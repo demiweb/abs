@@ -1,0 +1,165 @@
++font('proximanova-regular', 'proximanova-regular-webfont')
++font('proximanova-bold', 'proximanova-bold-webfont')
++font('proximanova-semibold', 'proximanova-semibold-webfont')
++font('proximanova-light', 'proximanova-light-webfont')
++font('proximanovat-thin', 'proximanovat-thin-webfont')
+
+=reg
+  font-family: 'proximanova-regular', Arial, sans-serif
+=bold
+  font-family: 'proximanova-bold', Arial, sans-serif
+=semi
+  font-family: 'proximanova-semibold', Arial, sans-serif
+=light
+  font-family: 'proximanova-light', Arial, sans-serif
+=thin
+  font-family: 'proximanovat-thin', Arial, sans-serif
+
+
+=xl
+  +r(1399)
+    @content
+=lg
+  +r(1199)
+    @content
+=md
+  +r(991)
+    @content
+=sm
+  +r(767)
+    @content
+=xs
+  +r(575)
+    @content
+
+=lgmin
+  +r(1200)
+    @content
+=mdmin
+  +r(992)
+    @content
+=smmin
+  +r(768)
+    @content
+=xsmin
+  +r(576)
+    @content
+
+
+body
+  background: #FFF
+  line-height: 1.4
+  font-size: 16px
+  +reg
+  color: $c-text
+  +no-scroll
+
+.out
+  overflow-x: hidden
+
+img
+  max-width: 100%
+
+.is-animated
+  &[data-loaded="true"]
+    animation: fadeIn .4s
+
+.icon
+  display: inline-block
+
+.logo
+  +flex(center, center)
+  width: 182px
+  height: $header-height
+  +xs
+    width: 85px
+    height: $header-height-mob
+  &.is-red
+    background-color: #b80a00
+
+.copy
+  font-size: 14px
+  text-transform: uppercase
+  color: rgba($white, .5)
+  +thin
+
+.scroll-down
+  text-align: center
+  &__title
+    text-transform: uppercase
+    color: rgba($white, .5)
+    font-size: 14px
+    +thin
+  &__btn
+    display: inline-block
+  &__mouse
+    display: block
+    position: relative
+    border: 2px solid rgba($white, .5)
+    height: 45px
+    width: 26px
+    border-radius: 25px
+    +before
+      width: 5px
+      height: 5px
+      display: inline-block
+      background-color: rgba($white, .5)
+      border-radius: 50%
+      position: absolute
+      top: 8px
+      left: 50%
+      transform: translate(-50%, 0)
+  &__arr
+    display: inline-block
+    position: relative
+    height: 25px
+    width: 26px
+    margin-bottom: 15px
+    +before
+      display: inline-block
+      +icon-arrow(15, 15, 2, rgba($white, .5), -45)
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%, 0) rotate(-45deg)
+      animation-name: scrollDown
+      animation-duration: 1s
+      animation-iteration-count: infinite
+    +after
+      @extend .scroll-down__arr::before
+      top: 10px
+      animation-duration: 1s
+      animation-delay: .1s
+      animation-iteration-count: infinite
+
+.btn
+  display: inline-block
+  background-color: transparent
+  text-align: center
+  text-transform: uppercase
+  color: $white
+  border: 1px solid  $white
+  padding-top: 10px
+  padding-bottom: 10px
+  padding-left: 30px
+  padding-right: 30px
+
+.line-sm
+  height: 45px
+  width: 1px
+  background-color: $white
+  display: inline-block
+
+@keyframes scrollDown
+  0%
+    opacity: 0.3
+  50%
+    opacity: 1
+  100%
+    opacity: 0.3
+
+// @keyframes fadeIn
+//   0%
+//     opacity: 0
+//   100%
+//     opacity: 1

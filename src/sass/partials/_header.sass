@@ -1,0 +1,99 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 15
+  +flex(space-between, center)
+  background-color: transparent
+  padding-right: 30px
+  height: $header-height
+  border-bottom: 1px solid $white-transp
+  +lg
+    justify-content: flex-start
+  +xs
+    padding-right: 15px
+    padding-left: 15px
+    height: $header-height-mob
+  &.is-black
+    background-color: #000
+  &__logo
+    position: relative
+    z-index: 1
+    +lg
+      flex-grow: 1
+  &__nav
+    flex-grow: 1
+    text-align: center
+    &.is-active
+      transform: translate(0, 0)
+      top: $header-height
+      +xs
+        top: $header-height-mob
+    +lg
+      position: absolute
+      top: 0
+      left: 0
+      background-color: #000
+      width: 100%
+      height: calc(100vh - #{$header-height})
+      +flex(center, center)
+      transform: translate(0, -100%)
+      +tr(transform .3s)
+    +xs
+      height: calc(100vh - #{$header-height-mob})
+  &__lang
+    width: 152px // logo width - padding
+    text-align: right
+    position: relative
+    z-index: 1
+    +lg
+      width: auto
+  &__burger
+    display: none
+    margin-left: 30px
+    +lg
+      display: block
+
+.lang
+  display: inline-block
+  li
+    +notlast
+      border-bottom: 1px solid $white
+  a
+    text-transform: uppercase
+    +light
+    color: $white
+    font-size: 14px
+    &.is-active
+      +semi
+
+.burger
+  display: block
+  width: 28px
+  height: 28px
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+    top: 9px
+  span:after
+    top: 18px
+  span 
+    position: relative
+    display: block
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: #fff
+    transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+  &.is-active span 
+    background-color: transparent
+
+  &.is-active span:before 
+    transform: rotate(45deg) translate(-1px, 0px)
+
+  &.is-active span:after 
+    transform: rotate(-45deg) translate(6px, -7px)

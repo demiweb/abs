@@ -1,0 +1,37 @@
+<!-- begin header -->
+<header class="header">
+  <div class="header__logo">
+    <a href="/" class="logo">
+      <img src="img/logo.png" alt="">
+    </a>
+  </div>
+
+  <div class="header__nav js-menu">
+    {{ mixins.list(
+      name = 'nav',
+      list = [
+        { link: 'Про нас' },
+        { link: 'продукція' },
+        { link: 'клієнтам' },
+        { link: 'новини' },
+        { link: 'контакти' }
+      ]
+    ) }}
+  </div>
+
+  <div class="header__lang">
+    {{ mixins.list(
+      name = 'lang',
+      
+      list = [
+        { item: '', link: 'UA', modItem: '', modLink: 'is-active' },
+        { item: '', link: 'RU' }
+      ]
+    ) }}
+  </div>
+
+  <div class="header__burger">
+    <a href="#" class="burger js-burger"><span></span></a>
+  </div>
+</header>
+<!-- end header -->

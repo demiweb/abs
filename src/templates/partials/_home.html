@@ -1,0 +1,108 @@
+{%set
+screens = [
+  {
+    img: 'home-1.jpg',
+    descr: true,
+    blockBottom: true
+  },
+  {
+    img: 'home-2.jpg',
+    title: 'АКУМУЛЯТОРИ',
+    subttl: 'ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ'
+  },
+  {
+    img: 'home-3.jpg',
+    title: 'АКУМУЛЯТОРИ',
+    subttl: 'ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ '
+  },
+  {
+    img: 'home-4.jpg',
+    title: 'АКУМУЛЯТОРИ',
+    subttl: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ'
+  },
+  {
+    img: 'home-5.jpg',
+    title: 'АКУМУЛЯТОРИ',
+    subttl: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ'
+  },
+  {
+    img: 'home-6.jpg',
+    title: 'АКУМУЛЯТОРИ',
+    subttl: 'ДЛЯ АКТИВНОГО ВІДПОЧИНКУ'
+  }
+]
+%}
+
+<!-- begin fullpage -->
+<div class="fullpage js-fullpage">
+  {% for i in screens %}
+  <!-- begin fullpage-section -->
+  <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/{{ i.img }}">
+   <div class="lines">
+     <div class="line"></div>
+     <div class="line"></div>
+     <div class="line"></div>
+   </div>
+
+   <div class="letters">
+     <div class="letter"><span>a</span></div>
+     <div class="letter"><span>b</span></div>
+     <div class="letter"><span>s</span></div>
+   </div>
+
+    {% if i.descr %}
+    <div class="fullpage-section__descr">
+      <div>accumulatory</div>
+      <div>battery</div>
+      <div>systems</div>
+    </div>
+    {% endif %}
+
+    <div class="fullpage-section__block{% if i.blockBottom %} fullpage-section__block-bottom{% endif %}">
+      {% if i.title %}
+      <div class="fullpage-section__title">
+        <h2 class="h2">{{ i.title }}</h2>
+        <div class="h2-subttl">{{ i.subttl }}</div>
+      </div>
+      {% endif %}
+
+      <div class="line-sm"></div>
+
+      {{ mixins.btn(
+        title = 'Детальніше'
+      ) }}
+      
+    </div>
+
+    <div class="fullpage-section__scroll">
+      <!-- begin scroll-down -->
+      <div class="scroll-down">
+        <a href="#" class="scroll-down__btn">
+          <span class="scroll-down__mouse"></span>
+          <span class="scroll-down__arr"></span>
+        </a>
+        <div class="scroll-down__title">каталог продукції</div>
+      </div>
+      <!-- end scroll-down -->
+    </div>
+
+    <div class="fullpage-section__copy copy">&copy; 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
+   
+  </div>
+  <!-- end fullpage-section -->
+  {% endfor %}  
+</div>
+<!-- end fullpage -->
+
+<div class="fullpage__nav js-fullpage-nav">
+    {{ mixins.list(
+      name = 'fullage-nav',
+      modifications = { wrap: '', item: '', link: '' },
+      list = [
+        { item: '', link: '01', modLink: 'is-active' },
+        { item: '', link: '02' },
+        { item: '', link: '03' },
+        { item: '', link: '04' }
+      ]
+    ) }}
+  </div>
