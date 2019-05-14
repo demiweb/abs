@@ -1,11 +1,13 @@
 .nav
+  font-size: 0
   li
     display: inline-block
-    margin-left: 5%
-    margin-right: 5%
+    // margin-left: 5%
+    // margin-right: 5%
+    position: relative
     +xl
-      margin-left: 4%
-      margin-right: 4%
+      // margin-left: 4%
+      // margin-right: 4%
     +lg
       display: block
       margin-left: 0
@@ -15,7 +17,46 @@
   a
     text-transform: uppercase
     color: $white
+    display: block
     +semi
     font-size: 16px
+    padding: 10px 30px 39px
+    +tr(background-color .3s)
+    +hover
+      background-color: $red
     +lg
       font-size: 21px
+      background-color: transparent
+      padding: 0
+      &.is-active
+        background-color: transparent
+
+    &.is-active
+      background-color: rgba($white, .3)
+
+.nav--sub
+
+  li
+    width: 25%
+    &:nth-child(1)
+      width: $width-1
+    &:nth-child(2)
+      width: $width-2
+    &:nth-child(3)
+      width: $width-3
+    &:nth-child(4)
+      width: $width-4
+      a
+        background-color: rgba(108, 83, 69, 0.502)
+  a
+    padding: 15px
+    border: 1px solid $white-transp
+    text-align: center
+    background-color: rgba(0, 0, 0, 0.502)
+    +reg
+    +tr(background-color .3s, color .3s)
+    +hover
+      color: #2a3d75
+      background-color: $white
+
+  

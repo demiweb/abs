@@ -1,29 +1,28 @@
 {%set
 screens = [
   {
-    img: 'home-1.jpg',
-    descr: true,
-    blockBottom: true
-  },
-  {
     img: 'home-2.jpg',
     title: 'АКУМУЛЯТОРИ',
-    subttl: 'ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ'
+    subttl: 'ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ',
+    scroll: 'ДЛЯ ВАНТАЖНИХ'
   },
   {
     img: 'home-3.jpg',
     title: 'АКУМУЛЯТОРИ',
-    subttl: 'ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ '
+    subttl: 'ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ ',
+    scroll: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬких'
   },
   {
     img: 'home-4.jpg',
     title: 'АКУМУЛЯТОРИ',
-    subttl: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ'
+    subttl: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ',
+    scroll: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ '
   },
   {
     img: 'home-5.jpg',
     title: 'АКУМУЛЯТОРИ',
-    subttl: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ'
+    subttl: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ',
+    scroll: 'ДЛЯ АКТИВНОГО ВІДПОЧИНКУ'
   },
   {
     img: 'home-6.jpg',
@@ -74,6 +73,8 @@ screens = [
       
     </div>
 
+    {% if i.scroll %}
+
     <div class="fullpage-section__scroll">
       <!-- begin scroll-down -->
       <div class="scroll-down">
@@ -81,10 +82,12 @@ screens = [
           <span class="scroll-down__mouse"></span>
           <span class="scroll-down__arr"></span>
         </a>
-        <div class="scroll-down__title">каталог продукції</div>
+        <div class="scroll-down__title">{{ i.scroll }}</div>
       </div>
       <!-- end scroll-down -->
     </div>
+
+    {% endif %}
 
     <div class="fullpage-section__copy copy">&copy; 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
    

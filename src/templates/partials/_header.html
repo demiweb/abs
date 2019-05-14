@@ -9,17 +9,36 @@
   <div class="header__nav js-menu">
     {{ mixins.list(
       name = 'nav',
-      list = [
+      list = [        
+        {
+          link: 'продукція',
+          modLink: 'is-active js-hover'
+        },
         { link: 'Про нас' },
-        { link: 'продукція' },
-        { link: 'клієнтам' },
         { link: 'новини' },
-        { link: 'контакти' }
+        {
+          link: 'контакти',
+          item:  '<div class="header__social">'+
+            mixins.list(
+              name = 'social',
+              list = [
+                { item: '', link: mixins.icon('facebook') },
+                { item: '', link: mixins.icon('instagram') },
+                { item: '', link: mixins.icon('youtube') }
+              ]
+            )+
+          '</div> '
+        }
       ]
     ) }}
+       
   </div>
 
   <div class="header__lang">
+    <div class="header__contacts">
+      <a href="tel:+380504947606">+38 050 494 76 06</a>
+      <a href="#" class="btn-link">замовити дзвінок</a>
+    </div>
     {{ mixins.list(
       name = 'lang',
       
@@ -32,6 +51,19 @@
 
   <div class="header__burger">
     <a href="#" class="burger js-burger"><span></span></a>
+  </div>
+
+  <div class="header__subnav">
+    {{ mixins.list(
+        name = 'nav',
+        modifications = { wrap: 'nav--sub' },
+        list = [
+          { item: '', link: 'monbat batteries' },
+          { item: '', link: 'start batteries' },
+          { item: '', link: 'winmaxx' },
+          { item: '', link: 'MonOil' }
+        ]
+      ) }}
   </div>
 </header>
 <!-- end header -->
