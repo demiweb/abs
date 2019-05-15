@@ -1,3 +1,4 @@
+import 'promise-polyfill/src/polyfill';
 import setTouchClassName from './components/setTouchClassName';
 import setLazy from './components/setLazy';
 import toggleMenu from './components/toggleMenu';
