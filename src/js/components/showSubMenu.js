@@ -4,6 +4,7 @@ import isTouch from '../lib/detectTouch';
 class SubMenu {
   constructor(btn) {
     this.btn = btn;
+    this.$btn = $('.' + btn);
     this.$header = $('.' + btn).closest('.header');
     this.subnav= 'header__subnav';
     this.$subnav = this.$header.find('.' + this.subnav);
@@ -15,10 +16,12 @@ class SubMenu {
   };
 
   show(e) {
+    this.$btn.addClass(SubMenu.classNames.IS_HOVERED);
     this.$subnav.addClass(ACTIVE);
   };
 
   hide(e) {
+    this.$btn.removeClass(SubMenu.classNames.IS_HOVERED);
     this.$subnav.removeClass(ACTIVE);
   };
 
@@ -39,6 +42,10 @@ class SubMenu {
       $DOC.on('click', '.'+this.btn, this.toggle.bind(this));
     }; 
   };
+};
+
+SubMenu.classNames = {
+  IS_HOVERED: 'is-hovered'
 };
 
 export default function showSubMenu() {

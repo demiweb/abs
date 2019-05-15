@@ -72,14 +72,14 @@ export default class Animator {
         targets: this.current,
         opacity: [1, 0],
         zIndex: [1, 0],
-        duration: 500
+        duration: 600
       })
 
       .add({
         targets: this.target,
         opacity: [0, 1],
         zIndex: [0, 1],
-        duration: 300
+        duration: 600
       }, '-=500')
 
       .add({

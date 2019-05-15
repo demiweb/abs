@@ -130,7 +130,7 @@ export default function setFullpage() {
         translateY: ['-150%', '0%'],
         duration: 1000,
         delay: anime.stagger(300)
-      })
+      }, '-=500')
       .add({
         targets: letters,
         translateX: ['-100%', '-40%'],

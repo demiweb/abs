@@ -1,6 +1,7 @@
 import Animator from './Animator';
-import { ACTIVE } from '../../constants';
+import { ACTIVE, $WIN } from '../../constants';
 import anime from 'animejs';
+import '../../lib/touchevents';
 
 export default class Pager {
   constructor(wrap) {
@@ -16,22 +17,22 @@ export default class Pager {
 
   init() {
     if (!this.$sections.length) return;
-    this._initFirstSection();    
+    this._initFirstSection();
 
     this._createPagination();
     this._paginateOnScroll();
     this._paginateOnClick();
+    this._paginateOnTouch();
   };
 
   paginate(e) {
     if (!this.allowScroll) return;
     let direction;
-
     
     if (e.type === 'wheel') {
       e = e.originalEvent;
       direction = e.deltaY > 0 ? 1 : -1;
-      this.nextSection = this.activeSection + direction;           
+      this.nextSection = this.activeSection + direction;
     };
     if (e.type === 'click') {
       const index = parseInt(e.currentTarget.getAttribute('data-index'));
@@ -41,6 +42,12 @@ export default class Pager {
       this.nextSection = index;
 
       direction = this.nextSection > this.activeSection ? 1 : -1;      
+    };
+    if (e.type === 'swd') {
+      this.nextSection = this.activeSection - 1;
+    };
+    if (e.type === 'swu') {
+      this.nextSection = this.activeSection + 1;
     };
 
     if (this.nextSection >= this.$sections.length || this.nextSection < 0 || this.nextSection === this.activeSection) return;
@@ -81,7 +88,7 @@ export default class Pager {
   };
 
   _paginateOnScroll() {
-    $(window).on('wheel', this.paginate.bind(this));
+    $WIN.on('wheel', this.paginate.bind(this));
   };
 
   _paginateOnClick() {
@@ -91,8 +98,13 @@ export default class Pager {
     if (this.$nextBtns.length > 0) {
       this.$nextBtns.on('click', this.paginate.bind(this));
     }
-    
-    
+  };
+
+  _paginateOnTouch() {
+    const events = ['swu', 'swd'];
+    events.forEach((event) => {
+      window.addEventListener(event, this.paginate.bind(this));
+    });
   };
 
   _initFirstSection() {
