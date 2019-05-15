@@ -11,107 +11,96 @@ export default class Animator {
     this.target = $sections[to];
   };
 
-  getCurrentElements() {
+  getElements(section) {
     const elements = {
-      btn: this.current.querySelector('.btn'),
-      line: this.current.querySelector('.line-sm'),
-      title: this.current.querySelector('.h2'),
-      subttl: this.current.querySelector('.h2-subttl'),
-      scroll: this.current.querySelector('.scroll-down'),
-      copy: this.current.querySelector('.copy')
+      btn: section.querySelector('.btn'),
+      line: section.querySelector('.line-sm'),
+      title: section.querySelector('.h2'),
+      subttl: section.querySelector('.h2-subttl'),
+      scroll: section.querySelector('.scroll-down'),
+      copy: section.querySelector('.copy')
     };
     return elements;
   };
 
-  getTargetElements() {
-    const elements = {
-      btn: this.target.querySelector('.btn'),
-      line: this.target.querySelector('.line-sm'),
-      title: this.target.querySelector('.h2'),
-      subttl: this.target.querySelector('.h2-subttl'),
-      scroll: this.target.querySelector('.scroll-down'),
-      copy: this.target.querySelector('.copy')
-    };
-    return elements;
-  };
-      
-  animateSections() {
-    this.tl      
-      .add({
-        targets: this.getCurrentElements().copy,
-        opacity: [1, 0],
-        duration: 600,
-      })
-      .add({
-        targets: this.getCurrentElements().scroll,
-        opacity: [1, 0],
-        duration: 600,
-      }, '-=450')
-      .add({
-        targets: this.getCurrentElements().btn,
-        translateY: ['0%', '-100%'],
-        duration: 600,
-      }, '-=500')
-      .add({
-        targets: this.getCurrentElements().line,
-        translateY: ['0%', '-100%'],
-        duration: 600,
-      }, '-=500')
-      .add({
-        targets: this.getCurrentElements().subttl,
-        translateY: ['0%', '-100%'],
-        duration: 600,
-      }, '-=500')
-      .add({
-        targets: this.getCurrentElements().title,
-        opacity: [1, 0],
-        duration: 400,
-      }, '-=300')
-
-      .add({
-        targets: this.current,
-        opacity: [1, 0],
-        zIndex: [1, 0],
-        duration: 600
-      })
-
+  enterAnimations() {
+    this.tl
       .add({
         targets: this.target,
         opacity: [0, 1],
         zIndex: [0, 1],
         duration: 600
       }, '-=500')
-
       .add({
-        targets: this.getTargetElements().title,
+        targets: this.getElements(this.target).title,
         opacity: [0, 1],
         duration: 400,
       })
       .add({
-        targets: this.getTargetElements().subttl,
+        targets: this.getElements(this.target).subttl,
         translateY: ['-100%', '0%'],
         duration: 600,
       }, '-=500')
       .add({
-        targets: this.getTargetElements().line,
+        targets: this.getElements(this.target).line,
         translateY: ['-100%', '0%'],
         duration: 600,
       }, '-=500')
       .add({
-        targets: this.getTargetElements().btn,
-        translateY: ['-100%', '0%'],
+        targets: this.getElements(this.target).btn,
+        translateY: ['-105%', '0%'],
         duration: 600,
       }, '-=500')
       .add({
-        targets: this.getTargetElements().scroll,
+        targets: this.getElements(this.target).scroll,
         opacity: [0, 1],
         duration: 600,
       }, '-=450')
       .add({
-        targets: this.getTargetElements().copy,
+        targets: this.getElements(this.target).copy,
         opacity: [0, 1],
         duration: 600,
-      });     
+      });
+  };
+
+  exitAnimations() {
+    this.tl
+      .add({
+        targets: this.getElements(this.current).copy,
+        opacity: [1, 0],
+        duration: 600,
+      })
+      .add({
+        targets: this.getElements(this.current).scroll,
+        opacity: [1, 0],
+        duration: 600,
+      }, '-=450')
+      .add({
+        targets: this.getElements(this.current).btn,
+        translateY: ['0%', '-105%'],
+        duration: 600,
+      }, '-=500')
+      .add({
+        targets: this.getElements(this.current).line,
+        translateY: ['0%', '-100%'],
+        duration: 600,
+      }, '-=500')
+      .add({
+        targets: this.getElements(this.current).subttl,
+        translateY: ['0%', '-100%'],
+        duration: 600,
+      }, '-=500')
+      .add({
+        targets: this.getElements(this.current).title,
+        opacity: [1, 0],
+        duration: 400,
+      }, '-=300')
+      .add({
+        targets: this.current,
+        opacity: [1, 0],
+        zIndex: [1, 0],
+        duration: 600
+      });
   };
 
   animate() {
@@ -124,6 +113,7 @@ export default class Animator {
       $(this.target).addClass(ACTIVE);
     });
 
-    this.animateSections();
+    this.exitAnimations();
+    this.enterAnimations();
   };
 };

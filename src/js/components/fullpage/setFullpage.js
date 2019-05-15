@@ -8,15 +8,12 @@ export default function setFullpage() {
 
   const $sections = $('.js-fullpage').children();
   const section = $sections[0];
-  const $elseSections = $sections.not(section);
 
   const logo = document.querySelector('.logo');
   const navLinks = document.querySelector('.nav ul').children;
   const contacts = document.querySelector('.header__contacts');
   const lang = document.querySelector('.lang');
   const burger = document.querySelector('.burger');
-
-  // $(section).addClass(ACTIVE);
   
   $sections.css({
     zIndex: -1,

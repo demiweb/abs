@@ -142,7 +142,7 @@ export default class Pager {
       }, '-=500')
       .add({
         targets: btn,
-        translateY: ['-100%', '0%'],
+        translateY: ['-105%', '0%'],
         duration: 600,
       }, '-=500')
       .add({
