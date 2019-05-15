@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- BEGIN content -->
-    <div class="out">
+    <div class="out" style="background-image: url('img/home/home-2.jpg');">
       <!-- begin header -->
       <header class="header">
         <div class="header__logo">
@@ -23,7 +23,20 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class=" is-active js-hover">продукція</a></li>
+              <li><a href="#" class=" is-active js-hover">продукція</a>
+                <div class="header__subnav">
+                  <!-- begin nav -->
+                  <nav class="nav nav--sub">
+                    <ul>
+                      <li><a href="#">monbat batteries</a></li>
+                      <li><a href="#">start batteries</a></li>
+                      <li><a href="#">winmaxx</a></li>
+                      <li><a href="#">MonOil</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end nav -->
+                </div>
+              </li>
               <li><a href="#">Про нас</a></li>
               <li><a href="#">новини</a></li>
               <li><a href="#">контакти</a>
@@ -78,46 +91,36 @@
         <div class="header__burger">
           <a href="#" class="burger js-burger"><span></span></a>
         </div>
-        <div class="header__subnav">
-          <!-- begin nav -->
-          <nav class="nav nav--sub">
-            <ul>
-              <li><a href="#">monbat batteries</a></li>
-              <li><a href="#">start batteries</a></li>
-              <li><a href="#">winmaxx</a></li>
-              <li><a href="#">MonOil</a></li>
-            </ul>
-          </nav>
-          <!-- end nav -->
-        </div>
       </header>
       <!-- end header -->
+      <div class="line line--1"></div>
+      <div class="line line--2"></div>
+      <div class="line line--3"></div>
+      <div class="letter letter--1"><span>a</span></div>
+      <div class="letter letter--2"><span>b</span></div>
+      <div class="letter letter--3"><span>s</span></div>
       <!-- begin fullpage -->
       <div class="fullpage js-fullpage">
         <!-- begin fullpage-section -->
-        <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/home-2.jpg">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="letters">
-            <div class="letter"><span>a</span></div>
-            <div class="letter"><span>b</span></div>
-            <div class="letter"><span>s</span></div>
-          </div>
+        <div class="fullpage-section js-lazy" data-background-image="img/home/home-2.jpg">
           <div class="fullpage-section__block">
             <div class="fullpage-section__title">
               <h2 class="h2">АКУМУЛЯТОРИ</h2>
-              <div class="h2-subttl">ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ</div>
+              <div class="overflow-hidden">
+                <div class="h2-subttl">ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ</div>
+              </div>
             </div>
-            <div class="line-sm"></div>
-            <a href="#" class="btn ">Детальніше</a>
+            <div class="overflow-hidden">
+              <div class="line-sm"></div>
+            </div>
+            <div class="overflow-hidden">
+              <a href="#" class="btn ">Детальніше</a>
+            </div>
           </div>
           <div class="fullpage-section__scroll">
             <!-- begin scroll-down -->
             <div class="scroll-down">
-              <a href="#" class="scroll-down__btn">
+              <a href="#" class="scroll-down__btn js-fullpage-next" data-index="1">
                 <span class="scroll-down__mouse"></span>
                 <span class="scroll-down__arr"></span>
               </a>
@@ -129,29 +132,25 @@
         </div>
         <!-- end fullpage-section -->
         <!-- begin fullpage-section -->
-        <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/home-3.jpg">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="letters">
-            <div class="letter"><span>a</span></div>
-            <div class="letter"><span>b</span></div>
-            <div class="letter"><span>s</span></div>
-          </div>
+        <div class="fullpage-section js-lazy" data-background-image="img/home/home-3.jpg">
           <div class="fullpage-section__block">
             <div class="fullpage-section__title">
               <h2 class="h2">АКУМУЛЯТОРИ</h2>
-              <div class="h2-subttl">ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ </div>
+              <div class="overflow-hidden">
+                <div class="h2-subttl">ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ </div>
+              </div>
             </div>
-            <div class="line-sm"></div>
-            <a href="#" class="btn ">Детальніше</a>
+            <div class="overflow-hidden">
+              <div class="line-sm"></div>
+            </div>
+            <div class="overflow-hidden">
+              <a href="#" class="btn ">Детальніше</a>
+            </div>
           </div>
           <div class="fullpage-section__scroll">
             <!-- begin scroll-down -->
             <div class="scroll-down">
-              <a href="#" class="scroll-down__btn">
+              <a href="#" class="scroll-down__btn js-fullpage-next" data-index="2">
                 <span class="scroll-down__mouse"></span>
                 <span class="scroll-down__arr"></span>
               </a>
@@ -163,29 +162,25 @@
         </div>
         <!-- end fullpage-section -->
         <!-- begin fullpage-section -->
-        <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/home-4.jpg">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="letters">
-            <div class="letter"><span>a</span></div>
-            <div class="letter"><span>b</span></div>
-            <div class="letter"><span>s</span></div>
-          </div>
+        <div class="fullpage-section js-lazy" data-background-image="img/home/home-4.jpg">
           <div class="fullpage-section__block">
             <div class="fullpage-section__title">
               <h2 class="h2">АКУМУЛЯТОРИ</h2>
-              <div class="h2-subttl">ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ</div>
+              <div class="overflow-hidden">
+                <div class="h2-subttl">ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ</div>
+              </div>
             </div>
-            <div class="line-sm"></div>
-            <a href="#" class="btn ">Детальніше</a>
+            <div class="overflow-hidden">
+              <div class="line-sm"></div>
+            </div>
+            <div class="overflow-hidden">
+              <a href="#" class="btn ">Детальніше</a>
+            </div>
           </div>
           <div class="fullpage-section__scroll">
             <!-- begin scroll-down -->
             <div class="scroll-down">
-              <a href="#" class="scroll-down__btn">
+              <a href="#" class="scroll-down__btn js-fullpage-next" data-index="3">
                 <span class="scroll-down__mouse"></span>
                 <span class="scroll-down__arr"></span>
               </a>
@@ -197,29 +192,25 @@
         </div>
         <!-- end fullpage-section -->
         <!-- begin fullpage-section -->
-        <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/home-5.jpg">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="letters">
-            <div class="letter"><span>a</span></div>
-            <div class="letter"><span>b</span></div>
-            <div class="letter"><span>s</span></div>
-          </div>
+        <div class="fullpage-section js-lazy" data-background-image="img/home/home-5.jpg">
           <div class="fullpage-section__block">
             <div class="fullpage-section__title">
               <h2 class="h2">АКУМУЛЯТОРИ</h2>
-              <div class="h2-subttl">ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ</div>
+              <div class="overflow-hidden">
+                <div class="h2-subttl">ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ</div>
+              </div>
             </div>
-            <div class="line-sm"></div>
-            <a href="#" class="btn ">Детальніше</a>
+            <div class="overflow-hidden">
+              <div class="line-sm"></div>
+            </div>
+            <div class="overflow-hidden">
+              <a href="#" class="btn ">Детальніше</a>
+            </div>
           </div>
           <div class="fullpage-section__scroll">
             <!-- begin scroll-down -->
             <div class="scroll-down">
-              <a href="#" class="scroll-down__btn">
+              <a href="#" class="scroll-down__btn js-fullpage-next" data-index="4">
                 <span class="scroll-down__mouse"></span>
                 <span class="scroll-down__arr"></span>
               </a>
@@ -231,24 +222,20 @@
         </div>
         <!-- end fullpage-section -->
         <!-- begin fullpage-section -->
-        <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/home-6.jpg">
-          <div class="lines">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <div class="letters">
-            <div class="letter"><span>a</span></div>
-            <div class="letter"><span>b</span></div>
-            <div class="letter"><span>s</span></div>
-          </div>
+        <div class="fullpage-section js-lazy" data-background-image="img/home/home-6.jpg">
           <div class="fullpage-section__block">
             <div class="fullpage-section__title">
               <h2 class="h2">АКУМУЛЯТОРИ</h2>
-              <div class="h2-subttl">ДЛЯ АКТИВНОГО ВІДПОЧИНКУ</div>
+              <div class="overflow-hidden">
+                <div class="h2-subttl">ДЛЯ АКТИВНОГО ВІДПОЧИНКУ</div>
+              </div>
             </div>
-            <div class="line-sm"></div>
-            <a href="#" class="btn ">Детальніше</a>
+            <div class="overflow-hidden">
+              <div class="line-sm"></div>
+            </div>
+            <div class="overflow-hidden">
+              <a href="#" class="btn ">Детальніше</a>
+            </div>
           </div>
           <div class="fullpage-section__copy copy">&copy; 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
         </div>
@@ -256,16 +243,6 @@
       </div>
       <!-- end fullpage -->
       <div class="fullpage__nav js-fullpage-nav">
-        <!-- begin fullage-nav -->
-        <div class="fullage-nav ">
-          <ul>
-            <li><a href="#" class=" is-active">01</a></li>
-            <li><a href="#">02</a></li>
-            <li><a href="#">03</a></li>
-            <li><a href="#">04</a></li>
-          </ul>
-        </div>
-        <!-- end fullage-nav -->
       </div>
     </div>
     <!-- END content -->

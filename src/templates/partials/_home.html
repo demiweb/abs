@@ -4,25 +4,29 @@ screens = [
     img: 'home-2.jpg',
     title: 'АКУМУЛЯТОРИ',
     subttl: 'ДЛЯ ЛЕГКОВИХ АВТОМОБІЛІВ',
-    scroll: 'ДЛЯ ВАНТАЖНИХ'
+    scroll: 'ДЛЯ ВАНТАЖНИХ',
+    nextIndex: 1
   },
   {
     img: 'home-3.jpg',
     title: 'АКУМУЛЯТОРИ',
     subttl: 'ДЛЯ ВАНТАЖНИХ АВТОМОБІЛІВ ',
-    scroll: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬких'
+    scroll: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬких',
+    nextIndex: 2
   },
   {
     img: 'home-4.jpg',
     title: 'АКУМУЛЯТОРИ',
     subttl: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ',
-    scroll: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ '
+    scroll: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ',
+    nextIndex: 3
   },
   {
     img: 'home-5.jpg',
     title: 'АКУМУЛЯТОРИ',
     subttl: 'ДЛЯ ГАРАНТІЙНОГО ЖИВЛЕННЯ ЕНЕРГОСИСТЕМ',
-    scroll: 'ДЛЯ АКТИВНОГО ВІДПОЧИНКУ'
+    scroll: 'ДЛЯ АКТИВНОГО ВІДПОЧИНКУ',
+    nextIndex: 4
   },
   {
     img: 'home-6.jpg',
@@ -36,18 +40,8 @@ screens = [
 <div class="fullpage js-fullpage">
   {% for i in screens %}
   <!-- begin fullpage-section -->
-  <div class="fullpage-section is-animated js-lazy" data-background-image="img/home/{{ i.img }}">
-   <div class="lines">
-     <div class="line"></div>
-     <div class="line"></div>
-     <div class="line"></div>
-   </div>
-
-   <div class="letters">
-     <div class="letter"><span>a</span></div>
-     <div class="letter"><span>b</span></div>
-     <div class="letter"><span>s</span></div>
-   </div>
+  <div class="fullpage-section js-lazy" data-background-image="img/home/{{ i.img }}">
+   
 
     {% if i.descr %}
     <div class="fullpage-section__descr">
@@ -61,15 +55,22 @@ screens = [
       {% if i.title %}
       <div class="fullpage-section__title">
         <h2 class="h2">{{ i.title }}</h2>
-        <div class="h2-subttl">{{ i.subttl }}</div>
+        <div class="overflow-hidden">
+          <div class="h2-subttl">{{ i.subttl }}</div>
+        </div>
+        
       </div>
       {% endif %}
 
-      <div class="line-sm"></div>
+      <div class="overflow-hidden">
+        <div class="line-sm"></div>
+      </div>
 
-      {{ mixins.btn(
-        title = 'Детальніше'
-      ) }}
+      <div class="overflow-hidden">
+        {{ mixins.btn(
+          title = 'Детальніше'
+        ) }}
+      </div>
       
     </div>
 
@@ -78,7 +79,7 @@ screens = [
     <div class="fullpage-section__scroll">
       <!-- begin scroll-down -->
       <div class="scroll-down">
-        <a href="#" class="scroll-down__btn">
+        <a href="#" class="scroll-down__btn js-fullpage-next" data-index="{{ i.nextIndex }}">
           <span class="scroll-down__mouse"></span>
           <span class="scroll-down__arr"></span>
         </a>
@@ -98,14 +99,4 @@ screens = [
 <!-- end fullpage -->
 
 <div class="fullpage__nav js-fullpage-nav">
-    {{ mixins.list(
-      name = 'fullage-nav',
-      modifications = { wrap: '', item: '', link: '' },
-      list = [
-        { item: '', link: '01', modLink: 'is-active' },
-        { item: '', link: '02' },
-        { item: '', link: '03' },
-        { item: '', link: '04' }
-      ]
-    ) }}
   </div>

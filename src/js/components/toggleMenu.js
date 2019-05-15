@@ -1,4 +1,5 @@
-import { ACTIVE, $BODY, NOSCROLL } from '../constants';
+import { ACTIVE, $BODY, $WIN, NOSCROLL } from '../constants';
+import { debounce } from 'throttle-debounce';
 import anime from 'animejs';
 
 class Menu {
@@ -6,12 +7,24 @@ class Menu {
     this.$burger = $burger;
     this.$menu = $('.js-menu');
     this.$header = this.$menu.closest('.header');
-    this.menuItems = this.$menu.find('li').get();
+    this.menuItems = [].slice.call(this.$menu[0].querySelectorAll('li'));
     this.IS_BLACK = 'is-black';
   };
 
   init() {
-    this._toggleMenu();    
+    this._refresh();
+    this._toggleMenu();
+  };
+
+  refresh() {
+    if (window.matchMedia('(min-width: 1200px)').matches) {
+      this.menuItems.forEach((item) => {
+        $(item).css({
+          transform: '',
+          opacity: ''
+        });
+      });
+    };
   };
 
   toggle(e) {
@@ -59,15 +72,20 @@ class Menu {
 
   _toggleMenu() {
     this.$burger.on('click', this.toggle.bind(this));    
-  };  
+  };
+
+  _refresh() {
+    const refreshDebouced = debounce(66, this.refresh.bind(this));
+    $WIN.on('resize', refreshDebouced);
+  };
 };
 
 export default function toggleMenu() {
-  
   const $burger = $('.js-burger');
 
   if (!$burger.length) return;
 
   const menu = new Menu($burger);
   menu.init();
+  
 };

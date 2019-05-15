@@ -53,16 +53,23 @@ body
   +reg
   color: $c-text
   +no-scroll
+  background-color: $black
 
 .out
-  overflow-x: hidden
+  overflow: hidden
+  width: 100%
+  height: 100vh
+  +cover
 
 img
   max-width: 100%
 
-.is-animated
-  &[data-loaded="true"]
-    animation: fadeIn .4s
+// .is-animated
+//   &[data-loaded="true"]
+//     animation: fadeIn .4s
+
+.overflow-hidden
+  overflow: hidden
 
 .icon
   display: inline-block

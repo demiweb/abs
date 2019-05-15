@@ -2,6 +2,7 @@
   overflow: hidden
   &__nav
     position: fixed
+    z-index: 10
     right: 0
     display: inline-block
     top: 50%
@@ -41,15 +42,23 @@
   
 .fullpage-section
   height: 100vh
+  width: 100%
+  // visibility: hidden
+  // opacity: 0
+  position: absolute
+  top: 0
+  left: 0
   padding-top: $header-height
   +cover
-  position: relative
   +flex(center, center, column)
   +md
     padding-bottom: 50px
   +xs
     // justify-content: space-between
     padding-bottom: 185px
+  &.is-active
+    visibility: visible
+    opacity: 1
   &__descr
     position: relative
     width: 100%
@@ -83,14 +92,25 @@
       text-align: center
     +xs
       // position: static
+  &__title
+    .h2
+      opacity: 0
+    .h2-subttl
+      transform: translate(0, -100%)
+  &__subttl
+    overflow: hidden
   &__block
     position: relative
     z-index: 1
     text-align: center
     +flex(flex-start, center, column)
+    overflow: hidden
     
     .line-sm
       margin-bottom: 25px
+      transform: translate(0, -100%)
+    .btn
+      transform: translate(0, -100%)
   &__block-bottom
     position: absolute
     bottom: 185px
@@ -99,56 +119,52 @@
   &__scroll
     position: absolute
     bottom: 30px
+    .scroll-down
+      opacity: 0
     +md
       bottom: 70px
     +xs
       // position: static
+  &__copy
+    opacity: 0
 
 
-
-.lines
-  +coverdiv
-  top: $header-height
-  z-index: 0
-  overflow: hidden
-  +xs
-    display: none
 
 .line
   position: absolute
   border-right: 1px solid $white-transp
-  top: 0
+  top: 97px
   bottom: 0
-  &:nth-child(1)
-    left: $left-1
-  &:nth-child(2)
-    left: $left-2
-  &:nth-child(3)
-    left: $left-3
-
-.letters
-  position: relative
-  width: 100%
-  z-index: 0
-  +xs
+  z-index: 10
+  +md
     display: none
+  &--1
+    left: $left-1
+  &--2
+    left: $left-2
+  &--3
+    left: $left-3
 
 .letter
   font-size: 550px
   +css-lock(300, 550, 576, 1199, font-size)
   color: rgba($white, .2)
   text-transform: uppercase
+  z-index: 2
   +bold
   line-height: .8
   position: absolute
+  top: 50%
   transform: translate(0, -50%)
   overflow: hidden
+  +md
+    display: none
   span
     display: inline-block
     transform: translate(-40%, 0)
-  &:nth-child(1)
+  &--1
     left: $left-1
-  &:nth-child(2)
+  &--2
     left: $left-2
-  &:nth-child(3)
+  &--3
     left: $left-3

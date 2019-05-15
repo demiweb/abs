@@ -1,0 +1,150 @@
+import Pager from '../fullpage/Pager';
+import anime from 'animejs';
+import { ACTIVE } from '../../constants';
+
+export default function setFullpage() {
+  const lines = [].slice.call(document.querySelectorAll('.line'));
+  const letters = [].slice.call(document.querySelectorAll('.letter span'));
+
+  const $sections = $('.js-fullpage').children();
+  const section = $sections[0];
+  const $elseSections = $sections.not(section);
+
+  const logo = document.querySelector('.logo');
+  const navLinks = document.querySelector('.nav ul').children;
+  const contacts = document.querySelector('.header__contacts');
+  const lang = document.querySelector('.lang');
+  const burger = document.querySelector('.burger');
+
+  // $(section).addClass(ACTIVE);
+  
+  $sections.css({
+    zIndex: -1,
+    opacity: '0'
+  });
+
+  const tl = anime.timeline({
+    easing: 'linear'
+  });
+
+  
+  if (window.matchMedia('(min-width: 320px)').matches && window.matchMedia('(max-width: 991px)').matches) {
+    tl
+      .add({
+        targets: logo,
+        opacity: [0, 1],
+        duration: 1000
+      })      
+      .add({
+        targets: contacts,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: lang,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: burger,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: section,
+        opacity: [0, 1],
+        zIndex: [0, 1],
+        duration: 500
+      });
+  } else if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1199px)').matches) {
+    tl
+      .add({
+        targets: logo,
+        opacity: [0, 1],
+        duration: 1000
+      })
+      .add({
+        targets: contacts,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: lang,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: burger,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: section,
+        opacity: [0, 1],
+        zIndex: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: lines,
+        translateY: ['-150%', '0%'],
+        duration: 1000,
+        delay: anime.stagger(300)
+      })
+      .add({
+        targets: letters,
+        translateX: ['-100%', '-40%'],
+        opacity: [0, 1],
+        duration: 500
+      });
+  } else if (window.matchMedia('(min-width: 1200px)').matches) {
+    tl
+      .add({
+        targets: logo,
+        opacity: [0, 1],
+        duration: 1000
+      })
+      .add({
+        targets: navLinks,
+        opacity: [0, 1],
+        delay: anime.stagger(200),
+        duration: 500
+      })
+      .add({
+        targets: contacts,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: lang,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: section,
+        opacity: [0, 1],
+        zIndex: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: lines,
+        translateY: ['-150%', '0%'],
+        duration: 1000,
+        delay: anime.stagger(300)
+      })
+      .add({
+        targets: letters,
+        translateX: ['-100%', '-40%'],
+        opacity: [0, 1],
+        duration: 500
+      });
+  };  
+
+  tl.finished.then(() => {
+    const pager = new Pager('.js-fullpage');
+    pager.init();
+  });  
+};
+
+
+
+

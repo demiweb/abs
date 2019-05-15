@@ -21,6 +21,8 @@
     position: relative
     width: 250px
     z-index: 1
+    +xl
+      width: 180px
     +lg
       flex-grow: 1
     +xs
@@ -28,8 +30,8 @@
   &__nav
     flex-grow: 1
     text-align: center
-    position: relative
-    transform: translate(0, 12px)
+    // transform: translate(0, 12px)
+    margin-top: 25px
     &.is-active
       transform: translate(0, 0)
       top: $header-height
@@ -37,11 +39,13 @@
         top: $header-height-mob
     +lg
       position: absolute
+      margin-top: 0
       top: 0
       left: 0
       background-color: #000
       width: 100%
       height: calc(100vh - #{$header-height})
+      overflow: auto
       +flex(center, center)
       transform: translate(0, -100%)
       +tr(transform .3s)
@@ -89,8 +93,10 @@
     // padding-top: 4px
     // display: none
     max-height: 0
-
-
+    +lg
+      position: relative
+      max-height: none
+      display: none
     +before
       width: 100%
       height: 4px
@@ -102,11 +108,18 @@
       transform: translate(-100%, 0)
       +tr(transform .3s)
       z-index: 1
+      +lg
+        transform: translate(0, 0)
     .nav
       transform: translate(0, -100%)
       +tr(opacity .3s)
+      +lg
+        transform: translate(0, 0)
     &.is-active
       max-height: none
+      +lg
+        .nav
+          animation: none
       .nav
         animation: slideDown .3s forwards
         animation-delay: .3s
