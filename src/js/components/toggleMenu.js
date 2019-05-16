@@ -86,6 +86,5 @@ export default function toggleMenu() {
   if (!$burger.length) return;
 
   const menu = new Menu($burger);
-  menu.init();
-  
+  menu.init();  
 };
