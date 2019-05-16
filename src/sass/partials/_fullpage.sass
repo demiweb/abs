@@ -48,7 +48,9 @@
       width: 100%
       text-align: center
     +xs
-      // position: static
+      bottom: 15px
+    +rh(550)
+      display: none
 
   
 .fullpage-section
@@ -68,7 +70,10 @@
     padding-bottom: 50px
   +xs
     // justify-content: space-between
-    padding-bottom: 185px
+    padding-bottom: 155px
+    padding-top: $header-height-mob
+  +rh(550)
+    padding-bottom: 15px !important
   &.is-active
     visibility: visible
     opacity: 1
@@ -95,17 +100,19 @@
         left: $left-2
       &:nth-child(3)
         left: $left-3
-  &__copy
-    position: absolute
-    bottom: 30px
-    right: 30px
-    +md
-      right: 0
-      width: 100%
-      text-align: center
-    +xs
+  // &__copy
+  //   position: absolute
+  //   bottom: 30px
+  //   right: 30px
+  //   +md
+  //     right: 0
+  //     width: 100%
+  //     text-align: center
+  //   +xs
       // position: static
   &__title
+    +rh(550)
+      margin-bottom: 5px
     .h2
       opacity: 0
     .h2-subttl
@@ -117,11 +124,12 @@
     z-index: 1
     text-align: center
     +flex(flex-start, center, column)
-    overflow: hidden
-    
+    overflow: hidden    
     .line-sm
       margin-bottom: 25px
       transform: translate(0, -100%)
+      +rh(550)
+        display: none
     .btn
       transform: translate(0, -105%)
   &__block-bottom
@@ -140,6 +148,8 @@
       bottom: 70px
     +xs
       // position: static
+    +rh(550)
+      display: none
   &__copy
     opacity: 0
 
