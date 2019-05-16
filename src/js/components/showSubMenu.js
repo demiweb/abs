@@ -32,7 +32,7 @@ class SubMenu {
   };
 
   _toggle() {
-    if (!isTouch()) {
+    if (window.matchMedia('(min-width: 1200px)').matches) {
       $DOC.on('mouseenter', '.'+this.btn, this.show.bind(this));
       $DOC.on('mouseleave', '.'+this.btn, this.hide.bind(this));
 

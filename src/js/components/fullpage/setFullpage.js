@@ -3,7 +3,8 @@ import anime from 'animejs';
 import { ACTIVE } from '../../constants';
 
 export default function setFullpage() {
-  const lines = [].slice.call(document.querySelectorAll('.line'));
+  // const lines = [].slice.call(document.querySelectorAll('.line'));
+  const lines = [].slice.call(document.querySelector('.js-fullpage').children[0].querySelectorAll('.line'));
   const letters = [].slice.call(document.querySelectorAll('.letter span'));
 
   const $sections = $('.js-fullpage').children();
@@ -14,6 +15,7 @@ export default function setFullpage() {
   const contacts = document.querySelector('.header__contacts');
   const lang = document.querySelector('.lang');
   const burger = document.querySelector('.burger');
+  const copy = document.querySelector('.copy');
   
   $sections.css({
     zIndex: -1,
@@ -24,7 +26,6 @@ export default function setFullpage() {
     easing: 'linear'
   });
 
-  
   if (window.matchMedia('(min-width: 320px)').matches && window.matchMedia('(max-width: 991px)').matches) {
     tl
       .add({
@@ -46,6 +47,11 @@ export default function setFullpage() {
         targets: burger,
         opacity: [0, 1],
         duration: 500
+      })      
+      .add({
+        targets: copy,
+        opacity: [0, 1],
+        duration: 600,
       })
       .add({
         targets: section,
@@ -76,6 +82,11 @@ export default function setFullpage() {
         duration: 500
       })
       .add({
+        targets: copy,
+        opacity: [0, 1],
+        duration: 600,
+      })
+      .add({
         targets: section,
         opacity: [0, 1],
         zIndex: [0, 1],
@@ -86,7 +97,7 @@ export default function setFullpage() {
         translateY: ['-150%', '0%'],
         duration: 1000,
         delay: anime.stagger(300)
-      })
+      }, '-=500')
       .add({
         targets: letters,
         translateX: ['-100%', '-40%'],
@@ -115,6 +126,11 @@ export default function setFullpage() {
         targets: lang,
         opacity: [0, 1],
         duration: 500
+      })
+      .add({
+        targets: copy,
+        opacity: [0, 1],
+        duration: 600,
       })
       .add({
         targets: section,

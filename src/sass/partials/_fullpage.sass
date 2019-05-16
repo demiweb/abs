@@ -38,6 +38,17 @@
         vertical-align: super
         margin-left: 10px
         +tr(width .3s)
+  &__copy
+    position: fixed
+    z-index: 10
+    bottom: 30px
+    right: 30px
+    +md
+      right: 0
+      width: 100%
+      text-align: center
+    +xs
+      // position: static
 
   
 .fullpage-section
@@ -134,14 +145,14 @@
 
 
 .lines
-  position: fixed
+  position: absolute
   top: 97px
   overflow: hidden
   width: 100%
   bottom: 0
   left: 0
   pointer-events: none
-  z-index: 10
+  z-index: 0
 .line
   position: absolute
   border-right: 1px solid $white-transp
@@ -163,7 +174,7 @@
   +css-lock(300, 550, 576, 1199, font-size)
   color: rgba($white, .2)
   text-transform: uppercase
-  z-index: 2
+  z-index: 0
   +bold
   line-height: .8
   position: absolute

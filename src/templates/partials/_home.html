@@ -40,8 +40,20 @@ screens = [
 <div class="fullpage js-fullpage">
   {% for i in screens %}
   <!-- begin fullpage-section -->
-  <div class="fullpage-section js-lazy" data-background-image="img/home/{{ i.img }}">
-   
+  <div class="fullpage-section js-lazy js-mobile-height" data-background-image="img/home/{{ i.img }}">
+
+    <div class="letter letter--1"><span>a</span></div>
+    <div class="letter letter--2"><span>b</span></div>
+    <div class="letter letter--3"><span>s</span></div>
+
+    <div class="lines">
+     <div class="line line--1"></div>
+     <div class="line line--2"></div>
+     <div class="line line--3"></div>
+   </div>
+
+
+
 
     {% if i.descr %}
     <div class="fullpage-section__descr">
@@ -90,7 +102,7 @@ screens = [
 
     {% endif %}
 
-    <div class="fullpage-section__copy copy">&copy; 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
+    
    
   </div>
   <!-- end fullpage-section -->
@@ -98,5 +110,6 @@ screens = [
 </div>
 <!-- end fullpage -->
 
-<div class="fullpage__nav js-fullpage-nav">
-  </div>
+<div class="fullpage__copy copy">&copy; 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
+
+<div class="fullpage__nav js-fullpage-nav"></div>

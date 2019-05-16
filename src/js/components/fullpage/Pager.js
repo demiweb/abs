@@ -115,7 +115,6 @@ export default class Pager {
     const title = section.querySelector('.h2');
     const subttl = section.querySelector('.h2-subttl');
     const scroll = section.querySelector('.scroll-down');
-    const copy = section.querySelector('.copy');
 
     $(section).addClass(ACTIVE);
     $('.out').css({
@@ -147,11 +146,6 @@ export default class Pager {
       }, '-=500')
       .add({
         targets: scroll,
-        opacity: [0, 1],
-        duration: 600,
-      }, '-=300')
-      .add({
-        targets: copy,
         opacity: [0, 1],
         duration: 600,
       }, '-=300');

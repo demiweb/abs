@@ -17,8 +17,7 @@ export default class Animator {
       line: section.querySelector('.line-sm'),
       title: section.querySelector('.h2'),
       subttl: section.querySelector('.h2-subttl'),
-      scroll: section.querySelector('.scroll-down'),
-      copy: section.querySelector('.copy')
+      scroll: section.querySelector('.scroll-down')
     };
     return elements;
   };
@@ -55,21 +54,11 @@ export default class Animator {
         targets: this.getElements(this.target).scroll,
         opacity: [0, 1],
         duration: 600,
-      }, '-=450')
-      .add({
-        targets: this.getElements(this.target).copy,
-        opacity: [0, 1],
-        duration: 600,
-      });
+      }, '-=450');
   };
 
   exitAnimations() {
     this.tl
-      .add({
-        targets: this.getElements(this.current).copy,
-        opacity: [1, 0],
-        duration: 600,
-      })
       .add({
         targets: this.getElements(this.current).scroll,
         opacity: [1, 0],
