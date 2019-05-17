@@ -6,6 +6,7 @@ class Menu {
   constructor($burger) {
     this.$burger = $burger;
     this.$menu = $('.js-menu');
+    this.$subnav = this.$menu.find('.header__subnav');
     this.$header = this.$menu.closest('.header');
     this.menuItems = [].slice.call(this.$menu[0].querySelectorAll('li'));
     this.IS_BLACK = 'is-black';
@@ -18,6 +19,16 @@ class Menu {
 
   refresh() {
     if (window.matchMedia('(min-width: 1200px)').matches) {
+      this.$header.removeClass(this.IS_BLACK);
+      this.$menu.removeClass(ACTIVE);
+      this.$burger.removeClass(ACTIVE);
+
+      if (this.$subnav.length > 0) {
+        this.$subnav.css({
+          display: ''
+        });
+      };
+
       this.menuItems.forEach((item) => {
         $(item).css({
           transform: '',
@@ -29,6 +40,7 @@ class Menu {
 
   toggle(e) {
     e.preventDefault();
+
     if (!$(e.currentTarget).hasClass(ACTIVE)) {
       $(e.currentTarget).addClass(ACTIVE);
       this.$menu.addClass(ACTIVE);

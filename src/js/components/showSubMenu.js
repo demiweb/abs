@@ -1,5 +1,6 @@
 import { ACTIVE, FOCUS, $DOC, $WIN } from '../constants';
 import { debounce } from 'throttle-debounce';
+import isTouch from '../lib/detectTouch';
 
 class SubMenu {
   constructor(btn) {
@@ -18,16 +19,22 @@ class SubMenu {
   show(e) {
     this.$btn.addClass(SubMenu.classNames.IS_HOVERED);
     this.$subnav.addClass(ACTIVE);
-    console.log('show');
+    if (window.matchMedia('(max-width: 1199px)').matches) {
+      this.$subnav.slideDown();
+    };    
   };
 
   hide(e) {
     this.$btn.removeClass(SubMenu.classNames.IS_HOVERED);
     this.$subnav.removeClass(ACTIVE);
+    if (window.matchMedia('(max-width: 1199px)').matches) {
+      // this.$subnav.slideUp();
+    };
   };
 
   toggle(e) {
     e.preventDefault();
+
     if (this.$btn.hasClass(FOCUS)) {
       this.$btn.removeClass(FOCUS);
       this.$subnav.removeClass(ACTIVE);
@@ -39,9 +46,8 @@ class SubMenu {
     };    
   };
 
-  _toggle() {   
-
-    if (window.matchMedia('(min-width: 1200px)').matches) {
+  _toggle() {
+    if (!isTouch()) {
       this.$subnav.css({
         display: ''
       });
@@ -63,6 +69,8 @@ class SubMenu {
       $DOC.off('mouseenter', '.'+this.subnav, this.showBinded);
       $DOC.off('mouseleave', '.'+this.subnav, this.hideBinded);
 
+      $DOC.off('click', '.'+this.btn, this.toggleBinded);
+
       $DOC.on('click', '.'+this.btn, this.toggleBinded);
     }; 
   };
@@ -73,13 +81,6 @@ SubMenu.classNames = {
 };
 
 export default function showSubMenu() {
-  function toggleMenu() {
-    const submenu = new SubMenu('js-hover');
-    submenu.init();
-  };
-  toggleMenu();
-
-  const toggleMenuDebounced = debounce(66, toggleMenu);
-
-  $WIN.on('resize', toggleMenuDebounced);  
+  const submenu = new SubMenu('js-hover');
+  submenu.init();
 };
