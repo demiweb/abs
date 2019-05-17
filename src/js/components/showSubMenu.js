@@ -54,22 +54,15 @@ class SubMenu {
 
       this.showBinded = this.show.bind(this);
       this.hideBinded = this.hide.bind(this);
-      $DOC.off('click', '.'+this.btn, this.toggleBinded);
 
-      $DOC.on('mouseenter', '.'+this.btn, this.showBinded);
-      $DOC.on('mouseleave', '.'+this.btn, this.hideBinded);
+      const classNames = ['.'+this.btn, '.'+this.subnav];
 
-      $DOC.on('mouseenter', '.'+this.subnav, this.showBinded);
-      $DOC.on('mouseleave', '.'+this.subnav, this.hideBinded);
+      classNames.forEach((className) => {
+        $DOC.on('mouseenter', className, this.showBinded);
+        $DOC.on('mouseleave', className, this.hideBinded);
+      });
     } else {
-      this.toggleBinded = this.toggle.bind(this);
-      $DOC.off('mouseenter', '.'+this.btn, this.showBinded);
-      $DOC.off('mouseleave', '.'+this.btn, this.hideBinded);
-
-      $DOC.off('mouseenter', '.'+this.subnav, this.showBinded);
-      $DOC.off('mouseleave', '.'+this.subnav, this.hideBinded);
-
-      $DOC.off('click', '.'+this.btn, this.toggleBinded);
+      this.toggleBinded = this.toggle.bind(this);     
 
       $DOC.on('click', '.'+this.btn, this.toggleBinded);
     }; 
