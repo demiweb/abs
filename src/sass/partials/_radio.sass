@@ -1,0 +1,39 @@
+.checkbox
+  position: relative
+  font-size: 16px
+  color: $black
+  text-transform: uppercase
+  width: 100%
+  padding: 10px 15px
+  display: block
+  padding-left: 40px
+  user-select: none
+  cursor: pointer
+  input
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    top: 0
+    left: 0
+    &:checked + span
+      &::after
+        display: block
+        content: ''
+        height: 12px
+        width: 12px
+        position: absolute
+        top: .9em
+        left: 15px
+        background-color: $red
+  span
+    &:before
+      border: 1px solid $c-border
+      width: 12px
+      height: 12px
+      top: .9em
+      left: 15px
+      background-color: $white
+      position: absolute
+      display: block
+      line-height: 1
+      content: ""

@@ -1,4 +1,4 @@
-import { ACTIVE, FOCUS, $DOC, $WIN } from '../constants';
+import { ACTIVE, FOCUS, $DOC } from '../constants';
 import { debounce } from 'throttle-debounce';
 import isTouch from '../lib/detectTouch';
 

@@ -1,0 +1,48 @@
+{%set
+items = [
+  {
+    title: 'РОЗРАХ. РЕСУРС',
+    icon: 'pulse',
+    rating: ''
+  },
+  {
+    title: 'система старт-стоп',
+    icon: 'power',
+    rating: ''
+  },
+  {
+    title: 'рівень оснащ.',
+    icon: 'energy',
+    rating: ''
+  },
+  {
+    title: 'хар-ка перезарядки',
+    icon: 'update',
+    rating: ''
+  },
+  {
+    title: 'холодний пуск',
+    icon: 'season',
+    rating: ''
+  },
+  {
+    title: 'витрата води',
+    icon: 'drop',
+    rating: ''
+  }
+]
+%}
+
+<!-- begin characteristics -->
+<div class="characteristics">
+  {% for i in items %} 
+  <div class="characteristics__item">
+    <div class="characteristics__icon">{{ mixins.icon(i.icon) }}</div>
+
+    <div class="characteristics__item-title">{{ i.title}}</div>
+
+    <div class="characteristics__rating">{{ i.rating | safe }}</div>
+  </div>
+  {% endfor %}
+</div>
+<!-- end characteristics -->

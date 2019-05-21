@@ -1,0 +1,65 @@
+.aside
+  background-color: $white
+  &__toggle
+    position: absolute
+    left: 100%
+    top: 0
+    height: 41px
+    width: 41px
+    background-color: $c-text
+    +flex(center, center)
+    +before
+      +icon-arrow(8, 8, 1, $white, 45)
+      // +vcenter
+  &__title
+    padding: 8px 15px
+    background-color: $c-text
+    display: block
+    width: 100%
+    position: relative
+    +after
+      top: .8em
+      right: 15px
+      +icon-arrow(8, 8, 1, currentColor, -45)
+      position: absolute
+  &__title-main
+    background-color: $red
+    +after
+      display: none
+  &__list-title
+    border-bottom: 1px solid  $c-border
+    display: block
+    padding: 8px 15px
+    text-transform: uppercase
+    position: relative
+    &.is-active
+      +before
+        display: block
+    +before
+      width: 39px
+      height: 100%
+      background-color: $gray-light
+      top: 0
+      right: 0
+      position: absolute
+      display: none
+    +after
+      top: .8em
+      right: 15px
+      +icon-arrow(8, 8, 1, $red, -45)
+      position: absolute
+  &__list-items
+    
+  &__list-item
+    text-transform: uppercase
+    background-color: $gray-light
+    display: block
+    padding: 8px 15px    
+    +before
+      content: '-'
+      margin-right: 10px
+    +notlast
+      border-bottom: 1px solid  $c-border
+  &__list-title-checkbox
+    +notlast
+      border-bottom: 1px solid  $c-border

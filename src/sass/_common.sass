@@ -50,16 +50,17 @@ body
   background: #FFF
   line-height: 1.4
   font-size: 16px
-  +reg
+  +light
   color: $c-text
   +no-scroll
   background-color: $black
 
 .out
-  overflow: hidden
-  width: 100%
-  height: 100vh
-  +cover
+  &--fullpage
+    overflow: hidden
+    width: 100%
+    height: 100vh
+    +cover
 
 img
   max-width: 100%

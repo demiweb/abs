@@ -1,0 +1,28 @@
+---
+title: catalog
+page: catalog
+hero: {
+  title: 'Для легкових автомобілів',
+  breadcrumbs: [
+    { item: '', link: 'ABS', modItem: '', modLink: '' },
+    { item: '/', link: '', modItem: '', modLink: '' },
+    { item: '', link: 'Продукція', modItem: '', modLink: '' },
+    { item: '/', link: '', modItem: '', modLink: '' },
+    { item: '', link: 'Для легкових автомобілів', modItem: '', modLink: 'is-active' }
+  ]
+}
+catalog: [
+  {},
+  {},
+  {}
+]
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/_catalog.html" %}
+{% endblock %}
+
+

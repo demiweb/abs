@@ -1,0 +1,81 @@
+{%set
+  products = [
+    {
+      title: 'Для легкових автомобілів',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    },
+    {
+      title: 'Для вантажних автомобілів',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    },
+    {
+      title: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    }
+  ]
+%}
+
+{%set
+ brands = [
+  {
+    list: [
+      { label: 'monbat batteries' },
+      { label: 'start batteries' },
+      { label: 'winmaxx batteries' }
+    ]
+  }
+ ]
+%}
+
+<!-- begin aside -->
+<aside class="aside">
+  <a href="#" class="aside__toggle js-aside-toggle"></a>
+  <div class="aside__block">    
+    <a href="#" class="aside__title aside__title-main h4">Тип продукції:</a>
+    <div class="aside__list">
+      {% for i in products %}
+      <a href="#" class="aside__list-title">{{ i.title }}</a>
+      <div class="aside__list-items">
+        {% for j in i.list %}
+        <a href="#" class="aside__list-item">
+          {{ j.item }}
+        </a>        
+        {% endfor %}
+      </div>      
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="aside__block">    
+    <a href="#" class="aside__title h4">оберіть бренд:</a>
+    <div class="aside__list">
+      {% for i in brands %}
+      <div class="aside__list-items">
+        {% for j in i.list %}
+        <div class="aside__list-title-checkbox">
+          {{ mixins.input(
+            name = 'checkbox',
+            label = { checkbox: j.label },
+            type = 'checkbox'
+          ) }}
+        </div>
+        {% endfor %}
+      </div>      
+      {% endfor %}
+    </div>
+  </div>
+  
+</aside>
+<!-- end aside -->

@@ -1,0 +1,28 @@
+.main
+  $this: &
+  +image('bg.jpg')
+  background-repeat: repeat-y
+  background-size: auto
+  position: relative
+  &.has-aside-open
+    #{$this}__aside
+      transform: translate(0, 0)
+    #{$this}__content
+      transform: translate($aside-width, 0)
+      padding-right: $aside-width
+  &__aside
+    width: 0
+    position: absolute
+    width: $aside-width
+    top: 0
+    left: 0
+    height: 100%
+    // transform: translate(-100%, 0)
+    +tr(transform 3s)
+  &__content    
+    +tr(transform 3s)
+
+.content
+  max-width: 1050px
+  margin-left: auto
+  margin-right: auto

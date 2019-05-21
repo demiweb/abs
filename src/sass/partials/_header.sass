@@ -1,11 +1,11 @@
 .header
   position: fixed
+  background-color: $c-text
   top: 0
   left: 0
   width: 100%
   z-index: 15
   +flex(space-between, center)
-  background-color: transparent
   padding-right: 30px
   height: $header-height
   border-bottom: 1px solid $white-transp
@@ -15,6 +15,7 @@
     padding-right: 15px
     padding-left: 15px
     height: $header-height-mob
+
   &.is-black
     background-color: #000
   &__logo
@@ -127,6 +128,12 @@
         animation-delay: .3s
       +before
         transform: translate(0, 0)
+
+  &--transp
+    background-color: transparent
+    .nav
+      a.is-active
+        background-color: rgba($white, .3)
     
 
 .lang

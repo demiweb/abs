@@ -14,7 +14,7 @@
   <body>
 
     <!-- BEGIN content -->
-    <div class="out js-mobile-height" style="background-image: url('img/home/home-2.jpg');">
+    <div class="out{% if page === 'home' %} out--fullpage js-mobile-height{% endif %}" {% if page === 'home' %}style="background-image: url('img/home/home-2.jpg');"{% endif %}>
       {% block content %}{% endblock %}
     </div>
     <!-- END content -->

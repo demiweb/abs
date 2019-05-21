@@ -1,0 +1,20 @@
+<!-- begin hero -->
+<section class="hero js-lazy" data-background-image="img/hero/{% if hero.bgImage %}{{ hero.bgImage }}{% else %}bg-hero.jpg{% endif %}">
+  <div class="hero__block">
+    {% if hero.title %}
+    <div class="hero__title">
+      <h1 class="h1">{{ hero.title | safe }}</h1>
+    </div>
+    {% endif %}
+    {% if hero.breadcrumbs %}
+    <div class="hero__breadcrumbs">
+      {{ mixins.list(
+        name = 'breadcrumbs',
+        modifications = { wrap: '', item: '', link: '' },
+        list = hero.breadcrumbs
+      ) }}
+    </div>
+    {% endif %}   
+  </div>
+</section>
+<!-- end hero -->

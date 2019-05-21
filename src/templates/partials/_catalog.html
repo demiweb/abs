@@ -1,0 +1,15 @@
+<!-- begin main -->
+<main class="main">
+  <div class="main__aside">
+    {% include "partials/_aside.html" %}
+  </div>
+
+  <div class="main__content">
+    <div class="content">
+      {% for i in catalog %}
+      {% include "partials/_catalog-item.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</main>
+<!-- end main -->
