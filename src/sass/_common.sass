@@ -16,34 +16,7 @@
   font-family: 'proximanovat-thin', Arial, sans-serif
 
 
-=xl
-  +r(1399)
-    @content
-=lg
-  +r(1199)
-    @content
-=md
-  +r(991)
-    @content
-=sm
-  +r(767)
-    @content
-=xs
-  +r(575)
-    @content
 
-=lgmin
-  +r(1200)
-    @content
-=mdmin
-  +r(992)
-    @content
-=smmin
-  +r(768)
-    @content
-=xsmin
-  +r(576)
-    @content
 
 
 body
@@ -54,8 +27,11 @@ body
   color: $c-text
   +no-scroll
   background-color: $black
+  +sm
+    font-size: 14px
 
 .out
+  overflow-x: hidden
   &--fullpage
     overflow: hidden
     width: 100%
@@ -87,7 +63,7 @@ img
     background-color: #b80a00
 
 .copy
-  font-size: 14px
+  font-size: $fz-md
   text-transform: uppercase
   color: rgba($white, .5)
   +thin
@@ -97,7 +73,7 @@ img
   &__title
     text-transform: uppercase
     color: rgba($white, .5)
-    font-size: 14px
+    font-size: $fz-md
     +thin
   &__btn
     display: inline-block
@@ -164,7 +140,7 @@ img
   display: inline-block
 
 .btn-link
-  font-size: 12px
+  font-size: $fz-sm
   text-decoration: underline
   color: $white
   +light
@@ -185,3 +161,14 @@ img
 //     opacity: 0
 //   100%
 //     opacity: 1
+
+.fadeInBottom
+  animation-name: fadeInBottom
+
+@keyframes fadeInBottom
+  0%
+    opacity: 0
+    transform: translate(0, 30px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)

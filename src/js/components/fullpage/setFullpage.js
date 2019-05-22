@@ -4,7 +4,11 @@ import { ACTIVE } from '../../constants';
 
 export default function setFullpage() {
   // const lines = [].slice.call(document.querySelectorAll('.line'));
-  const lines = [].slice.call(document.querySelector('.js-fullpage').children[0].querySelectorAll('.line'));
+  const page = document.querySelector('.js-fullpage');
+
+  if (!page) return;
+  
+  const lines = [].slice.call(page.children[0].querySelectorAll('.line'));
   const letters = [].slice.call(document.querySelectorAll('.letter span'));
 
   const $sections = $('.js-fullpage').children();

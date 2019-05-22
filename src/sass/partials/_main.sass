@@ -4,23 +4,63 @@
   background-repeat: repeat-y
   background-size: auto
   position: relative
+  padding-bottom: var(--section-padding)
+  padding-top: var(--section-padding)
+  opacity: 0
   &.has-aside-open
+    .aside
+      transform: translate(0, 0)
+      position: relative
     #{$this}__aside
       transform: translate(0, 0)
+      +lg
+        position: fixed
+        overflow: auto
+        z-index: 10
+        top: 0
+        padding-top: $header-height
+        background-color: rgba($black, .5)
+        width: 100%
+      +xs
+        padding-top: $header-height-mob
     #{$this}__content
       transform: translate($aside-width, 0)
       padding-right: $aside-width
+      +lg
+        transform: translate(0, 0)
+        padding-right: 0
+        // z-index: 0
+  &.has-aside-open-mob
+    #{$this}__content
+      +lg
+          z-index: 0
+    #{$this}__aside
+      z-index: 10
   &__aside
-    width: 0
     position: absolute
-    width: $aside-width
+    z-index: 2
+    
     top: 0
     left: 0
     height: 100%
-    // transform: translate(-100%, 0)
-    +tr(transform 3s)
+    background-color: $white
+    border-bottom: 1px solid  $c-border
+    transform: translate(-100%, 0)
+    +tr(transform .3s)
+
+    +lg
+      background-color: transparent
+      +tr(transform 0s, background-color .3s)
+      transform: translate(0, 0)
+      z-index: 0
+      .aside
+        transform: translate(-100%, 0)
+
   &__content    
-    +tr(transform 3s)
+    +tr(transform .3s, padding .3s)
+    +lg
+      position: relative
+      z-index: 1
 
 .content
   max-width: 1050px

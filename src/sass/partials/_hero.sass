@@ -4,6 +4,7 @@
   padding-top: $header-height
   +flex(center, center)
   position: relative
+  opacity: 0
   +before
     +coverdiv
     background-color: rgba($black, .4)
@@ -14,3 +15,6 @@
     z-index: 1
   &__title
     margin-bottom: 10px
+    opacity: 0
+  &__breadcrumbs
+    opacity: 0

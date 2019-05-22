@@ -1,6 +1,9 @@
 ---
 title: catalog
 page: catalog
+subNav: {
+  active: true
+}
 hero: {
   title: 'Для легкових автомобілів',
   breadcrumbs: [
@@ -12,9 +15,33 @@ hero: {
   ]
 }
 catalog: [
-  {},
-  {},
-  {}
+  {
+    title: 'LONGLIFE series'
+  },
+  {
+    title: 'V series',
+    mod: 'is-gray'
+  },
+  {
+    title: 'AGM series',
+    mod: 'is-blue-light'
+  },
+  {
+    title: 'EFB series',
+    mod: 'is-blue-lighten'
+  },
+  {
+    title: 'PEMIUM series',
+    mod: 'is-green'
+  },
+  {
+    title: 'FORMULA ASIA series',
+    mod: 'is-orange'
+  },
+  {
+    title: 'DYNAMIC series',
+    mod: 'is-red'
+  }
 ]
 ---
 {% extends "layouts/_layout.html" %}
@@ -23,6 +50,7 @@ catalog: [
   {% include "partials/_header.html" %}
   {% include "partials/_hero.html" %}
   {% include "partials/_catalog.html" %}
+  {% include "partials/_footer.html" %}
 {% endblock %}
 
 

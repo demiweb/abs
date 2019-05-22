@@ -3,32 +3,32 @@ items = [
   {
     title: 'РОЗРАХ. РЕСУРС',
     icon: 'pulse',
-    rating: ''
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
   },
   {
     title: 'система старт-стоп',
     icon: 'power',
-    rating: ''
+    rating: 'не рекоменд.'
   },
   {
     title: 'рівень оснащ.',
     icon: 'energy',
-    rating: ''
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
   },
   {
     title: 'хар-ка перезарядки',
     icon: 'update',
-    rating: ''
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
   },
   {
     title: 'холодний пуск',
     icon: 'season',
-    rating: ''
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
   },
   {
     title: 'витрата води',
     icon: 'drop',
-    rating: ''
+    rating: 'вкрай низька'
   }
 ]
 %}
@@ -39,7 +39,7 @@ items = [
   <div class="characteristics__item">
     <div class="characteristics__icon">{{ mixins.icon(i.icon) }}</div>
 
-    <div class="characteristics__item-title">{{ i.title}}</div>
+    <div class="characteristics__item-title">{{ i.title }}</div>
 
     <div class="characteristics__rating">{{ i.rating | safe }}</div>
   </div>

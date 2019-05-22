@@ -1,6 +1,5 @@
 .checkbox
   position: relative
-  font-size: 16px
   color: $black
   text-transform: uppercase
   width: 100%
@@ -37,3 +36,14 @@
       display: block
       line-height: 1
       content: ""
+
+  &--plain
+    span
+      +before
+        content: '-'
+        margin-right: 10px
+        border: 0
+        background-color: transparent
+        top: .7em
+      +after
+        display: none !important

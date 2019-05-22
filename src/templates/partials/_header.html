@@ -7,6 +7,45 @@
   </div>
 
   <div class="header__nav js-menu">
+    {% if subNav.active %}
+    {{ mixins.list(
+      name = 'nav',
+      list = [        
+        {
+          link: 'продукція',
+          modLink: 'is-active',
+          item: '<div class="header__subnav is-active">'+
+           mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--sub' },
+              list = [
+                { item: '', link: 'monbat batteries' },
+                { item: '', link: 'start batteries' },
+                { item: '', link: 'winmaxx' },
+                { item: '', link: 'MonOil' }
+              ]
+            ) 
+        +'</div>'
+        },
+        { link: 'Про нас' },
+        { link: 'новини' },
+        {
+          link: 'контакти',
+          item:  '<div class="header__social">'+
+            mixins.list(
+              name = 'social',
+              list = [
+                { item: '', link: mixins.icon('facebook') },
+                { item: '', link: mixins.icon('instagram') },
+                { item: '', link: mixins.icon('youtube') }
+              ]
+            )+
+          '</div> '
+        }
+      ]
+    ) }}
+
+    {% else %}
     {{ mixins.list(
       name = 'nav',
       list = [        
@@ -43,6 +82,7 @@
         }
       ]
     ) }}
+    {% endif %}
        
   </div>
 

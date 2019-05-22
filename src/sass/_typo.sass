@@ -25,12 +25,26 @@ h1, h2, h3, h4, h5, h6
   +css-lock(24, 32, 576, 1199, font-size)
 
 .h3, h3
+  +bold
+  font-size: 28px
+  +css-lock(21, 28, 576, 1199, font-size)
+  &--blue
+    color: $blue
+
+.h3-subttl
+  font-size: 21px
+  color: $black
+  text-transform: uppercase
+  +light
+  +css-lock(18, 21, 576, 1199, font-size)
 
 .h4, h4
   text-transform: uppercase
   +light
   color: $white
   font-size: 18px
+  +sm
+    font-size: 16px
 
 .h5, h5
 
