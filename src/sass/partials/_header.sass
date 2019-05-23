@@ -11,10 +11,10 @@
   border-bottom: 1px solid $white-transp
   +lg
     justify-content: flex-start
-  +xs
+    height: $header-height-mob
     padding-right: 15px
     padding-left: 15px
-    height: $header-height-mob
+    
 
   &.is-black
     background-color: #000
@@ -36,7 +36,7 @@
     &.is-active
       transform: translate(0, 0)
       top: $header-height
-      +xs
+      +lg
         top: $header-height-mob
     +lg
       position: absolute
@@ -50,7 +50,7 @@
       +flex(center, center)
       transform: translate(0, -100%)
       +tr(transform .3s)
-    +xs
+    +lg
       height: calc(100vh - #{$header-height-mob})
   &__social
     position: absolute
