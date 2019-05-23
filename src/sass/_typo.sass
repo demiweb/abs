@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6
   line-height: 1
   &--blue
     color: $blue
+  &--sm
+    +bold
+    text-transform: uppercase
+    +css-lock(18, 21, 576, 1199, font-size)
 
 .h3-subttl
   font-size: 21px
@@ -45,8 +49,15 @@ h1, h2, h3, h4, h5, h6
   color: $white
   font-size: 18px
   +sm
-    font-size: 16px
+    font-size: $fz
+
 
 .h5, h5
 
 .h6, h6
+
+.text
+  font-size: $fz
+  text-align: justify
+  +light
+  color: $c-text
