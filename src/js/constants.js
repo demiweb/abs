@@ -16,7 +16,9 @@ export const {
   ERROR,
   HASTEXT,
   VALID,
-  FIXED
+  FIXED,
+
+  ASIDE_TRANSITION
 } = {
   $DOC: $(document),
   $WIN: $(window),
@@ -35,5 +37,7 @@ export const {
   ERROR: 'has-error',
   HASTEXT: 'has-text',
   VALID: 'is-valid',
-  FIXED: 'is-fixed'
+  FIXED: 'is-fixed',
+
+  ASIDE_TRANSITION: 300
 };

@@ -1,5 +1,3 @@
-import { ANIMATE } from '../constants';
-
 class Animator {
   constructor(el, options) {
     this.el = el;

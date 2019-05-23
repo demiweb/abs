@@ -1,4 +1,4 @@
-import { $DOC, $BODY, ACTIVE, NOSCROLL } from '../constants';
+import { $DOC, $BODY, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
 
 class Aside {
   constructor() {
@@ -8,6 +8,8 @@ class Aside {
   };
 
   init() {
+    this._setAsideOnLoad();
+     
     $DOC.on('click', `.${Aside.classNames.toggle}`, this._toggleAside.bind(this));
     $DOC.on('click', (e) => {
       if ($(e.target).is(this.$menu)) {
@@ -23,7 +25,7 @@ class Aside {
 
     setTimeout(() => {
       this.$wrap.removeClass(Aside.classNames.hasAsideOpenMobile);
-    }, 400);
+    }, ASIDE_TRANSITION);
   };
 
   _toggleAside(e) {
@@ -33,12 +35,19 @@ class Aside {
     $(e.currentTarget).toggleClass(ACTIVE);
     $wrap.toggleClass(Aside.classNames.hasAsideOpen);
     if (window.matchMedia('(max-width: 1199px)').matches) {
-      
       $BODY.toggleClass(NOSCROLL);
 
       setTimeout(() => {
         $wrap.toggleClass(Aside.classNames.hasAsideOpenMobile);
-      }, 400);
+      }, ASIDE_TRANSITION);
+    };
+  };
+
+  _setAsideOnLoad() {
+    this.$btn.addClass(ACTIVE);
+    this.$wrap.addClass(Aside.classNames.hasAsideOpen);
+    if (window.matchMedia('(max-width: 1199px)').matches) {
+      this.closeAside();
     };
   };
 };

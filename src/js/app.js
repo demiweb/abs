@@ -1,4 +1,5 @@
 import 'promise-polyfill/src/polyfill';
+import 'intersection-observer';
 
 import setTouchClassName from './components/setTouchClassName';
 import setLazy from './components/setLazy';

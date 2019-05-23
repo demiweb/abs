@@ -1,3 +1,10 @@
 import animateCatalog from './animateCatalog';
+import { ASIDE_TRANSITION } from '../../constants';
 
-animateCatalog();
+if (window.matchMedia('(max-width: 1199px)').matches) {
+  setTimeout(animateCatalog, ASIDE_TRANSITION);
+} else {
+  animateCatalog();
+};
+
+

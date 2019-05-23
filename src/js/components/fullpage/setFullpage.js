@@ -1,6 +1,5 @@
 import Pager from '../fullpage/Pager';
 import anime from 'animejs';
-import { ACTIVE } from '../../constants';
 
 export default function setFullpage() {
   // const lines = [].slice.call(document.querySelectorAll('.line'));
