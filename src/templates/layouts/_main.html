@@ -1,5 +1,5 @@
 <!-- begin main -->
-<main class="main has-aside-open">
+<main class="main has-aside-open{% if main.mod %} {{ main.mod }}{% endif %}">
   <div class="main__aside js-aside">
     {% include "partials/_aside.html" %}
   </div>
