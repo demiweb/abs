@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6
   line-height: 1
   &--blue
     color: $blue
+  &--ttu
+    text-transform: uppercase
+  &--md
+    +css-lock(26, 36, 576, 1199, font-size)
+  &--light
+    +light
   &--sm
     +bold
     text-transform: uppercase
@@ -51,6 +57,13 @@ h1, h2, h3, h4, h5, h6
   +sm
     font-size: $fz
 
+  &--blue
+    color: $blue
+  &--ttn
+    text-transform: none
+  &--lg
+    +bold
+    +css-lock(21, 26, 576, 1199, font-size)
 
 .h5, h5
 
@@ -61,3 +74,21 @@ h1, h2, h3, h4, h5, h6
   text-align: justify
   +light
   color: $c-text
+
+.title-under
+  position: relative
+  padding-bottom: 30px
+  +after
+    border-bottom: 1px solid  $red
+    width: 50px
+    left: 50%
+    transform: translate(-50%, 0)
+    bottom: 0
+    position: absolute
+  +before
+    border-bottom: 1px solid  $red
+    width: 100px
+    left: 50%
+    transform: translate(-50%, 0)
+    bottom: 8px
+    position: absolute

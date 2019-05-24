@@ -11,6 +11,8 @@ import toggleAside from './components/toggleAside';
 import setAccordion from './components/setAccordion';
 import './components/animations/setAnimations';
 import animateOnScroll from './components/animateOnScroll';
+import setMainColor from './components/setMainColor';
+import setSliders from './components/setSliders';
 
 $(function() {
   setTouchClassName();
@@ -22,4 +24,6 @@ $(function() {
   toggleAside();
   setAccordion();
   animateOnScroll();
+  setMainColor();
+  setSliders();
 });

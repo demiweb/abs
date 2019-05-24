@@ -1,0 +1,33 @@
+.item
+  padding: 15px
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12)
+  background-color: $white
+  +flex(space-between, normal, column)
+  &__img,
+  &__content
+    border-bottom: 1px solid  $c-border
+    display: block
+    padding-top: 10px
+    padding-bottom: 10px
+  &__content
+    flex-grow: 1
+  &__bottom
+    +flex(space-between, center)
+    padding-top: 10px
+
+.item-list
+  dl
+    +clr
+  dt
+    +light
+    font-size: $fz-md
+    color: $gray
+    float: left
+    margin-right: 5px
+  dd
+    +reg
+    font-size: $fz-md
+  em
+    font-style: normal
+    color: $red
+

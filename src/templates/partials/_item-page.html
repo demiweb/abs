@@ -1,8 +1,8 @@
 {%set
   features = [
     { item: 'Удосконалена технологія EFB' },
-    { item: 'Чудово підходить для стандартних     систем START- STOP' },
-    { item: 'Підтримка частих запусків двигуна     і тривалих періодів спокою двигуна' },
+    { item: 'Чудово підходить для стандартних систем START- STOP' },
+    { item: 'Підтримка частих запусків двигуна і тривалих періодів спокою двигуна' },
     { item: 'Висока пускова потужність' },
     { item: 'Максимальна циклічна продуктивність' },
     { item: 'Швидке відновлення заряду' },
@@ -31,7 +31,7 @@
   ) }}
   </div>
 
-  <div class="content__row">
+  <div class="content__row content__row-align-end">
     <div class="content__col">
       <img data-src="img/accum/MONBAT EFB L3.png" alt="" class="js-lazy">
 
@@ -54,7 +54,7 @@
     <div class="content__col">
       <!-- begin content-block -->
       <div class="content-block">
-        <div class="content-block__block">
+        <div class="content-block__block content-block__block-flex">
           <div class="content-block__img">
             <img data-src="img/logos/logo-1.png" alt="" class="js-lazy">
           </div>
@@ -68,7 +68,7 @@
             <div class="price">1240 uah</div>
             {{ mixins.btn(
               title = 'замовити',
-              mod = ''
+              mod = 'btn--sec'
             ) }}
           </div>
         </div>
@@ -85,7 +85,7 @@
               {{ mixins.input(
                 name = 'select',
                 label = {
-                  simple: 'Ємність, Ач'
+                  simple: 'ЄМНІСТЬ, Ач'
                 },
                 type = 'default',
                 fieldClass = 'js-select',
@@ -128,4 +128,19 @@
       <!-- end content-block -->
     </div>
   </div>
+
+  <div class="content__table">
+    {% include "partials/_item-table.html" %}
+  </div>
+
+  <div class="content__similar">
+    <div class="content__title title-under">
+      <h3 class="h3--light h3--md h3--ttu">схожі <strong>товари</strong></h3>
+    </div>
+
+    <div class="content__slider">
+      {% include "partials/_similar-slider.html" %}
+    </div>
+  </div>
+  
 {% endblock %}

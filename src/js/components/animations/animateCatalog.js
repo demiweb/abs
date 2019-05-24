@@ -1,4 +1,5 @@
 import anime from 'animejs';
+import PageAnimator from './PageAnimator';
 
 export default function animateCatalog() {
   const elements = {
@@ -8,47 +9,33 @@ export default function animateCatalog() {
     main: document.querySelector('.main')
   };
 
-  let allowAnimate = true;
+  const pageAnimator = new PageAnimator(elements);
+  pageAnimator.animate = (elements) => {
+    const tl = anime.timeline({ easing: 'linear' });
 
-  const getObjectValues = function(obj) {
-    var res = [];
-    for (var i in obj) {
-      if (obj.hasOwnProperty(i)) {
-        res.push(obj[i]);
-      }
-    }
-    return res;
+    tl
+      .add({
+        targets: elements.hero,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: elements.title,
+        translateY: ['-100%', '0%'],
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: elements.breadcrumbs,
+        translateY: ['-100%', '0%'],
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: elements.main,
+        opacity: [0, 1],
+        duration: 500
+      }, '-=1500');
   };
-
-  getObjectValues(elements).forEach((el) => {
-    if (!el) allowAnimate = false;
-  });
-
-  if (!allowAnimate) return;
-
-  const tl = anime.timeline({ easing: 'linear' });
-
-  tl
-    .add({
-      targets: elements.hero,
-      opacity: [0, 1],
-      duration: 500
-    })
-    .add({
-      targets: elements.title,
-      translateY: ['-100%', '0%'],
-      opacity: [0, 1],
-      duration: 500
-    })
-    .add({
-      targets: elements.breadcrumbs,
-      translateY: ['-100%', '0%'],
-      opacity: [0, 1],
-      duration: 500
-    })
-    .add({
-      targets: elements.main,
-      opacity: [0, 1],
-      duration: 500
-    }, '-=1500');
+  pageAnimator.init();
 };

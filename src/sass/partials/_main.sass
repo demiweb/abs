@@ -1,4 +1,6 @@
 .main
+  --main-color:      #{$black}
+  --secondary-color: #{$gray}
   $this: &
   +image('bg.jpg')
   background-repeat: repeat-y
@@ -92,24 +94,63 @@
     +flex(flex-start, normal, row, wrap)
     margin-left: -10px
     margin-right: -10px
+    margin-bottom: 20px
+  &__row-align-end
+    align-items: flex-end
   &__col
     width: 50%
     padding-left: 10px
     padding-right: 10px
+  &__table
+    margin-bottom: 50px
+  &__title
+    margin-bottom: 30px
+    text-align: center
+
   &--full
     max-width: 1440px
 
-.content-block
-  background-color: $white
-  padding: 20px
-  &__title
-    margin-bottom: 15px
-
 .content-list
   font-size: 0
-  li
-    margin-bottom: 15px
+  li    
     display: inline-block
     vertical-align: top
     width: 50%
     font-size: $fz
+    padding-right: 10px
+    &::before
+      content: '+'
+      font-size: 24px
+      display: inline-block
+      position: relative
+      top: .2em
+      margin-right: .2em
+      color: var(--main-color)
+    +notlast
+      margin-bottom: 15px
+
+.content-block
+  --padding: 20px
+  background-color: $white
+  padding: var(--padding)
+  &__title
+    margin-bottom: 15px
+  &__block
+    margin-left: calc(0px - var(--padding))
+    margin-right: calc(0px - var(--padding))
+    padding: var(--padding)
+    +notlast
+      border-bottom: 1px solid  $c-border
+  &__block-flex
+    +flex(flex-start, center)
+  &__icons
+    background-color: var(--secondary-color)
+    padding: 40px 25px
+    margin-bottom: 15px
+  &__img
+    width: 25%
+  &__title
+    flex: 1
+    padding-right: 10px
+  &__price
+    width: 30%

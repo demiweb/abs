@@ -217,6 +217,10 @@
   &:not(:last-child)
     @content
 
+=notfirst
+  &:not(:first-child)
+    @content
+
 =flex($justify-content: flex-start, $align-items: normal, $flex-direction: row, $flex-wrap: nowrap)
   display: flex
   justify-content: $justify-content

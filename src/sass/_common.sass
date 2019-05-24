@@ -131,10 +131,21 @@ strong
   padding-bottom: 10px
   padding-left: 30px
   padding-right: 30px
-  +tr(background-color .3s, border-color .3s)
+  +tr(background-color .3s, border-color .3s, color .3s)
   +hover
     background-color: $red
     border-color: $red
+
+  &--sec
+    background-color: $red
+    +light
+    font-size: $fz-md
+    border-color: $red
+    padding: 4px 10px
+    min-width: 155px
+    +hover
+      background-color: transparent
+      color: $red
 
 .line-sm
   height: 45px
@@ -150,6 +161,22 @@ strong
   text-transform: uppercase
   +hover
     text-decoration: none
+
+.price
+  +semi
+  font-size: 36px
+  color: $red
+  text-transform: uppercase
+
+  &--sm
+    font-size: 24px
+    color: $c-text
+    small
+      font-size: 10px
+      +light
+
+
+// ============ animations ===============
 
 @keyframes scrollDown
   0%

@@ -1,0 +1,30 @@
+.slider
+  &__wrap
+    position: relative
+  &__prev,
+  &__next
+    position: absolute
+    top: 50%
+    background-color: transparent
+  &__prev
+    +icon-arrow(15, 15, 1, $c-text, 45)
+    display: inline-block
+    transform: translate(0, -50%) rotate (45deg)
+    left: 0
+  &__next
+    +icon-arrow(15, 15, 1, $c-text, -135)
+    display: inline-block
+    transform: translate(0, -50%) rotate (45deg)
+    right: 0
+
+  &--similar
+    .slick-track
+      +flex()
+    .slick-slide
+      +flex(flex-start, normal, column)
+      height: auto
+      > div
+        height: 100%
+      .slide
+        height: 100%        
+        display: flex !important
