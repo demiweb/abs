@@ -7,7 +7,6 @@ export default function setSliders() {
 
   $sliders.each((i, slider) => {
     const name = slider.getAttribute('data-slider');
-    console.log(name);
     const $wrap = $(slider).closest('.slider__wrap');
     const $prev = $wrap.find('.js-prev');
     const $next = $wrap.find('.js-next');
@@ -16,7 +15,33 @@ export default function setSliders() {
       similar: {
         slidesToShow: 5,
         prevArrow: $prev,
-        nextArrow: $next
+        nextArrow: $next,
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
       }
     };
 

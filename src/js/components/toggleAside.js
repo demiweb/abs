@@ -1,4 +1,4 @@
-import { $DOC, $BODY, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
+import { $DOC, $BODY, $HTML, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
 
 class Aside {
   constructor() {
@@ -20,6 +20,7 @@ class Aside {
 
   closeAside() {
     this.$wrap.removeClass(Aside.classNames.hasAsideOpen);
+    $HTML.removeClass(Aside.classNames.hasAsideOpen);
     this.$btn.removeClass(ACTIVE);
     $BODY.removeClass(NOSCROLL);
 
@@ -34,6 +35,7 @@ class Aside {
 
     $(e.currentTarget).toggleClass(ACTIVE);
     $wrap.toggleClass(Aside.classNames.hasAsideOpen);
+    $HTML.toggleClass(Aside.classNames.hasAsideOpen);
     if (window.matchMedia('(max-width: 1199px)').matches) {
       $BODY.toggleClass(NOSCROLL);
 
@@ -46,6 +48,7 @@ class Aside {
   _setAsideOnLoad() {
     this.$btn.addClass(ACTIVE);
     this.$wrap.addClass(Aside.classNames.hasAsideOpen);
+    $HTML.addClass(Aside.classNames.hasAsideOpen);
     if (window.matchMedia('(max-width: 1199px)').matches) {
       this.closeAside();
     };

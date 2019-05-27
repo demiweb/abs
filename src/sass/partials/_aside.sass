@@ -76,15 +76,16 @@
       +icon-arrow(8, 8, 1, $red, -45)
       position: absolute
       +tr(transform .3s)
-  &__list-items
   &__list-items-accordion
     display: none
     
-  &__list-item
   &__list-title-item
     background-color: $gray-light
     +notlast
       border-bottom: 1px solid  $c-border
+    .checkbox
+      // span
+      //   +coverdiv
   &__list-title-checkbox
     background-color: $white
     +notlast

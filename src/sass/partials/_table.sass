@@ -7,12 +7,24 @@
   // border: 1px solid  $c-border
   background-color: $white
   +semi
+  +xllopen
+    font-size: $fz-md
+  +lg
+    font-size: $fz-md
+  +md
+    font-size: $fz-sm
+    width: 992px
   .bd-right
     border-right: 1px solid  $c-border !important
 
   a
     color: $blue-light
     text-decoration: underline
+  img
+    +xllopen
+      max-width: 70%
+    +sm
+      max-width: 70%
 
   &__tr
     display: table-row
@@ -34,6 +46,8 @@
     // padding-right: 8px
     height: 50px
     border: 1px solid  $c-border
+    +md
+      height: 40px
     #{$this}__th,
     #{$this}__td
       border: 0

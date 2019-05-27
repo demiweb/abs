@@ -74,20 +74,30 @@
     top: 0
     left: 0
     width: 100%
+    +md
+      padding-top: 30%
 
   &--full
     padding-top: $subnav-height
     margin-top: $header-height
     +lg
-      margin-top: $header-height-mob + $subnav-height
+      margin-top: $header-height-mob
+      padding-top: 50px
+      .content
+        margin-top: -8px
     #{$this}__aside
       top: $subnav-height
       height: calc(100% - #{$subnav-height})
+      +lg
+        top: 0
+        height: 100%
     #{$this}__content
-      padding-left: 50px
+      // padding-left: 50px
 
 .content
-  max-width: 1050px
+  max-width: 1080px
+  padding-left: 15px
+  padding-right: 15px
   margin-left: auto
   margin-right: auto
   &__row
@@ -101,40 +111,74 @@
     width: 50%
     padding-left: 10px
     padding-right: 10px
+    +md
+      width: 100%
   &__table
     margin-bottom: 50px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+      overflow: auto
   &__title
     margin-bottom: 30px
     text-align: center
+  &__breadcrumbs
+    position: relative
+    left: 50px
+    width: calc(100% - 50px)
+    +lg
+      position: relative
+      top: -35px
+  &__img
+    +md
+      img
+        max-width: 50%
 
   &--full
     max-width: 1440px
 
 .content-list
   font-size: 0
+  text-align: left
   li    
     display: inline-block
     vertical-align: top
     width: 50%
     font-size: $fz
     padding-right: 10px
+    +notlast
+      margin-bottom: 15px
+    +xllopen
+      width: 100%
+    +lg
+      width: 100%
+      +notlast
+        margin-bottom: 0px
+    +md
+      font-size: $fz-md
     &::before
       content: '+'
-      font-size: 24px
+      font-size: 1.8em
       display: inline-block
       position: relative
       top: .2em
       margin-right: .2em
       color: var(--main-color)
-    +notlast
-      margin-bottom: 15px
+    
 
 .content-block
   --padding: 20px
+  +xl
+    --padding: 15px
+  +sm
+    --padding: 10px
   background-color: $white
   padding: var(--padding)
   &__title
     margin-bottom: 15px
+    +md
+      margin-bottom: 5px
   &__block
     margin-left: calc(0px - var(--padding))
     margin-right: calc(0px - var(--padding))
@@ -142,15 +186,36 @@
     +notlast
       border-bottom: 1px solid  $c-border
   &__block-flex
-    +flex(flex-start, center)
+    +flex(flex-start, center, row, wrap)
+    +xllopen
+      // display: block
+    +lg
+      // display: block
   &__icons
     background-color: var(--secondary-color)
-    padding: 40px 25px
+    padding: 40px 25px 25px
     margin-bottom: 15px
   &__img
     width: 25%
+    +xllopen
+      margin-bottom: 15px
+      margin-right: 10px
+    +xl
+      width: 15%
+      margin-right: 10px
+    +lg
+      // width: 25%
+      // margin-bottom: 15px
+    +md
+      // margin-bottom: 5px
   &__title
     flex: 1
     padding-right: 10px
   &__price
     width: 30%
+    +xllopen
+      width: 100%
+      text-align: center
+    +lg
+      width: 100%
+      text-align: center

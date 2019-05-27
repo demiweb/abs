@@ -22,13 +22,13 @@
 body
   background: #FFF
   line-height: 1.4
-  font-size: 16px
+  font-size: $fz
   +light
   color: $c-text
   +no-scroll
   background-color: $black
-  +sm
-    font-size: 14px
+  +md
+    font-size: $fz-md
 
 .out
   overflow-x: hidden
@@ -167,6 +167,10 @@ strong
   font-size: 36px
   color: $red
   text-transform: uppercase
+  +md
+    font-size: 32px
+  +sm
+    font-size: 28px
 
   &--sm
     font-size: 24px

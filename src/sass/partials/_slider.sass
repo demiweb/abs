@@ -1,5 +1,6 @@
-.slider
+.slider  
   &__wrap
+    --arrows-gap: -30px
     position: relative
   &__prev,
   &__next
@@ -10,12 +11,12 @@
     +icon-arrow(15, 15, 1, $c-text, 45)
     display: inline-block
     transform: translate(0, -50%) rotate (45deg)
-    left: 0
+    left: var(--arrows-gap)
   &__next
     +icon-arrow(15, 15, 1, $c-text, -135)
     display: inline-block
     transform: translate(0, -50%) rotate (45deg)
-    right: 0
+    right: var(--arrows-gap)
 
   &--similar
     .slick-track

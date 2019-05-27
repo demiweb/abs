@@ -13,6 +13,7 @@ import './components/animations/setAnimations';
 import animateOnScroll from './components/animateOnScroll';
 import setMainColor from './components/setMainColor';
 import setSliders from './components/setSliders';
+import setSelects from './components/setSelects';
 
 $(function() {
   setTouchClassName();
@@ -26,4 +27,5 @@ $(function() {
   animateOnScroll();
   setMainColor();
   setSliders();
+  setSelects();
 });

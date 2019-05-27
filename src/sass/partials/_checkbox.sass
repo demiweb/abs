@@ -17,15 +17,9 @@
     &:checked + span
       &::after
         display: block
-        content: ''
-        height: 12px
-        width: 12px
-        position: absolute
-        top: .9em
-        left: 15px
-        background-color: $red
-  span
-    &:before
+       
+  > span
+    &::before
       border: 1px solid $c-border
       width: 12px
       height: 12px
@@ -36,14 +30,31 @@
       display: block
       line-height: 1
       content: ""
+    &::after
+        display: none
+        content: ''
+        height: 12px
+        width: 12px
+        position: absolute
+        top: .9em
+        left: 15px
+        background-color: $red
 
   &--plain
-    span
+    > span
+      // position: relative
+      // z-index: 1
+      span
+        position: relative
+        z-index: 1
       +before
         content: '-'
         margin-right: 10px
         border: 0
         background-color: transparent
         top: .7em
+        z-index: 1
       +after
-        display: none !important
+        +coverdiv
+        z-index: 0
+        background-color: $gray

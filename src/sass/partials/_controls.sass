@@ -1,5 +1,5 @@
 .controls
-  +flex(flex-start, center)
+  +flex(flex-start, center, row, wrap)
   &__title
     display: inline-block
     text-transform: uppercase
@@ -11,9 +11,36 @@
 
 .controls__item  
   width: 33.33333%
-  padding-left: 20px
-  padding-right: 10px
+  padding-left: 2%
+  padding-right: 1.5%
+  +xllopen
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .select
+      justify-content: flex-start
+      label
+        margin-right: 10px
+    +notlast
+      border: 0
+      margin-bottom: 10px
+  +xl
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    .select
+      justify-content: flex-start
+      label
+        margin-right: 10px
+    +notlast
+      border: 0
+      margin-bottom: 10px
   +reg
   +notlast
     border-right: 1px solid  $c-border
+  .select
+    +flex(space-between, center)
+    label
+      +bold
+      font-size: $fz-md
   

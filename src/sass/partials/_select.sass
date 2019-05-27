@@ -1,0 +1,50 @@
+.select
+  
+
+.custom-select
+  $this: &
+  --padding: 10px
+  min-width: 90px
+  position: relative
+  font-size: $fz-md
+  +light
+  select
+    position: absolute
+    visibility: hidden
+    opacity: 0
+  &.is-open
+    #{$this}__panel      
+      visibility: visible
+      opacity: 1
+  &__opener
+    border: 1px solid  $c-border
+    position: relative
+    padding: calc(var(--padding) / 3) var(--padding)
+    cursor: pointer
+    user-select: none
+    +before
+      +icon-arrow(8, 8, 1, $red, 45)
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%) rotate(-45deg)
+      right: .5em
+      pointer-events: none
+  &__panel
+    position: absolute
+    width: 100%
+    top: 100%
+    left: 0
+    visibility: hidden
+    opacity: 0
+    z-index: 1
+    background-color: $white
+    overflow: auto
+    max-height: 300px
+    border: 1px solid  $c-border
+    +tr(opacity .3s, visibility .3s)
+  &__option
+    cursor: pointer
+    padding: calc(var(--padding) / 3) var(--padding)
+    +tr(background-color .3s)
+    +hover
+      background-color: $gray
