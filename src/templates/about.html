@@ -1,0 +1,21 @@
+---
+title: about
+page: about
+header: {
+  mod: ''
+}
+hero: {
+  fullpage: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/about/_block-1.html" %}
+  {% include "partials/about/_block-2.html" %}
+  {% include "partials/about/_block-3.html" %}
+{% endblock %}
+
+

@@ -1,0 +1,72 @@
+{%set
+slider = [
+  { img: 'slider-1.jpg' },
+  { img: 'slider-2.jpg' },
+  { img: 'slider-1.jpg' },
+  { img: 'slider-2.jpg' }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--gray">
+  <div class="lines lines--section">
+   <div class="line line--1"></div>
+   <div class="line line--2"></div>
+   <div class="line line--3"></div>
+ </div>
+
+ <div class="section__block section-block">
+   <div class="section__title is-col-6-5">
+     <h1 class="title"><strong>Широкий ассортимент</strong> аккумуляторных батарей включает:</h1>
+   </div>
+
+   <div class="section-block__slider">
+     <!-- begin slider -->
+     <div class="slider__wrap slider--assort__wrap">
+      <div class="slider slider--assort js-slider" data-slider="about_assort">
+        {% for i in slider %}
+        <!-- begin slide -->
+        <div class="slide assort-slide">
+          <div class="assort-slide__content">
+            <div class="assort-slide__title">
+              <h4 class="h4 h4--md h4--black">Стартерные аккумуляторы  
+для легковых и грузовых 
+автомобилей</h4>
+            </div>
+
+            <div class="assort-slide__text text text--gray text--thin">Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.</div>
+          </div>
+
+          <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
+        </div>
+        <!-- end slide -->
+        {% endfor %}        
+      </div>
+      
+      
+      <div class="slider--assort__counter-sm js-counter-sm">
+        <div class="slider-counter-sm">
+          <div class="slider-counter-sm__current">01</div>
+
+          <div class="slider-counter-sm__line"></div>
+
+          <div class="slider-counter-sm__all">04</div>
+        </div>
+      </div>
+      <div class="slider--assort__counter number js-counter">
+        01
+      </div>
+
+      <div class="slider--assort__btns">
+        <button class="slider--assort__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--assort__next arrow arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>      
+     </div>
+     <!-- end slider -->
+   </div>
+
+
+
+ </div>
+</section>
+<!-- end section -->

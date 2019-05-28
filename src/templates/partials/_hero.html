@@ -1,3 +1,28 @@
+{% if hero.fullpage %}
+<!-- begin fullpage-section -->
+  <section class="fullpage-section fullpage-section--hero js-lazy js-mobile-height" data-background-image="img/home/home-1.jpg">
+
+  <div class="letter letter--1"><span>a</span></div>
+  <div class="letter letter--2"><span>b</span></div>
+  <div class="letter letter--3"><span>s</span></div>
+
+  <div class="lines">
+   <div class="line line--1"></div>
+   <div class="line line--2"></div>
+   <div class="line line--3"></div>
+ </div>
+
+  <div class="fullpage-section__descr">
+    <div>accumulatory</div>
+    <div>battery</div>
+    <div>systems</div>
+  </div>
+</section>
+<!-- end fullpage-section -->
+
+{% else %}
+
+
 <!-- begin hero -->
 <section class="hero js-lazy" data-background-image="img/hero/{% if hero.bgImage %}{{ hero.bgImage }}{% else %}bg-hero.jpg{% endif %}">
   <div class="hero__block overflow-hidden">
@@ -20,3 +45,4 @@
   </div>
 </section>
 <!-- end hero -->
+{% endif %}

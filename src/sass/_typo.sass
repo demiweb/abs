@@ -1,6 +1,18 @@
 h1, h2, h3, h4, h5, h6
   font-weight: 400
 
+.title
+  font-size: 36px
+  color: $black
+  +reg
+  line-height: 1.2
+  text-transform: uppercase
+  strong
+    +bold
+    color: $red
+  &--white
+    color: $white
+
 .h1, h1
   font-size: 36px
   color: $white
@@ -64,6 +76,11 @@ h1, h2, h3, h4, h5, h6
   &--lg
     +bold
     +css-lock(21, 26, 576, 1199, font-size)
+  &--md
+    +reg
+    +css-lock(21, 24, 576, 1199, font-size)
+  &--black
+    color: $black
 
 .h5, h5
 
@@ -76,6 +93,12 @@ h1, h2, h3, h4, h5, h6
   color: $c-text
   +md
     font-size: $fz-md
+  &--thin
+    +thin
+  &--gray
+    color: $gray
+    strong
+      color: $c-text
 
 .title-under
   position: relative

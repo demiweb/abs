@@ -29,3 +29,78 @@
       .slide
         height: 100%        
         display: flex !important
+
+  &--assort
+    &__wrap
+      padding-top: 45px
+    &__btns
+      position: absolute
+      bottom: 50px
+      display: inline-block
+      left: calc(30% - 50px)
+    &__counter
+      position: absolute
+      top: 0
+      left: -.5em
+      
+    &__counter-sm
+      position: absolute
+      left: 0 
+      bottom: 100px
+
+.assort-slide
+  display: flex !important
+  +flex(flex-start, center)
+  &__title
+    margin-bottom: 25px
+  &__content
+    width: 30%
+    padding-right: 5%
+  &__img
+    width: 70%
+    +cover
+    padding-top: 40%
+  &__text
+    text-align: left
+
+.arrow
+  width: 100px
+  height: 50px
+  background-color: $red
+  color: $white
+  +inline-flex(center, center)
+  font-size: 40px
+  .icon
+    fill: currentColor
+  &--next
+    .icon
+      +rotate(180)
+
+.slider-counter-sm
+  --value: -80%
+  position: relative
+  +thin
+  color: $gray
+  &__current
+    display: inline-block
+    vertical-align: middle
+  &__all
+    display: inline-block
+    vertical-align: middle
+  &__line
+    display: inline-block
+    vertical-align: middle
+    width: 60px
+    background-color: currentColor
+    height: 1px
+    position: relative
+    overflow: hidden
+    +before
+      background-color: $red
+      position: absolute
+      height: 100%
+      left: 0
+      top: 0
+      width: 100%
+      transform: translate(var(--value), 0)
+      +tr(transform .3s)

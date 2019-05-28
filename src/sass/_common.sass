@@ -3,6 +3,7 @@
 +font('proximanova-semibold', 'proximanova-semibold-webfont')
 +font('proximanova-light', 'proximanova-light-webfont')
 +font('proximanovat-thin', 'proximanovat-thin-webfont')
++font('proximanova-black', 'proximanova-black-webfont')
 
 =reg
   font-family: 'proximanova-regular', Arial, sans-serif
@@ -14,9 +15,8 @@
   font-family: 'proximanova-light', Arial, sans-serif
 =thin
   font-family: 'proximanovat-thin', Arial, sans-serif
-
-
-
+=black
+  font-family: 'proximanova-black', Arial, sans-serif
 
 
 body
@@ -42,11 +42,12 @@ img
   max-width: 100%
 
 strong
+  font-weight: 400
   +bold
 
 // .is-animated
-//   &[data-loaded="true"]
-//     animation: fadeIn .4s
+[data-loaded="true"]
+  animation: fadeIn .4s
 
 .overflow-hidden
   overflow: hidden
@@ -179,6 +180,16 @@ strong
       font-size: 10px
       +light
 
+.number
+  font-size: 260px
+  line-height: .8
+  +black
+  color: transparent
+  -webkit-text-stroke-width: 1px
+  -webkit-text-stroke-color: $red
+  text-stroke-width: 1px
+  text-stroke-color: $red
+
 
 // ============ animations ===============
 
@@ -190,11 +201,11 @@ strong
   100%
     opacity: 0.3
 
-// @keyframes fadeIn
-//   0%
-//     opacity: 0
-//   100%
-//     opacity: 1
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 
 .fadeInBottom
   animation-name: fadeInBottom

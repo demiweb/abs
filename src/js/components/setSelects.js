@@ -1,4 +1,4 @@
-import Select from 'customSelect';
+import Select from 'select-custom';
 
 export default function setSelects() {
   const $selects = $('.js-select');
