@@ -56,6 +56,7 @@
 
   
 .fullpage-section
+  $this: &
   height: 100vh
   width: 100%
   padding-left: 15px
@@ -149,7 +150,38 @@
 
   &--hero
     position: relative
+    #{$this}__descr
+      div
+        &:nth-child(1)
+          left: $left-1-fucked-up
+        &:nth-child(2)
+          left: $left-2-fucked-up
+        &:nth-child(3)
+          left: $left-3-fucked-up
 
+
+.words
+  position: absolute
+  top: 50%
+  width: 100%
+  transform: translate(0, -50%)
+  &--fu
+    .word
+      &--1
+        left: $left-1-fucked-up
+      &--2
+        left: $left-2-fucked-up
+      &--3
+        left: $left-3-fucked-up
+
+.word
+  position: absolute
+  &--1
+    left: $left-1
+  &--2
+    left: $left-2
+  &--3
+    left: $left-3
 
 .lines
   position: absolute
@@ -171,17 +203,30 @@
   &--section-bg
     .line
       border-right-color: $black-light
+  &--fu
+    .line
+      &--1
+        left: $left-1-fucked-up
+      &--2
+        left: $left-2-fucked-up
+      &--3
+        left: $left-3-fucked-up
   &--7
     .line
       &--1
-        left: $left-1
+        left: $left-7-1
       &--2
-        left: 40%
+        left: $left-7-2
       &--3
+        left: $left-7-3
       &--4
+        left: $left-7-4
       &--5
+        left: $left-7-5
       &--6
+        left: $left-7-6
       &--7
+        left: $left-7-7
 
 .line
   position: absolute
@@ -198,7 +243,38 @@
   &--3
     left: $left-3
 
+.letters
+  position: absolute
+  width: 100%
+  top: 50%
+  transform: translate(0, -50%)
+  left: 0
+  &--7
+    transform: translate(0, 0)
+    top: var(--section-padding-lg)
+    .letter
+      +black
+      +css-lock(100, 200, 576, 1199, font-size)
+      transform: translate(0, 0)
+      span
+        transform: translate(-25%, 0)
+      &--1
+        left: $left-7-1
+      &--2
+        left: $left-7-2
+      &--3
+        left: $left-7-3
+      &--4
+        left: $left-7-4
+      &--5
+        left: $left-7-5
+      &--6
+        left: $left-7-6
+      &--7
+        left: $left-7-7
+
 .letter
+  $this: &
   font-size: 550px
   +css-lock(300, 550, 576, 1199, font-size)
   color: rgba($white, .2)
@@ -222,3 +298,11 @@
     left: $left-2
   &--3
     left: $left-3
+
+  &--fu
+    &.letter--1
+      left: $left-1-fucked-up
+    &.letter--2
+      left: $left-2-fucked-up
+    &.letter--3
+      left: $left-3-fucked-up

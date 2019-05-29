@@ -1,0 +1,53 @@
+{%set
+features = [
+  {
+    nmb: '01',
+    text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. '
+  },
+  {
+    nmb: '02',
+    text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.'
+  },
+  {
+    nmb: '03',
+    text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.'
+  }
+]
+
+%}
+
+<!-- begin section -->
+<section class="section">
+  
+ {{ mixins.lines('lines--section lines--fu') }}
+
+  <div class="section__block is-col-3">
+    <div class="text text--ttu text--left">Мы делаем все возможное для полного удовлетворения спроса и комфорта при сотрудничестве с нами</div>
+  </div>
+
+  <div class="section__block">
+    <div class="section__title">
+     <h2 class="title"><strong>мы гордимся командой</strong> «АККУМУЛЯТОРНО-БАТАРЕЙНЫХ СИСТЕМ» </h2>
+   </div>
+
+ </div>
+
+ <div class="section__block">
+   <!-- begin features -->
+   <div class="features">
+     {% for i in features %}
+     <!-- begin feature -->
+     <div class="feature">
+       <div class="feature__nmb">{{ i.nmb | safe }}</div>
+
+       <div class="feature__text text text--gray">{{ i.text }}</div>
+     </div>
+     <!-- end feature -->
+     {% endfor %}
+   </div>
+   <!-- end features -->
+ </div>
+
+    
+</section>
+<!-- end section -->

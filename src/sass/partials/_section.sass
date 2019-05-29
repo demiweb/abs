@@ -1,13 +1,20 @@
 .section
+  $this: &
   position: relative
   background-color: $white
   padding-top: var(--section-padding-lg)
   padding-bottom: var(--section-padding)
   &__block
     position: relative
-    left: $left-1
-    width: calc(100% - #{$left-1})
+    left: $left-1-fucked-up
+    width: calc(100% - #{$left-1-fucked-up})
     padding-right: var(--section-padding-md)
+  &__block-left-7-2
+    left: $left-7-2
+    width: calc(100% - #{$left-7-2})
+  &__block-left-7-4
+    left: $left-7-4
+    width: calc(100% - #{$left-7-4})
   &__title
     margin-bottom: 35px
 
@@ -16,8 +23,12 @@
   &--bg
     +cover
   &--oil
-    padding-top: 30%
-    padding-bottom: 10%
+    padding-top: 20%
+    padding-bottom: var(--section-padding-lg)
+    #{$this}__block-left-7-2
+      margin-bottom: 85px
+    #{$this}__block-left-7-4
+      max-width: 585px
   
 .section-block
   position: relative
