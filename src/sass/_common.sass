@@ -180,8 +180,10 @@ strong
       font-size: 10px
       +light
 
-.number
+.text-stroke
   font-size: 260px
+  text-transform: uppercase
+  display: inline-block
   line-height: .8
   +black
   color: transparent
@@ -189,6 +191,20 @@ strong
   -webkit-text-stroke-color: $red
   text-stroke-width: 1px
   text-stroke-color: $red
+
+  &--col-light
+    -webkit-text-stroke-color: rgba($white, .2)
+    text-stroke-color: rgba($white, .2)
+  &--white
+    -webkit-text-stroke-color: $white
+    text-stroke-color: $white
+
+.section-word
+  +bold
+  font-size: 260px
+  line-height: .8
+  color: rgba($white, .1)
+  text-transform: uppercase
 
 
 // ============ animations ===============

@@ -17,11 +17,16 @@
     width: calc(100% - #{$left-7-4})
   &__title
     margin-bottom: 35px
+  &__word
+    position: absolute
+    z-index: 0
 
   &--gray
     background-color: $gray-lightest
   &--bg
     +cover
+  &--lg
+    padding-bottom: var(--section-padding-lg)
   &--oil
     padding-top: 20%
     padding-bottom: var(--section-padding-lg)
@@ -29,6 +34,12 @@
       margin-bottom: 85px
     #{$this}__block-left-7-4
       max-width: 585px
+  &--red
+    background-color: $red-accent
+  &--principles
+    #{$this}__word
+      top: -.3em
+      left: 75px
   
 .section-block
   position: relative
@@ -47,3 +58,47 @@
     z-index: 2
     width: 38%
     +cover
+
+.three-cols-section  
+  background-color: $black
+  padding: 0  
+  height: calc(100vh - #{$header-height})
+  .section__title
+    position: absolute
+    top: var(--section-padding-lg)
+    left: calc(var(--section-padding-lg) * 1.5)
+    margin-bottom: 0
+  &__cols
+    +flex()
+    height: 100%
+
+.three-cols-section-col
+  padding-top: calc(var(--section-padding-lg) * 2)
+  padding-bottom: calc(var(--section-padding-lg) * 2)
+  +flex(center, normal, column)
+  overflow: hidden
+  +cover
+  &:nth-child(1)
+    width: $width-1-fucked-up-2
+    padding-left: calc(var(--section-padding-lg) * 1.5)
+  &:nth-child(2)
+    width: $width-2-fucked-up-2
+    padding-left: 40px
+  &:nth-child(3)
+    width: $width-3-fucked-up-2
+    padding-left: 40px
+  &__nmb
+    position: relative
+    margin-bottom: 20px
+    .text-stroke
+      left: -.5em
+      position: relative      
+    +before
+      bottom: 0
+      left: 0
+      background-color: $red
+      height: 1px
+      width: 18px
+      position: absolute
+  &__text
+    max-width: 280px

@@ -1,0 +1,63 @@
+.letters
+  position: absolute
+  width: 100%
+  top: 50%
+  transform: translate(0, -50%)
+  left: 0
+  &--7
+    transform: translate(0, 0)
+    top: var(--section-padding-lg)
+    .letter
+      +black
+      +css-lock(100, 200, 576, 1199, font-size)
+      transform: translate(0, 0)
+      span
+        transform: translate(-25%, 0)
+      &--1
+        left: $left-7-1
+      &--2
+        left: $left-7-2
+      &--3
+        left: $left-7-3
+      &--4
+        left: $left-7-4
+      &--5
+        left: $left-7-5
+      &--6
+        left: $left-7-6
+      &--7
+        left: $left-7-7
+
+.letter
+  $this: &
+  font-size: 550px
+  +css-lock(300, 550, 576, 1199, font-size)
+  color: rgba($white, .2)
+  text-transform: uppercase
+  z-index: 0
+  +bold
+  line-height: .8
+  position: absolute
+  top: 50%
+  transform: translate(0, -50%)
+  overflow: hidden
+  pointer-events: none
+  +md
+    display: none
+  span
+    display: inline-block
+    transform: translate(-40%, 0)
+  &--1
+    left: $left-1
+  &--2
+    left: $left-2
+  &--3
+    left: $left-3
+
+  &--fu
+    &.letter--1
+      left: $left-1-fucked-up
+    &.letter--2
+      left: $left-2-fucked-up
+    &.letter--3
+      left: $left-3-fucked-up

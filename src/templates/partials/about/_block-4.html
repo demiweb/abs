@@ -1,14 +1,17 @@
 {%set
 features = [
   {
+    mod: 'cols__col-1',
     nmb: '01',
     text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. '
   },
   {
+    mod: 'cols__col-2',
     nmb: '02',
     text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.'
   },
   {
+    mod: 'cols__col-3',
     nmb: '03',
     text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.'
   }
@@ -17,7 +20,7 @@ features = [
 %}
 
 <!-- begin section -->
-<section class="section">
+<section class="section section--lg">
   
  {{ mixins.lines('lines--section lines--fu') }}
 
@@ -31,22 +34,22 @@ features = [
    </div>
 
  </div>
+  
+  <div class="cols__wrap">
+     <!-- begin features -->
+     <div class="features cols">
+       {% for i in features %}
+       <!-- begin feature -->
+       <div class="feature cols__col {{ i.mod }}">
+         <div class="feature__nmb"><span>{{ i.nmb | safe }}</span></div>
 
- <div class="section__block">
-   <!-- begin features -->
-   <div class="features">
-     {% for i in features %}
-     <!-- begin feature -->
-     <div class="feature">
-       <div class="feature__nmb">{{ i.nmb | safe }}</div>
-
-       <div class="feature__text text text--gray">{{ i.text }}</div>
+         <div class="feature__text text text--gray">{{ i.text }}</div>
+       </div>
+       <!-- end feature -->
+       {% endfor %}
      </div>
-     <!-- end feature -->
-     {% endfor %}
+     <!-- end features -->
    </div>
-   <!-- end features -->
- </div>
 
     
 </section>

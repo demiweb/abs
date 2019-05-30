@@ -12,6 +12,8 @@ h1, h2, h3, h4, h5, h6
     color: $red
   &--white
     color: $white
+  &--bold
+    +bold
 
 .h1, h1
   font-size: 36px
@@ -83,6 +85,11 @@ h1, h2, h3, h4, h5, h6
     color: $black
 
 .h5, h5
+  font-size: 16px
+  +bold
+  text-transform: uppercase
+  &--white
+    color: $white
 
 .h6, h6
 
@@ -123,3 +130,15 @@ h1, h2, h3, h4, h5, h6
     transform: translate(-50%, 0)
     bottom: 8px
     position: absolute
+
+  &--sm
+    padding-bottom: 15px
+    +before
+      display: none
+    +after
+      width: 80px
+  &--left
+    +after
+      transform: translate(0, 0)
+      left: 0
+
