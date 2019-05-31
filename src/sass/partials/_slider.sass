@@ -1,12 +1,19 @@
-.slider  
+.slider
+  $this: &
   &__wrap
-    --arrows-gap: -30px
+    --content-padding: 50px
+    --arrows-gap: 15px
     position: relative
+    +md
+      --arrows-gap: 10px
+      --content-padding: 15px
+    
   &__prev,
   &__next
     position: absolute
     top: 50%
     background-color: transparent
+    z-index: 1
   &__prev
     +icon-arrow(15, 15, 1, $c-text, 45)
     display: inline-block
@@ -19,16 +26,14 @@
     right: var(--arrows-gap)
 
   &--similar
-    .slick-track
-      +flex()
-    .slick-slide
-      +flex(flex-start, normal, column)
+    .swiper-slide
       height: auto
-      > div
-        height: 100%
-      .slide
-        height: 100%        
-        display: flex !important
+      box-sizing: border-box
+    &__wrap
+      margin-left: calc(0px - var(--content-padding))
+      margin-right: calc(0px - var(--content-padding))
+      padding-left: var(--content-padding)
+      padding-right: var(--content-padding)
 
   &--assort
     &__wrap
@@ -38,18 +43,18 @@
       bottom: 50px
       display: inline-block
       left: calc(30% - 50px)
+      z-index: 1
     &__counter
       position: absolute
       top: 0
-      left: -.5em
-      
+      left: -.5em      
     &__counter-sm
       position: absolute
       left: 0 
       bottom: 100px
 
 .assort-slide
-  display: flex !important
+  // display: flex !important
   +flex(flex-start, center)
   &__title
     margin-bottom: 25px

@@ -14,6 +14,7 @@ import animateOnScroll from './components/animateOnScroll';
 import setMainColor from './components/setMainColor';
 import setSliders from './components/setSliders';
 import setSelects from './components/setSelects';
+import setAssortSlider from './components/setAssortSlider';
 
 $(function() {
   setTouchClassName();
@@ -28,4 +29,5 @@ $(function() {
   setMainColor();
   setSliders();
   setSelects();
+  setAssortSlider();
 });

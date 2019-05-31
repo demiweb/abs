@@ -1,5 +1,5 @@
-import slick from 'slick-carousel';
-import anime from 'animejs';
+import Swiper from 'swiper';
+import setLazy from './setLazy';
 
 export default function setSliders() {
   const $sliders = $('.js-slider');
@@ -9,61 +9,51 @@ export default function setSliders() {
   $sliders.each((i, slider) => {
     const name = slider.getAttribute('data-slider');
     const $wrap = $(slider).closest('.slider__wrap');
-    const $prev = $wrap.find('.js-prev');
-    const $next = $wrap.find('.js-next');
+    const prev = $wrap.find('.js-prev')[0];
+    const next = $wrap.find('.js-next')[0];
 
     const options = {
       similar: {
-        slidesToShow: 5,
-        prevArrow: $prev,
-        nextArrow: $next,
-        responsive: [
-          {
-            breakpoint: 1400,
-            settings: {
-              slidesToShow: 4
-            }
+        slidesPerView: 5,
+        loop: true,
+        navigation: {
+          nextEl: next,
+          prevEl: prev,
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 1
           },
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3
-            }
+          992: {
+            slidesPerView: 2
           },
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2
-            }
+          1200: {
+            slidesPerView: 3
           },
-          {
-            breakpoint: 576,
-            settings: {
-              slidesToShow: 1
-            }
+          1400: {
+            slidesPerView: 4
           }
-        ]
+        },
+        on: {
+          init: setLazy
+        }
       },
-      'about_assort': {
-        slidesToShow: 1,
-        prevArrow: $prev,
-        nextArrow: $next,
-        fade: true,
-        speed: 500
-      }
+      // 'about_assort': {
+      //   loop: true,
+      //   navigation: {
+      //     nextEl: next,
+      //     prevEl: prev,
+      //   },
+      //   // pagination: {
+      //   //   el: '.js-progress',
+      //   //   type: 'progressbar',
+      //   // },
+      // }
     };
 
-    $(slider).slick(options[name]);
+    const swiper = new Swiper(slider, options[name]);
 
-    if (name === 'about_assort') {
-      $(slider).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
-        const currenContent = slick.$slides[currentSlide].querySelector('.assort-slide__content');
-        const nextContent = slick.$slides[nextSlide].querySelector('.assort-slide__content');
-
-        
-
-      });
-    }
+    
   });
 
 };

@@ -7,6 +7,9 @@ header: {
 hero: {
   fullpage: true
 }
+footer: {
+  mod: 'footer--gray'
+}
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -19,6 +22,9 @@ hero: {
   {% include "partials/about/_block-4.html" %}
   {% include "partials/about/_block-5.html" %}
   {% include "partials/about/_block-6.html" %}
+  {% include "partials/about/_block-7.html" %}
+
+  {% include "partials/_footer.html" %}
 {% endblock %}
 
 

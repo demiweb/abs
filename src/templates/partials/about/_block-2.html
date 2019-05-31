@@ -21,24 +21,31 @@ slider = [
    <div class="section-block__slider">
      <!-- begin slider -->
      <div class="slider__wrap slider--assort__wrap">
-      <div class="slider slider--assort js-slider" data-slider="about_assort">
-        {% for i in slider %}
-        <!-- begin slide -->
-        <div class="slide assort-slide">
-          <div class="assort-slide__content">
-            <div class="assort-slide__title">
-              <h4 class="h4 h4--md h4--black">Стартерные аккумуляторы  
-для легковых и грузовых 
-автомобилей</h4>
+      <div class="swiper-container js-slider-assort">
+
+
+        <div class="slider slider--assort swiper-wrapper">
+          {% for i in slider %}
+          <!-- begin slide -->
+          <div class="swiper-slide">
+            <div class="slide assort-slide">
+              <div class="assort-slide__content">
+                <div class="assort-slide__title">
+                  <h4 class="h4 h4--md h4--black">Стартерные аккумуляторы  
+                    для легковых и грузовых 
+                  автомобилей</h4>
+                </div>
+
+                <div class="assort-slide__text text text--gray text--thin">Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.</div>
+              </div>
+
+              <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
             </div>
-
-            <div class="assort-slide__text text text--gray text--thin">Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.</div>
-          </div>
-
-          <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
+          </div>        
+          <!-- end slide -->
+          {% endfor %}        
         </div>
-        <!-- end slide -->
-        {% endfor %}        
+
       </div>
       
       
@@ -46,7 +53,7 @@ slider = [
         <div class="slider-counter-sm">
           <div class="slider-counter-sm__current">01</div>
 
-          <div class="slider-counter-sm__line"></div>
+          <div class="slider-counter-sm__line js-progress"></div>
 
           <div class="slider-counter-sm__all">04</div>
         </div>
