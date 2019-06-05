@@ -38,54 +38,142 @@
   &--assort
     &__wrap
       padding-top: 45px
+      padding-top: 40%
+      position: relative
+      +md
+        padding-top: 0
+        height: 80vh
+      +sm
+        height: 600px
+      .swiper-container
+        position: absolute
+        height: 100%
+        top: 0
+        left: 0
+        width: 100%
+      .swiper-slide
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index:  0
     &__btns
       position: absolute
-      bottom: 50px
+      // bottom: 50px
+      bottom: 10%
       display: inline-block
       left: calc(30% - 50px)
       z-index: 1
+      +xll
+        bottom: 20px
+      +md
+        bottom: auto
+        top: 50%
+        left: -10px
     &__counter
       position: absolute
       top: 0
-      left: -.5em      
+      left: -.5em
+      +md
+        display: none  
     &__counter-sm
       position: absolute
       left: 0 
       bottom: 100px
+      +xll
+        bottom: 0
+  &--standart
+    &__wrap
+      @extend .slider--assort__wrap
+      .swiper-slide
+        opacity: 0
+        z-index: 0
+    &__btns
+      bottom: 170px
+      position: absolute
+      z-index: 2
+      left: 58%
+    &__counter-sm
+      position: absolute
+      bottom: 20px
+      left: 61%
+      z-index: 2      
 
 .assort-slide
   // display: flex !important
   +flex(flex-start, center)
+  // background-color: $white
+  height: 100%
+  position: relative
+  box-sizing: border-box
+  +xll
+    padding-bottom: 30px
+  +md
+   flex-direction: column
   &__title
     margin-bottom: 25px
+    opacity: 0
+    transform: translateY(100px)
+    +md
+      margin-bottom: 15px
   &__content
     width: 30%
     padding-right: 5%
+    +md
+      width: 100%
+      order: 1
   &__img
     width: 70%
     +cover
-    padding-top: 40%
+    // padding-top: 40%
+    height: 100%
+    transform: translateX(100%)
+    +xll
+      height: calc(100% + 30px)
+      margin-bottom: -30px
+    +md
+      width: 100%
+      order: 0
+      margin-bottom: 20px
+      height: auto
+      height: 60%
   &__text
     text-align: left
+    opacity: 0
+    transform: translateY(100px)
 
 .arrow
-  width: 100px
-  height: 50px
+  --arrow-size: 100px
+  --arrow-font-size: 40px
+  width: var(--arrow-size)
+  height: calc(var(--arrow-size) / 2)
   background-color: $red
   color: $white
   +inline-flex(center, center)
-  font-size: 40px
+  font-size: var(--arrow-font-size)
+  +md
+    --arrow-size: 75px
+    --arrow-font-size: 35px
   .icon
     fill: currentColor
+  &.swiper-button-disabled
+    opacity: .5
   &--next
     .icon
       +rotate(180)
+  &--white
+    background-color: $white
+    color: $red
 
 .slider-counter-sm
   --value: -80%
+  $this: &
   position: relative
   +thin
   color: $gray
+  .swiper-pagination-progressbar-fill
+    background-color: $red
   &__current
     display: inline-block
     vertical-align: middle
@@ -100,12 +188,45 @@
     height: 1px
     position: relative
     overflow: hidden
-    +before
-      background-color: $red
-      position: absolute
-      height: 100%
-      left: 0
-      top: 0
-      width: 100%
-      transform: translate(var(--value), 0)
-      +tr(transform .3s)
+
+  &--white
+    .swiper-pagination-progressbar-fill
+      background-color: $white
+    #{$this}__current
+      color: $white
+    #{$this}__line
+      background-color: $red-light
+    #{$this}__all
+      color: $red-light
+
+.standart-slide
+  box-sizing: border-box
+  padding-top: 15%
+  height: 100%
+  +flex(flex-end, normal, column)
+  &__title
+    margin-bottom: 15px
+  &__block
+    background-color: $red-accent
+    padding-top: 75px
+    padding-bottom: 60px
+    padding-left: $left-1
+    padding-right: 11%
+    position: relative
+    z-index: 1
+    max-width: percentage(1310/1920)
+  &__date
+    color: $red-light
+    font-size: $fz-md
+    margin-bottom: 20px
+  &__text
+    margin-bottom: 25px
+  &__img
+    +cover
+    height: calc(100% - 60px)
+    width: calc(100% - #{$width-1-fucked-up})
+    position: absolute
+    z-index: 0
+    top: 0
+    right: 0
+    

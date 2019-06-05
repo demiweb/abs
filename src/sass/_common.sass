@@ -147,6 +147,19 @@ strong
     +hover
       background-color: transparent
       color: $red
+  &--black
+    background-color: $black
+    color: $white
+    border-color: $black
+    +hover
+      background-color: $red
+      color: $white
+      border-color: $white
+  &--md
+    min-width: 210px
+    font-size: $fz-md
+    padding: 7px 10px
+
 
 .line-sm
   height: 45px
@@ -181,7 +194,7 @@ strong
       +light
 
 .text-stroke
-  font-size: 260px
+  +css-lock(100, 260, 576, 1199, font-size)
   text-transform: uppercase
   display: inline-block
   line-height: .8

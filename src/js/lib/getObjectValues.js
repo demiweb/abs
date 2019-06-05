@@ -1,6 +1,6 @@
 export default function getObjectValues(obj) {
-  var res = [];
-  for (var i in obj) {
+  const res = [];
+  for (let i in obj) {
     if (obj.hasOwnProperty(i)) {
       res.push(obj[i]);
     }

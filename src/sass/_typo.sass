@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6
   font-weight: 400
 
 .title
-  font-size: 36px
+  +css-lock(25, 36, 576, 1199, font-size)
   color: $black
   +reg
   line-height: 1.2
@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6
   +light
   color: $white
   font-size: 18px
+  line-height: 1.2
   +sm
     font-size: $fz
 

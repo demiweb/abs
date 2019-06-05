@@ -9,10 +9,12 @@
     top: var(--section-padding-lg)
     .letter
       +black
-      +css-lock(100, 200, 576, 1199, font-size)
+      +css-lock(50, 200, 320, 1680, font-size)
       transform: translate(0, 0)
+      +md
+        display: block !important
       span
-        transform: translate(-25%, 0)
+        transform: translate(-35%, 0)
       &--1
         left: $left-7-1
       &--2
@@ -31,7 +33,7 @@
 .letter
   $this: &
   font-size: 550px
-  +css-lock(300, 550, 576, 1199, font-size)
+  +css-lock(150, 550, 320, 1199, font-size)
   color: rgba($white, .2)
   text-transform: uppercase
   z-index: 0
@@ -43,7 +45,8 @@
   overflow: hidden
   pointer-events: none
   +md
-    display: none
+    &:not(.letter--fu)
+      display: none
   span
     display: inline-block
     transform: translate(-40%, 0)
