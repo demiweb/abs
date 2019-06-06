@@ -15,6 +15,7 @@ import setMainColor from './components/setMainColor';
 import setSliders from './components/setSliders';
 import setSelects from './components/setSelects';
 import setAnimatedSliders from './components/sliders/setAnimatedSliders';
+import setParallax from './components/setParallax';
 
 $(function() {
   setTouchClassName();
@@ -30,4 +31,5 @@ $(function() {
   setSliders();
   setSelects();
   setAnimatedSliders();
+  setParallax();
 });

@@ -3,17 +3,20 @@ features = [
   {
     mod: 'cols__col-1 cols__col-md-100',
     nmb: '01',
-    text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. '
+    text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. ',
+    delay: ''
   },
   {
     mod: 'cols__col-2 cols__col-md-100',
     nmb: '02',
-    text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.'
+    text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.',
+    delay: ''
   },
   {
     mod: 'cols__col-3 cols__col-md-100',
     nmb: '03',
-    text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.'
+    text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.',
+    delay: ''
   }
 ]
 
@@ -24,12 +27,12 @@ features = [
   
  {{ mixins.lines('lines--section lines--fu') }}
 
-  <div class="section__block is-col-3-lg is-col-6-sm">
+  <div class="section__block is-col-3-lg is-col-6-sm js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
     <div class="text text--ttu text--left">Мы делаем все возможное для полного удовлетворения спроса и комфорта при сотрудничестве с нами</div>
   </div>
 
   <div class="section__block">
-    <div class="section__title">
+    <div class="section__title js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
      <h2 class="title"><strong>мы гордимся командой</strong> «АККУМУЛЯТОРНО-БАТАРЕЙНЫХ СИСТЕМ» </h2>
    </div>
 

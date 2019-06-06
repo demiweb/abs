@@ -130,6 +130,11 @@ export default function animateAssortSlider(slider) {
         img.style.transform = 'translateY(0)';
         activeSlide.style.zIndex = 5;          
       },
+      setTranslate(translate) {
+        const swiper = this;
+        if (swiper.params.effect !== 'myCustomTransition') return;
+        mySlider.setTranslate(swiper, translate);
+      },
         
       slideChange: () => {
         if (mySlider.swiper.params.effect !== 'myCustomTransition') return;

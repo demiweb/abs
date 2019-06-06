@@ -49,6 +49,7 @@ strong
 [data-loaded="true"]
   animation: fadeIn .4s
 
+
 .overflow-hidden
   overflow: hidden
   padding-right: 1px
@@ -214,7 +215,7 @@ strong
 
 .section-word
   +bold
-  font-size: 260px
+  +css-lock(100, 260, 576, 1199, font-size)
   line-height: .8
   color: rgba($white, .1)
   text-transform: uppercase
@@ -239,6 +240,15 @@ strong
 .fadeInBottom
   animation-name: fadeInBottom
 
+.fadeInBottomLg
+  animation-name: fadeInBottomLg
+
+.fadeInLeft
+  animation-name: fadeInLeft
+
+.fadeIn
+  animation-name: fadeIn
+
 @keyframes fadeInBottom
   0%
     opacity: 0
@@ -246,3 +256,25 @@ strong
   100%
     opacity: 1
     transform: translate(0, 0)
+
+@keyframes fadeInBottomLg
+  0%
+    opacity: 0
+    transform: translate(0, 200px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translate(100%, 0)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

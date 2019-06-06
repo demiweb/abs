@@ -3,7 +3,7 @@ import { ACTIVE, $WIN } from '../../constants';
 import anime from 'animejs';
 import '../../lib/touchevents';
 
-export default class Pager {
+export default class Paginator {
   constructor(wrap) {
     this.$wrap = $(wrap);
     this.$sections = this.$wrap.children();

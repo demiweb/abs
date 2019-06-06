@@ -2,6 +2,8 @@ import anime from 'animejs';
 import PageAnimator from './PageAnimator';
 
 export default function animateItemPage() {
+  const page = document.querySelector('.item-page');
+  if (!page) return;
   const elements = {
     main: document.querySelector('.main')
   };

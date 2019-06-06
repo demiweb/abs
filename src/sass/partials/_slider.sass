@@ -38,26 +38,13 @@
   &--assort
     &__wrap
       padding-top: 45px
-      padding-top: 40%
       position: relative
-      +md
-        padding-top: 0
-        height: 80vh
-      +sm
-        height: 600px
-      .swiper-container
-        position: absolute
-        height: 100%
-        top: 0
-        left: 0
-        width: 100%
-      .swiper-slide
-        position: absolute
-        top: 0
-        left: 0
-        height: 100%
-        width: 100%
+        
+      .swiper-slide        
         z-index:  0
+      .swiper-container
+        +sm
+          overflow: visible
     &__btns
       position: absolute
       // bottom: 50px
@@ -69,8 +56,12 @@
         bottom: 20px
       +md
         bottom: auto
-        top: 50%
-        left: -10px
+        top: 60%
+        left: var(--section-padding)
+      +sm
+        left: 0
+      +xs
+        top: 200px
     &__counter
       position: absolute
       top: 0
@@ -86,19 +77,37 @@
   &--standart
     &__wrap
       @extend .slider--assort__wrap
+      padding-top: 0
+      
       .swiper-slide
-        opacity: 0
+        // opacity: 0
         z-index: 0
     &__btns
       bottom: 170px
       position: absolute
       z-index: 2
-      left: 58%
+      left: 57%
+      +md
+        bottom: 100px
+      +sm
+        bottom: auto
+        top: 200px
+        left: var(--section-padding)
     &__counter-sm
       position: absolute
       bottom: 20px
-      left: 61%
-      z-index: 2      
+      left: 60%
+      z-index: 2
+      +lg
+        left: 58%
+      +md
+        left: 55%
+      +sm
+        left: auto
+        right: var(--section-padding)
+      +xs
+        right: auto
+        left: var(--section-padding-lg)
 
 .assort-slide
   // display: flex !important
@@ -111,6 +120,9 @@
     padding-bottom: 30px
   +md
    flex-direction: column
+  +sm
+    margin-left: calc(0px - var(--section-padding-md))
+    margin-right: calc(0px - var(--section-padding-md))
   &__title
     margin-bottom: 25px
     opacity: 0
@@ -123,21 +135,28 @@
     +md
       width: 100%
       order: 1
+    +sm
+      padding-left: var(--section-padding-md)
+      padding-right: var(--section-padding-md)
   &__img
     width: 70%
     +cover
-    // padding-top: 40%
-    height: 100%
+    padding-top: 40%
+    // height: 100%
     transform: translateX(100%)
     +xll
-      height: calc(100% + 30px)
+      // height: calc(100% + 30px)
       margin-bottom: -30px
     +md
       width: 100%
       order: 0
       margin-bottom: 20px
-      height: auto
-      height: 60%
+      // height: auto
+      // height: 60%
+      padding-top: 35%
+    +xs
+      padding-top: 0
+      height: 200px
   &__text
     text-align: left
     opacity: 0
@@ -167,7 +186,6 @@
     color: $red
 
 .slider-counter-sm
-  --value: -80%
   $this: &
   position: relative
   +thin
@@ -201,26 +219,46 @@
 
 .standart-slide
   box-sizing: border-box
+  position: relative
   padding-top: 15%
-  height: 100%
   +flex(flex-end, normal, column)
+  +sm
+    padding-top: 0
   &__title
     margin-bottom: 15px
+    +md
+      margin-bottom: 10px
   &__block
     background-color: $red-accent
     padding-top: 75px
     padding-bottom: 60px
     padding-left: $left-1
-    padding-right: 11%
+    padding-right: 12%
     position: relative
     z-index: 1
     max-width: percentage(1310/1920)
+    transform: translateY(100%)
+    +lg
+      padding-left: 15%
+    +md
+      padding-left: var(--section-padding-lg)
+      padding-top: 40px
+      padding-bottom: 30px
+    +sm
+      max-width: none
+      height: 60%
+    +xs
+      padding-bottom: 50px
   &__date
     color: $red-light
     font-size: $fz-md
     margin-bottom: 20px
+    +md
+      margin-bottom: 15px
   &__text
     margin-bottom: 25px
+    +md
+      margin-bottom: 20px
   &__img
     +cover
     height: calc(100% - 60px)
@@ -229,4 +267,9 @@
     z-index: 0
     top: 0
     right: 0
+    transform: translateX(100%)
+    +sm
+      position: relative
+      width: 100%
+      height: 200px
     

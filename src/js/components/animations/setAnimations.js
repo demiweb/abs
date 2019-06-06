@@ -1,6 +1,7 @@
+import { ASIDE_TRANSITION } from '../../constants';
 import animateCatalog from './animateCatalog';
 import animateItemPage from './animateItemPage';
-import { ASIDE_TRANSITION } from '../../constants';
+import animateAbout from './animateAbout';
 
 function setAnimation(func) {
   if (window.matchMedia('(max-width: 1199px)').matches) {
@@ -12,3 +13,4 @@ function setAnimation(func) {
 
 setAnimation(animateCatalog);
 setAnimation(animateItemPage);
+setAnimation(animateAbout);

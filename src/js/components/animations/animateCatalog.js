@@ -2,6 +2,9 @@ import anime from 'animejs';
 import PageAnimator from './PageAnimator';
 
 export default function animateCatalog() {
+  const page = document.querySelector('.catalog-page');
+  if (!page) return;
+
   const elements = {
     hero: document.querySelector('.hero'),
     title: document.querySelector('.hero__title'),

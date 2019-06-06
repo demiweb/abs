@@ -25,14 +25,32 @@ export default function animateStandartSlider(slider) {
       slidesAmount: mySlider.swiper.slides.length,
       htmlBlock: mySlider.GETTERS().counterSm
     });
+
+    function getelements(slide) {
+      return {
+        img: slide.querySelector('.standart-slide__img'),
+        block: slide.querySelector('.standart-slide__block')
+      };
+    };
     
     // previous slide
     anime({
       easing: 'linear',
       targets: previousSlide,
       duration: 500,
-      opacity: [1, 0],
       zIndex: [5, 0]
+    });
+    anime({
+      easing: 'easeOutCubic',
+      targets: getelements(previousSlide).img,
+      duration: 500,
+      translateX: ['0%', '100%']
+    });
+    anime({
+      easing: 'easeOutCubic',
+      targets: getelements(previousSlide).block,
+      duration: 500,
+      translateY: ['0%', '100%']
     });
     // previous slide
 
@@ -41,8 +59,19 @@ export default function animateStandartSlider(slider) {
       easing: 'linear',
       targets: activeSlide,
       duration: 500,
-      opacity: [0, 1],
       zIndex: [0, 5]
+    });
+    anime({
+      easing: 'easeOutCubic',
+      targets: getelements(activeSlide).img,
+      duration: 500,
+      translateX: ['100%', '0%']
+    });
+    anime({
+      easing: 'easeOutCubic',
+      targets: getelements(activeSlide).block,
+      duration: 500,
+      translateY: ['100%', '0%']
     });
     // active slide
   };
@@ -68,9 +97,19 @@ export default function animateStandartSlider(slider) {
         const swiper = this;
         const slides = [].slice.call(swiper.$el[0].querySelectorAll('.swiper-slide'));
         const activeSlide = slides[swiper.activeIndex];
+        const img = activeSlide.querySelector('.standart-slide__img');
+        const block = activeSlide.querySelector('.standart-slide__block');
 
         activeSlide.style.zIndex = 5;
-        activeSlide.style.opacity = 1;          
+
+
+        block.style.transform = 'translateY(0)';
+        img.style.transform = 'translateY(0)';      
+      },
+      setTranslate(translate) {
+        const swiper = this;
+        if (swiper.params.effect !== 'myCustomTransition') return;
+        mySlider.setTranslate(swiper, translate);
       },
         
       slideChange: () => {

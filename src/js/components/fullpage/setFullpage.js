@@ -1,4 +1,4 @@
-import Pager from '../fullpage/Pager';
+import Paginator from '../fullpage/Paginator';
 import anime from 'animejs';
 
 export default function setFullpage() {
@@ -156,8 +156,8 @@ export default function setFullpage() {
   };  
 
   tl.finished.then(() => {
-    const pager = new Pager('.js-fullpage');
-    pager.init();
+    const paginator = new Paginator('.js-fullpage');
+    paginator.init();
   });  
 };
 

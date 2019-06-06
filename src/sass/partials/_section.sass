@@ -55,12 +55,16 @@
   &--principles
     #{$this}__word
       top: -.3em
-      left: 75px
+      left: 10%
   
 .section-block
   position: relative
   z-index: 1
   padding-bottom: 25px
+  +sm
+    padding-bottom: 15px
+  +xs
+    padding-bottom: 10px
   &__article
     padding-left: 25px
     margin-bottom: 80px
@@ -75,6 +79,9 @@
       margin-bottom: 30px
       p
         margin-bottom: 10px
+  &__img
+    padding-top: 35%
+    +cover
   &__img-right
     position: absolute
     top: 2em
@@ -90,36 +97,78 @@
   background-color: $black
   padding: 0  
   height: calc(100vh - #{$header-height})
+  +lg
+    height: calc(100vh - #{$header-height-mob})
+  +xs
+    height: auto
   .section__title
     position: absolute
     top: var(--section-padding-lg)
     left: calc(var(--section-padding-lg) * 1.5)
     margin-bottom: 0
+    +xs
+      top: calc(var(--section-padding-lg) - 15px)
+      left: var(--section-padding)
   &__cols
     +flex()
     height: 100%
+    +xs
+      display: block
 
 .three-cols-section-col
+  --three-cols-section-col-padding-left: 40px
+  $this: &
   padding-top: calc(var(--section-padding-lg) * 2)
   padding-bottom: calc(var(--section-padding-lg) * 2)
   +flex(center, normal, column)
   overflow: hidden
-  +cover
+  position: relative
+  +hover
+    +before
+      opacity: .6
+    #{$this}__bg
+      +scale(1.1)
+  
+  +before
+    +coverdiv
+    z-index: 1
+    background-color: #000
+    opacity: .8
+    +tr(opacity .3s)
+  +lg
+    --three-cols-section-col-padding-left: 20px
   &:nth-child(1)
     width: $width-1-fucked-up-2
-    padding-left: calc(var(--section-padding-lg) * 1.5)
+    padding-left: calc(var(--section-padding-lg) * 1.5)   
+    +xs
+      width: 100%
+      padding-left: var(--section-padding)
+      padding-top: calc((var(--section-padding-lg) * 2) + 20px)
   &:nth-child(2)
     width: $width-2-fucked-up-2
-    padding-left: 40px
+    padding-left: var(--three-cols-section-col-padding-left)
+    +xs
+      width: 100%
+      padding-left: var(--section-padding)
   &:nth-child(3)
     width: $width-3-fucked-up-2
-    padding-left: 40px
+    padding-left: var(--three-cols-section-col-padding-left)
+    +xs
+      width: 100%
+      padding-left: var(--section-padding)
+  &__bg
+    +coverdiv
+    +cover
+    z-index: 0
+    +tr(transform .3s)
   &__nmb
     position: relative
     margin-bottom: 20px
+    z-index: 3
     .text-stroke
       left: -.5em
-      position: relative      
+      position: relative
+      transform: translateX(-100%)     
     +before
       bottom: 0
       left: 0
@@ -129,3 +178,5 @@
       position: absolute
   &__text
     max-width: 280px
+    position: relative
+    z-index: 3
