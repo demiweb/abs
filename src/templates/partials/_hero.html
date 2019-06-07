@@ -1,10 +1,13 @@
 {% if hero.fullpage %}
 <!-- begin fullpage-section -->
   <section class="fullpage-section fullpage-section--hero js-lazy js-mobile-height" data-background-image="img/home/home-1.jpg">
-
-  <div class="letter letter--fu letter--1"><span>a</span></div>
-  <div class="letter letter--fu letter--2"><span>b</span></div>
-  <div class="letter letter--fu letter--3"><span>s</span></div>
+  
+  <div class="letters">
+    <div class="letter letter--fu letter--1"><span>a</span></div>
+    <div class="letter letter--fu letter--2"><span>b</span></div>
+    <div class="letter letter--fu letter--3"><span>s</span></div>
+  </div>
+  
 
  {{ mixins.lines('lines--fu') }}
 
@@ -24,7 +27,7 @@
   <div class="hero__block overflow-hidden">
     {% if hero.title %}
     <div class="hero__title">
-      <h1 class="h1">{{ hero.title | safe }}</h1>
+      <h1 class="h1{% if hero.titleMod %} {{ hero.titleMod }}{% endif %}">{{ hero.title | safe }}</h1>
     </div>
     {% endif %}
     {% if hero.breadcrumbs %}

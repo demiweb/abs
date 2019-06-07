@@ -17,6 +17,7 @@ import setSelects from './components/setSelects';
 import setAnimatedSliders from './components/sliders/setAnimatedSliders';
 import setParallax from './components/setParallax';
 import setGallery from './components/setGallery';
+import toggleBlock from './components/toggleBlock';
 
 $(function() {
   setTouchClassName();
@@ -35,4 +36,5 @@ $(function() {
   setAnimatedSliders();
   setParallax();
   setGallery();
+  toggleBlock();
 });

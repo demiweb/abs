@@ -1,0 +1,27 @@
+---
+title: news
+page: news
+outClass: 'news-page'
+header: {
+  mod: ''
+}
+hero: {
+  title: 'АКТУАЛЬНІ НОВИНИ',
+  titleMod: 'title--white',
+  bgImage: 'bg-hero-news.jpg'
+}
+footer: {
+  mod: 'footer--gray'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+
+  {% include "partials/_news.html" %}
+  
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

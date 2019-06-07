@@ -160,6 +160,21 @@ strong
     min-width: 210px
     font-size: $fz-md
     padding: 7px 10px
+  &--full
+    width: 100%
+  &--arrow
+    position: relative
+    padding-right: 2em
+    +before
+      display: inline-block
+      +icon-arrow(10, 10, 1, currentColor, -135)
+      position: absolute
+      top: .5em
+      right: 1em
+      +tr(transform .3s)
+    &.is-active
+      +before
+        +icon-arrow(10, 10, 1, currentColor, -45)
 
 
 .line-sm
@@ -219,6 +234,18 @@ strong
   line-height: .8
   color: rgba($white, .1)
   text-transform: uppercase
+
+.toggle-btn
+  margin-bottom: 15px
+  display: none
+  &--md
+    +md
+      display: block
+
+.toggle-block
+  &--md
+    +md
+      display: none
 
 
 // ============ animations ===============

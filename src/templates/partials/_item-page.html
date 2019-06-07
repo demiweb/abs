@@ -34,13 +34,18 @@
   <div class="content__row">
     <div class="content__col content__col-justify-end">
       <div class="content__img">
-        {% include "partials/_item-gallery.html" %}
-        
+        {% include "partials/_item-gallery.html" %}        
       </div>
-      
+
+        <div class="toggle-btn toggle-btn--md">
+          {{ mixins.btn(
+            title = 'ОСНОВНІ ПЕРЕВАГИ',
+            mod = 'btn--sec btn--full btn--arrow js-toggle-btn'
+          ) }}
+        </div>
 
       <!-- begin content-block -->
-      <div class="content__block content-block">
+      <div class="content__block content-block toggle-block toggle-block--md js-toggle-block">
         <div class="content-block__title">
           <h3 class="h3 h3--sm">ОСНОВНІ ПЕРЕВАГИ</h3>
         </div>

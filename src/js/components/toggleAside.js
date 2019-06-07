@@ -1,4 +1,5 @@
 import { $DOC, $BODY, $HTML, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
+import setSliders from './setSliders';
 
 class Aside {
   constructor() {
@@ -8,6 +9,8 @@ class Aside {
   };
 
   init() {
+    if (!this.$menu.length) return;
+    
     this._setAsideOnLoad();
      
     $DOC.on('click', `.${Aside.classNames.toggle}`, this._toggleAside.bind(this));
@@ -35,10 +38,10 @@ class Aside {
 
     $(e.currentTarget).toggleClass(ACTIVE);
     $wrap.toggleClass(Aside.classNames.hasAsideOpen);
-    $HTML.toggleClass(Aside.classNames.hasAsideOpen);
+    $HTML.toggleClass(Aside.classNames.hasAsideOpen);    
+
     if (window.matchMedia('(max-width: 1199px)').matches) {
       $BODY.toggleClass(NOSCROLL);
-
       setTimeout(() => {
         $wrap.toggleClass(Aside.classNames.hasAsideOpenMobile);
       }, ASIDE_TRANSITION);
