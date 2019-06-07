@@ -38,22 +38,30 @@ export default function setSliders() {
           init: setLazy
         }
       },
-      // 'about_assort': {
-      //   loop: true,
-      //   navigation: {
-      //     nextEl: next,
-      //     prevEl: prev,
-      //   },
-      //   // pagination: {
-      //   //   el: '.js-progress',
-      //   //   type: 'progressbar',
-      //   // },
-      // }
+      'item_gallery_thumbs': {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        loop: true,
+        breakpoints: {
+          576: {
+            slidesPerView: 3,
+            spaceBetween: 5
+          },
+          768: {
+            slidesPerView: 4
+          }
+        },
+        on: {
+          init: setLazy
+        }
+      }
     };
 
     const swiper = new Swiper(slider, options[name]);
 
     
   });
+
+
 
 };

@@ -13,14 +13,11 @@ export default function animateAbout() {
   pageAnimator.animate = (elements) => {
     const aboutAnimator = new AboutAnimator(elements.sections);
 
-
     elements.sections.forEach((section, i) => {
       section.setAttribute('data-index', i);
+      const sectionThreshold = section.getAttribute('data-threshold') ? section.getAttribute('data-threshold') : 0.5;
 
-      const threshold = [];
-      for (let i = 1; i < 11; i++) {
-        threshold.push(i/10);
-      };
+      const threshold = [sectionThreshold];
 
       const observer = new IntersectionObserver(aboutAnimator.animate.bind(aboutAnimator), { threshold: threshold });
       observer.observe(section);

@@ -9,13 +9,14 @@ import setFullpage from './components/fullpage/setFullpage';
 import setMobileHeight from './components/setMobileHeight';
 import toggleAside from './components/toggleAside';
 import setAccordion from './components/setAccordion';
-import './components/animations/setAnimations';
+import setAnimations from './components/animations/setAnimations';
 import animateOnScroll from './components/animateOnScroll';
 import setMainColor from './components/setMainColor';
 import setSliders from './components/setSliders';
 import setSelects from './components/setSelects';
 import setAnimatedSliders from './components/sliders/setAnimatedSliders';
 import setParallax from './components/setParallax';
+import setGallery from './components/setGallery';
 
 $(function() {
   setTouchClassName();
@@ -26,10 +27,12 @@ $(function() {
   setMobileHeight();
   toggleAside();
   setAccordion();
+  setAnimations();
   animateOnScroll();
   setMainColor();
   setSliders();
   setSelects();
   setAnimatedSliders();
   setParallax();
+  setGallery();
 });

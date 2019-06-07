@@ -3,7 +3,6 @@ import anime from 'animejs';
 export default class AboutAnimator {
   constructor(sections) {
     this.sections = sections;
-    this.setLinesAllow = true;
   };  
 
   animate(entries, observer) {

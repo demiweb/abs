@@ -11,6 +11,10 @@ function setAnimation(func) {
   };
 };
 
-setAnimation(animateCatalog);
-setAnimation(animateItemPage);
-setAnimation(animateAbout);
+export default function setAnimations() {
+  setAnimation(animateCatalog);
+  setAnimation(animateItemPage);
+  setAnimation(animateAbout);
+};
+
+

@@ -108,10 +108,16 @@
     margin-bottom: 20px
   &__row-align-end
     align-items: flex-end
+  &__col-justify-end
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
   &__col
     width: 50%
     padding-left: 10px
     padding-right: 10px
+    position: relative
+    
     +md
       width: 100%
   &__table
@@ -132,12 +138,10 @@
       position: relative
       top: -35px
   &__img
-    +md
-      img
-        max-width: 50%
+    
 
   &--full
-    --content-padding: 50px
+    --content-padding: 30px
     max-width: 1440px
     +md
       --content-padding: 15px
@@ -173,6 +177,7 @@
 
 .content-block
   --padding: 20px
+  position: relative
   +xl
     --padding: 15px
   +sm

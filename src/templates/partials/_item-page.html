@@ -31,10 +31,11 @@
   ) }}
   </div>
 
-  <div class="content__row content__row-align-end">
-    <div class="content__col">
+  <div class="content__row">
+    <div class="content__col content__col-justify-end">
       <div class="content__img">
-        <img data-src="img/accum/{% if main.img %}{{ main.img }}{% else %}MONBAT EFB L3.png{% endif %}" alt="" class="js-lazy">
+        {% include "partials/_item-gallery.html" %}
+        
       </div>
       
 
@@ -54,7 +55,7 @@
       <!-- end content-block -->
     </div>
 
-    <div class="content__col">
+    <div class="content__col content__col-justify-end js-gallery-drift-zoom-container">
       <!-- begin content-block -->
       <div class="content-block">
         <div class="content-block__block content-block__block-flex">
