@@ -45,6 +45,9 @@ strong
   font-weight: 400
   +bold
 
+small
+  font-size: inherit
+
 // .is-animated
 [data-loaded="true"]
   animation: fadeIn .4s
@@ -139,21 +142,21 @@ strong
     border-color: $red
 
   &--sec
-    background-color: $red
+    background-color: $red-accent
     +light
     font-size: $fz-md
-    border-color: $red
+    border-color: $red-accent
     padding: 4px 10px
     min-width: 155px
     +hover
       background-color: transparent
-      color: $red
+      color: $red-accent
   &--black
     background-color: $black
     color: $white
     border-color: $black
     +hover
-      background-color: $red
+      background-color: transparent
       color: $white
       border-color: $white
   &--md

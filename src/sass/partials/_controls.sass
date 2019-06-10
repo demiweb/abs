@@ -35,6 +35,9 @@
     +notlast
       border: 0
       margin-bottom: 10px
+  +xs
+    +notlast
+      margin-bottom: 10px
   +reg
   +notlast
     border-right: 1px solid  $c-border
@@ -43,4 +46,10 @@
     label
       +bold
       font-size: $fz-md
-  
+  &:nth-child(2),
+  &:nth-child(3)
+    +xl
+      width: auto
+      margin-bottom: 0
+    +xs
+      width: 100%

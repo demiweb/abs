@@ -1,5 +1,6 @@
-import { $DOC, $BODY, $HTML, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
-import setSliders from './setSliders';
+import { $DOC, $WIN, $BODY, $HTML, ACTIVE, NOSCROLL, ASIDE_TRANSITION } from '../constants';
+
+import { swiperSliders } from './setSliders';
 
 class Aside {
   constructor() {
@@ -21,11 +22,21 @@ class Aside {
     });
   };
 
+  triggerResize() {
+    if (window.matchMedia('(min-width: 1200px)').matches) {
+      setTimeout(() => {
+        $WIN.trigger('resize');
+      }, ASIDE_TRANSITION);      
+    };
+  };
+
   closeAside() {
     this.$wrap.removeClass(Aside.classNames.hasAsideOpen);
     $HTML.removeClass(Aside.classNames.hasAsideOpen);
     this.$btn.removeClass(ACTIVE);
     $BODY.removeClass(NOSCROLL);
+
+    this.triggerResize();
 
     setTimeout(() => {
       this.$wrap.removeClass(Aside.classNames.hasAsideOpenMobile);
@@ -38,7 +49,9 @@ class Aside {
 
     $(e.currentTarget).toggleClass(ACTIVE);
     $wrap.toggleClass(Aside.classNames.hasAsideOpen);
-    $HTML.toggleClass(Aside.classNames.hasAsideOpen);    
+    $HTML.toggleClass(Aside.classNames.hasAsideOpen);
+
+    this.triggerResize(); 
 
     if (window.matchMedia('(max-width: 1199px)').matches) {
       $BODY.toggleClass(NOSCROLL);
@@ -68,4 +81,12 @@ Aside.classNames = {
 export default function toggleAside() {
   const aside = new Aside();
   aside.init();
+
+  $WIN.on('resize', () => {
+    swiperSliders.forEach((swiper) => {
+      swiper.update(true);
+    });
+  });
 };
+
+

@@ -1,6 +1,8 @@
 import Swiper from 'swiper';
 import setLazy from './setLazy';
 
+export const swiperSliders = [];
+
 export default function setSliders() {
   const $sliders = $('.js-slider');
 
@@ -59,9 +61,6 @@ export default function setSliders() {
 
     const swiper = new Swiper(slider, options[name]);
 
-    
+    swiperSliders.push(swiper);
   });
-
-
-
 };

@@ -1,4 +1,5 @@
 .item-gallery
+  $this: &
   padding-bottom: 10px
   &__img
     display: block
@@ -20,10 +21,15 @@
     background-color: $white
     // height: 40px
     +flex(flex-start, center)
+    .swiper-container-initialized
+      #{$this}__thumb
+        img
+          height: auto
   &__thumb
     display: block
     border: 1px solid  $c-border
     text-align: center
+    +cover
     &.is-active
       border-color: var(--main-color)
 

@@ -2,6 +2,7 @@ import { ASIDE_TRANSITION } from '../../constants';
 import animateCatalog from './animateCatalog';
 import animateItemPage from './animateItemPage';
 import animateAbout from './animateAbout';
+import animateNewsPage from './animateNewsPage';
 
 function setAnimation(func) {
   if (window.matchMedia('(max-width: 1199px)').matches) {
@@ -15,6 +16,7 @@ export default function setAnimations() {
   setAnimation(animateCatalog);
   setAnimation(animateItemPage);
   setAnimation(animateAbout);
+  setAnimation(animateNewsPage);
 };
 
 
