@@ -4,6 +4,7 @@
 +font('proximanova-light', 'proximanova-light-webfont')
 +font('proximanovat-thin', 'proximanovat-thin-webfont')
 +font('proximanova-black', 'proximanova-black-webfont')
++font('proximanova-thinit', 'proximanova-thinit-webfont')
 
 =reg
   font-family: 'proximanova-regular', Arial, sans-serif
@@ -15,6 +16,8 @@
   font-family: 'proximanova-light', Arial, sans-serif
 =thin
   font-family: 'proximanovat-thin', Arial, sans-serif
+=thinit
+  font-family: 'proximanova-thinit', Arial, sans-serif
 =black
   font-family: 'proximanova-black', Arial, sans-serif
 
@@ -38,6 +41,13 @@ body
     height: 100vh
     +cover
 
+.container
+  margin-left: auto
+  margin-right: auto
+  max-width: 1440px
+  padding-left: 15px
+  padding-right: 15px
+
 img
   max-width: 100%
 
@@ -47,6 +57,12 @@ strong
 
 small
   font-size: inherit
+
+input, textarea
+  font-family: inherit
+  +placeholder
+    font-family: inherit
+    font-size: inherit
 
 // .is-animated
 [data-loaded="true"]
@@ -185,6 +201,7 @@ small
   width: 1px
   background-color: $white
   display: inline-block
+  transform: translateY(-100%)
 
 .btn-link
   font-size: $fz-sm
@@ -249,6 +266,18 @@ small
   &--md
     +md
       display: none
+
+.subsribe
+  text-align: center
+  &__inner
+    max-width: 480px
+    margin-left: auto
+    margin-right: auto
+  &__title
+    margin-bottom: 15px
+  &__form
+    .input
+      margin-bottom: 15px
 
 
 // ============ animations ===============

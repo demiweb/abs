@@ -3,7 +3,7 @@
 
 .custom-select
   $this: &
-  --padding: 10px
+  --select-padding: 10px
   min-width: 90px
   position: relative
   font-size: $fz-md
@@ -19,7 +19,7 @@
   &__opener
     border: 1px solid  $c-border
     position: relative
-    padding: calc(var(--padding) / 3) var(--padding)
+    padding: calc(var(--select-padding, 10px) / 3) var(--select-padding, 10px)
     cursor: pointer
     user-select: none
     +before
@@ -44,7 +44,7 @@
     +tr(opacity .3s, visibility .3s)
   &__option
     cursor: pointer
-    padding: calc(var(--padding) / 3) var(--padding)
+    padding: calc(var(--select-padding, 10px) / 3) var(--select-padding, 10px)
     +tr(background-color .3s)
     +hover
       background-color: $gray

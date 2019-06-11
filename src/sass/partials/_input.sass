@@ -1,0 +1,26 @@
+.input
+  position: relative
+  color: $gray
+  input
+    width: 100%
+    color: inherit
+    font-size: $fz-sm
+    border: 1px solid  $gray-light
+    height: 45px
+    padding: 10px 12px
+
+  &--arrow
+    +before
+      position: absolute
+      height: 1px
+      width: 15px
+      background-color: currentColor
+      right: 12px
+      top: 50%
+      transform: translate(0, -50%)
+    +after
+      +icon-arrow(10, 10, 1, currentColor, -135)
+      position: absolute
+      right: 12px
+      top: 50%
+      transform: translate(0, -50%) rotate(-135deg)

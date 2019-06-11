@@ -1,4 +1,4 @@
-{% macro input(name, mod, type = 'text', placeholder, value, options, fieldClass, attributes, label) %}
+{% macro input(name, mod, type = 'text', placeholder, value, options, fieldClass, attributes, label, icon) %}
 <!-- begin {{ name }} -->
 {% if name === 'checkbox' or name === 'radio' %}
 <label class="{{ name }}{% if mod %} {{mod}}{% endif %}" {% for attr, attr_value in attributes %} {{ attr }}="{{ attr_value }}" {% endfor %}>
@@ -27,6 +27,10 @@
 
   {% elseif name === 'textarea' %}
   <textarea {% if fieldClass %}class="{{ fieldClass }}"{% endif %} placeholder="{{ placeholder }}" value="{{value}}" {% for attr, attr_value in fieldAttributes %} {{ attr }}="{{ attr_value }}" {% endfor %}></textarea>
+  {% endif %}
+
+  {% if icon %}
+  {{ icon | safe }}
   {% endif %}
 {% if name === 'checkbox' or name === 'radio' %}
 </label>

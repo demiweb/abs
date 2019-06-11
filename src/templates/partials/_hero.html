@@ -24,19 +24,34 @@
 
 <!-- begin hero -->
 <section class="hero js-lazy" data-background-image="img/hero/{% if hero.bgImage %}{{ hero.bgImage }}{% else %}bg-hero.jpg{% endif %}">
+  {% if hero.breadcrumbs.isInTop %}
+  <div class="hero__breadcrumbs hero__breadcrumbs-top">
+    {{ mixins.list(
+      name = 'breadcrumbs',
+      modifications = { wrap: '', item: '', link: '' },
+      list = hero.breadcrumbs.list
+    ) }}
+  </div>
+  
+  {% endif %}
   <div class="hero__block overflow-hidden">
     {% if hero.title %}
     <div class="hero__title">
       <h1 class="h1{% if hero.titleMod %} {{ hero.titleMod }}{% endif %}">{{ hero.title | safe }}</h1>
     </div>
     {% endif %}
-    {% if hero.breadcrumbs %}
+    {% if hero.titleLine %}
+    <div class="overflow-hidden">
+      <div class="line-sm"></div>
+    </div>
+    {% endif %}
+    {% if hero.breadcrumbs.isUnderTitle %}
     <div class="overflow-hidden">
       <div class="hero__breadcrumbs">
         {{ mixins.list(
           name = 'breadcrumbs',
           modifications = { wrap: '', item: '', link: '' },
-          list = hero.breadcrumbs
+          list = hero.breadcrumbs.list
         ) }}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import 'promise-polyfill/src/polyfill';
 import 'intersection-observer';
+import cssVars from 'css-vars-ponyfill';
 
 import setTouchClassName from './components/setTouchClassName';
 import setLazy from './components/setLazy';
@@ -21,6 +22,7 @@ import toggleBlock from './components/toggleBlock';
 import truncateText from './components/truncateText';
 
 $(function() {
+  cssVars();
   setTouchClassName();
   setLazy();
   toggleMenu();

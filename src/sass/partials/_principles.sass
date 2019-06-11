@@ -2,7 +2,7 @@
   --principles-right-width: 480px
   position: relative
   z-index: 1
-  padding-bottom: var(--section-padding-lg)
+  padding-bottom: var(--section-padding-lg, 100px)
   +r(1700)
     --principles-right-width: 400px
   +lg
@@ -12,23 +12,23 @@
   &__principles
     position: relative
     +lg
-      max-width: calc(100% - (var(--principles-right-width) + var(--section-padding) + 30px))
-      padding-left: var(--section-padding-md)
+      max-width: calc(100% - (var(--principles-right-width, 480px) + var(--section-padding, 40px) + 30px))
+      padding-left: var(--section-padding-md, 65px)
     +xs
       max-width: none
       margin-bottom: 15px
-      padding-right: var(--section-padding-md)
+      padding-right: var(--section-padding-md, 65px)
   &__title
-    max-width: calc(100% - (var(--principles-right-width) + var(--section-padding) - var(--section-padding-md) + 30px))
+    max-width: calc(100% - (var(--principles-right-width, 480px) + var(--section-padding, 40px) - var(--section-padding-md, 65px) + 30px))
     +xs
       max-width: none
   &__right
     position: absolute
     +cover
-    top: calc(0px - var(--section-padding-lg))
-    right: var(--section-padding)
+    top: calc(0px - var(--section-padding-lg, 100px))
+    right: var(--section-padding, 40px)
     bottom: 0
-    width: var(--principles-right-width)
+    width: var(--principles-right-width, 480px)
     +flex(flex-end, normal, column)
     +xs
       position: relative
@@ -73,7 +73,7 @@
   position: relative
   opacity: 0
   +notlast
-    margin-bottom: var(--section-padding-lg)
+    margin-bottom: var(--section-padding-lg, 100px)
   +lg
     --principle-line-width: 90px
   +md
@@ -83,23 +83,23 @@
     position: absolute
     background-color: $white
     height: 1px
-    width: var(--principle-line-width)
+    width: var(--principle-line-width, 130px)
     top: 30px
-    right: calc(100% + var(--principle-line-gap))
+    right: calc(100% + var(--principle-line-gap, 20px))
   &:nth-child(1)
     left: $left-5-1
     max-width: 280px
     +xll
       left: $left-5-1
     +lg
-      left: calc(var(--principle-line-width) + var(--principle-line-gap))
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
   &:nth-child(2)
     left: $left-5-2
     max-width: 430px
     +xll
       left: $left-5-1
     +lg
-      left: calc(var(--principle-line-width) + var(--principle-line-gap))
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
       max-width: 380px
   &:nth-child(3)
     left: $left-5-3
@@ -107,7 +107,7 @@
     +xll
       left: $left-5-1
     +lg
-      left: calc(var(--principle-line-width) + var(--principle-line-gap))
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
   &__text
     ul
     li

@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6
   text-transform: uppercase  
   small
     +light
+  &--text
+    color: $c-text
+  &--ttn
+    text-transform: none
 
 .h2, h2
   text-transform: uppercase
@@ -36,8 +40,6 @@ h1, h2, h3, h4, h5, h6
     +css-lock(28, 48, 576, 1199, font-size)
   &--ttn
     text-transform: none
-
-
 
 .h2-subttl
   font-size: 32px
@@ -62,6 +64,8 @@ h1, h2, h3, h4, h5, h6
     +bold
     text-transform: uppercase
     +css-lock(18, 21, 576, 1199, font-size)
+  &--ttn
+    text-transform: none
 
 .h3-subttl
   font-size: 21px
@@ -97,8 +101,11 @@ h1, h2, h3, h4, h5, h6
   font-size: 16px
   +bold
   text-transform: uppercase
+  line-height: 1.2
   &--white
     color: $white
+  &--ttn
+    text-transform: none
 
 .h6, h6
 
@@ -150,9 +157,17 @@ h1, h2, h3, h4, h5, h6
     +after
       transform: translate(0, 0)
       left: 0
+  &--xs
+    padding-bottom: 10px
+    +before
+      display: none
+    +after
+      left: 0
+      transform: translate(0, 0)
+      width: 20px
 
 .title-lines
   @extend .title-under
   padding: 0
   height: 9px
-  margin-bottom: calc(var(--main-padding-md) / 2)
+  margin-bottom: calc(var(--main-padding-md, 25px) / 2)

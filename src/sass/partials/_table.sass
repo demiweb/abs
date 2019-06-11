@@ -32,7 +32,7 @@
     vertical-align: middle
     // border: 1px solid  $c-border
     &.is-active
-      background-color: var(--secondary-color)
+      background-color: var(--secondary-color, #{$gray})
       a
         color: $c-text
         text-decoration: none
@@ -56,10 +56,10 @@
   &__td-33
     width: 33.33333%
   &__th-colored
-    background-color: var(--main-color)
+    background-color: var(--main-color, #{$black})
     color: $white
   &__td-colored
-    background-color: var(--secondary-color)
+    background-color: var(--secondary-color, #{$gray})
   &__th-caption
     // position: relative
     // left: 50%

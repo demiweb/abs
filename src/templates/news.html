@@ -8,7 +8,15 @@ header: {
 hero: {
   title: '<small>АКТУАЛЬНІ</small> НОВИНИ',
   titleMod: 'title--white',
-  bgImage: 'bg-hero-news.jpg'
+  bgImage: 'bg-hero-news.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'ABS' },
+      { item: '/' },
+      { link: 'Новини', modLink: 'is-active' }
+    ]
+  }
 }
 footer: {
   mod: 'footer--gray'
@@ -21,7 +29,6 @@ footer: {
   {% include "partials/_hero.html" %}
 
   {% include "partials/_news.html" %}
-  
 
   {% include "partials/_footer.html" %}
 {% endblock %}

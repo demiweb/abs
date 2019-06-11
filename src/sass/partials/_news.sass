@@ -1,9 +1,9 @@
 .news
   +sm
-    margin-left: calc(0px - var(--main-padding))
-    margin-right: calc(0px - var(--main-padding))
+    margin-left: calc(0px - var(--main-padding, 35px))
+    margin-right: calc(0px - var(--main-padding, 35px))
   &__items
-    margin-bottom: calc(var(--main-padding-md)/2)
+    margin-bottom: calc(var(--main-padding-md, 45px)/2)
   &__btn
     text-align: center
 
@@ -43,12 +43,12 @@
     +xs
       padding-top: 50%
   &__title
-    margin-bottom: var(--news-item-margin)
+    margin-bottom: var(--news-item-margin, 20px)
   &__text
-    margin-bottom: var(--news-item-margin)
+    margin-bottom: var(--news-item-margin, 20px)
     max-height: 70px
   &__content
-    padding: var(--news-item-padding-vertical) var(--news-item-padding-horizontal)
+    padding: var(--news-item-padding-vertical, 125px) var(--news-item-padding-horizontal, 50px)
     +sm
       order: 1
 

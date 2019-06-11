@@ -20,3 +20,10 @@
     opacity: 0
   &__breadcrumbs
     opacity: 0
+  &__breadcrumbs-top
+    position: absolute
+    top: calc(#{$header-height} + 10px)
+    left: var(--section-padding, 40px)
+    z-index: 10
+    +lg
+      top: calc(#{$header-height-mob} + 10px)

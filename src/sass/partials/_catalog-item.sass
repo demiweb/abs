@@ -73,7 +73,7 @@
     margin-bottom: 10px
     .icon
       font-size: 34px
-      fill: var(--main-color)
+      fill: var(--main-color, #{$black})
   &__item-title
     text-transform: uppercase
     +light
@@ -86,7 +86,7 @@
   &__rating
     text-align: center
     color: $white
-    background-color: var(--main-color)
+    background-color: var(--main-color, #{$black})
     padding: 4px 4px 3px
     +light
     font-size: $fz-sm
