@@ -77,7 +77,7 @@
         <div class="header__lang">
           <div class="header__contacts">
             <a href="tel:+380504947606">+38 050 494 76 06</a>
-            <a href="#" class="btn-link">замовити дзвінок</a>
+            <a href="#" class="btn-link js-popup-open" data-popup-target="call">замовити дзвінок</a>
           </div>
           <!-- begin lang -->
           <div class="lang ">
@@ -120,7 +120,7 @@
         <div class="news">
           <div class="news__items">
             <!-- begin news-item -->
-            <div class="news-item news-item--red">
+            <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
               <div class="news-item__img js-lazy" data-background-image="img/news/news_03.jpg"></div>
               <div class="news-item__content">
                 <div class="news-item__title">
@@ -134,7 +134,7 @@
             </div>
             <!-- end news-item -->
             <!-- begin news-item -->
-            <div class="news-item">
+            <div class="news-item js-anim-el" data-anim-name="fadeInBottom">
               <div class="news-item__content">
                 <div class="news-item__title">
                   <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
@@ -148,7 +148,7 @@
             </div>
             <!-- end news-item -->
             <!-- begin news-item -->
-            <div class="news-item news-item--red">
+            <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
               <div class="news-item__img js-lazy" data-background-image="img/news/news_08.jpg"></div>
               <div class="news-item__content">
                 <div class="news-item__title">
@@ -162,7 +162,7 @@
             </div>
             <!-- end news-item -->
             <!-- begin news-item -->
-            <div class="news-item">
+            <div class="news-item js-anim-el" data-anim-name="fadeInBottom">
               <div class="news-item__content">
                 <div class="news-item__title">
                   <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
@@ -219,6 +219,50 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popups -->
+    <!-- begin popup -->
+    <div class="popup js-popup" data-popup="call">
+      <div class="popup__inner">
+        <a href="#" class="popup__close js-popup-close"></a>
+        <div class="popup__title">
+          <h2 class="title title--bold">замовити дзвінок</h2>
+        </div>
+        <div class="popup__title-line">
+          <div class="line-sm line-sm--text"></div>
+        </div>
+        <div class="popup__subttl text text--thin is-center">Заповніть форму нижче та ми зв’яжемося з вами в найближчий час</div>
+        <div class="popup__form form form--contacts">
+          <form>
+            <div class="form__field">
+              <!-- begin input -->
+              <div class="input input--lg">
+                <input type="text" placeholder="ІМ’Я">
+              </div>
+              <!-- end input -->
+            </div>
+            <div class="form__field">
+              <!-- begin input -->
+              <div class="input input--lg">
+                <input type="tel" placeholder="телефон">
+              </div>
+              <!-- end input -->
+            </div>
+            <div class="form__field">
+              <!-- begin textarea -->
+              <div class="textarea textarea--lg">
+                <textarea placeholder="повідомлення" value=""></textarea>
+              </div>
+              <!-- end textarea -->
+            </div>
+            <div class="form__btn">
+              <button class="btn btn--sec btn--md btn--full">відправити</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- end popups -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
