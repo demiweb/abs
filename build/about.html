@@ -77,7 +77,7 @@
         <div class="header__lang">
           <div class="header__contacts">
             <a href="tel:+380504947606">+38 050 494 76 06</a>
-            <a href="#" class="btn-link">замовити дзвінок</a>
+            <a href="#" class="btn-link js-popup-open" data-popup-target="call">замовити дзвінок</a>
           </div>
           <!-- begin lang -->
           <div class="lang ">
@@ -210,7 +210,7 @@
                   <div class="slider-counter-sm__all">04</div>
                 </div>
               </div>
-              <div class="slider--assort__counter text-stroke js-counter"> 01 </div>
+              <div class="slider--assort__counter text-stroke js-parallax js-counter"> 01 </div>
               <div class="slider--assort__btns">
                 <button class="slider--assort__prev arrow arrow--prev js-prev">
                   <!-- begin icon-arrow -->
@@ -359,9 +359,7 @@
             <!-- end principle -->
           </div>
           <div class="principles__right js-lazy js-anim-el" data-background-image="img/about/alessio-lin-236486-unsplash.jpg" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
-            <div class="principles__right-word">
-              <div class="js-parallax-vertical-text">principle</div>
-            </div>
+            <div class="principles__right-word js-parallax js-parallax-vertical-text">principle</div>
             <div class="principles__right-block">
               <div class="principles__right-title title-under title-under--sm title-under--left">
                 <h2 class="title title--bold title--white">миссия компании</h2>
@@ -568,6 +566,50 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popups -->
+    <!-- begin popup -->
+    <div class="popup js-popup" data-popup="call">
+      <div class="popup__inner">
+        <a href="#" class="popup__close js-popup-close"></a>
+        <div class="popup__title">
+          <h2 class="title title--bold">замовити дзвінок</h2>
+        </div>
+        <div class="popup__title-line">
+          <div class="line-sm line-sm--text"></div>
+        </div>
+        <div class="popup__subttl text text--thin is-center">Заповніть форму нижче та ми зв’яжемося з вами в найближчий час</div>
+        <div class="popup__form form form--contacts">
+          <form>
+            <div class="form__field">
+              <!-- begin input -->
+              <div class="input input--lg">
+                <input type="text" placeholder="ІМ’Я">
+              </div>
+              <!-- end input -->
+            </div>
+            <div class="form__field">
+              <!-- begin input -->
+              <div class="input input--lg">
+                <input type="tel" placeholder="телефон">
+              </div>
+              <!-- end input -->
+            </div>
+            <div class="form__field">
+              <!-- begin textarea -->
+              <div class="textarea textarea--lg">
+                <textarea placeholder="повідомлення" value=""></textarea>
+              </div>
+              <!-- end textarea -->
+            </div>
+            <div class="form__btn">
+              <button class="btn btn--sec btn--md btn--full">відправити</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- end popups -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->

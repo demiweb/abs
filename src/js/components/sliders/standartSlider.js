@@ -50,7 +50,8 @@ export default function animateStandartSlider(slider) {
       easing: 'easeOutCubic',
       targets: getelements(previousSlide).block,
       duration: 500,
-      translateY: ['0%', '100%']
+      translateY: ['0%', '100%'],
+      opacity: [1, 0]
     });
     // previous slide
 
@@ -71,7 +72,8 @@ export default function animateStandartSlider(slider) {
       easing: 'easeOutCubic',
       targets: getelements(activeSlide).block,
       duration: 500,
-      translateY: ['100%', '0%']
+      translateY: ['100%', '0%'],
+      opacity: [0, 1]
     });
     // active slide
   };

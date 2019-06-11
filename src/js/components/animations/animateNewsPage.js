@@ -15,7 +15,7 @@ export default function animateNewsPage() {
   pageAnimator.animate = (elements) => {
     const tl = anime.timeline({ easing: 'linear' });
 
-    tl    
+    tl
       .add({
         targets: elements.hero,
         opacity: [0, 1],

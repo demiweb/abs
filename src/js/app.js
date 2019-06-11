@@ -20,6 +20,7 @@ import setParallax from './components/setParallax';
 import setGallery from './components/setGallery';
 import toggleBlock from './components/toggleBlock';
 import truncateText from './components/truncateText';
+import setPopups from './components/setPopups';
 
 $(function() {
   cssVars();
@@ -41,4 +42,5 @@ $(function() {
   setGallery();
   toggleBlock();
   truncateText();
+  setPopups();
 });

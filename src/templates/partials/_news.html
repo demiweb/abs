@@ -16,7 +16,7 @@ news = [
     <div class="news__items">
       {% for i in news %}
       <!-- begin news-item -->
-      <div class="news-item{% if i.odd %} news-item--red{% endif %}">
+      <div class="news-item{% if i.odd %} news-item--red{% endif %} js-anim-el" data-anim-name="fadeInBottom">
         {% if i.odd %}
         <div class="news-item__img js-lazy" data-background-image="img/news/{{ i.img }}"></div>
 

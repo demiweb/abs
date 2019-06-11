@@ -3,9 +3,9 @@ import Rellax from 'rellax';
 class TitleParallax {
   constructor(title) {
     this.title = title;
-    this.MAX_TRANSLATE = 10;
+    this.MAX_TRANSLATE = 20;
     this.MIN_TRANSLATE = 0;
-    this.OFFSET = 800;
+    this.OFFSET = 5000;
   };
 
   init() {
@@ -51,14 +51,23 @@ class TitleParallax {
 
 export default function setParallax() {  
   // rellax paralax init
-  const rellax = new Rellax('.js-parallax', {
-    speed: -1,
-    center: true,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-  });
+  function initRellax() {
+    const els = document.querySelectorAll('.js-parallax');
+
+    if(!els.length) return;
+
+    const rellax = new Rellax('.js-parallax', {
+      speed: -1.5,
+      center: true,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  };
+
+  initRellax();
+  
 
   // parallax for titles
   const titles = [].slice.call(document.querySelectorAll('.js-parallax-title'));
@@ -68,10 +77,23 @@ export default function setParallax() {
     titleParallax.init();
   });
 
-  // // parallax for vertical text
-  // function animateVerticalText() {
-  //   const textBlocks = [].slice.call(document.querySelectorAll('.js-parallax-vertical-text'));
-  //   const observer = new IntersectionObserver(animate);
-  //   observer.observe(text);
-  // }
+  // parallax for vertical text
+  function animateVerticalText() {
+    const textBlocks = [].slice.call(document.querySelectorAll('.js-parallax-vertical-text'));
+
+    textBlocks.forEach((block) => {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          const translate = block.style.transform.slice(12, -1).split(',')[1];
+          
+          block.style.transform = `translate3d(0px, ${translate}, 0px) rotate(-90deg)`;
+        });
+      });
+
+      observer.observe(block, { attributes: true });
+    });
+    
+  };
+
+  animateVerticalText();
 };

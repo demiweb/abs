@@ -1,14 +1,21 @@
+.no-touch
+  .no-scroll
+    .header
+      right: 17px
+
 .header
+  $this: &
   position: fixed
   background-color: $c-text
   top: 0
   left: 0
-  width: 100%
+  right: 0
   z-index: 15
   +flex(space-between, center)
   padding-right: 30px
   height: $header-height
   border-bottom: 1px solid $white-transp
+  
   +lg
     justify-content: flex-start
     height: $header-height-mob

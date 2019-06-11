@@ -61,7 +61,9 @@ export default function animateOnScroll() {
   const $els = $('.js-anim-el');
 
   $els.each((i, el) => {
-    const animator = new Animator(el);
+    const animator = new Animator(el, {
+      observer: { threshold: 0.5 }
+    });
     animator.init();
   });
 };
