@@ -8,6 +8,7 @@
     border: 1px solid  $gray-light
     height: 45px
     padding: 10px 12px
+    background-color: transparent
 
   &--arrow
     +before
@@ -24,3 +25,24 @@
       right: 12px
       top: 50%
       transform: translate(0, -50%) rotate(-135deg)
+
+  &--md
+    input
+      border: 0
+      border-bottom: 1px solid  $gray
+  &--gray
+    color: $gray-dark
+
+    input
+      border-color: $gray-dark
+      font-size: $fz
+      padding: 5px 0
+      height: 35px
+
+  &--lg
+    input
+      border: 0
+      border-bottom: 1px solid  $gray
+      padding: 5px 0
+      text-transform: uppercase
+      height: 35px

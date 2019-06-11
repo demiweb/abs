@@ -267,7 +267,8 @@ input, textarea
     +md
       display: none
 
-.subsribe
+.subscribe
+  $this: &
   text-align: center
   &__inner
     max-width: 480px
@@ -275,9 +276,20 @@ input, textarea
     margin-right: auto
   &__title
     margin-bottom: 15px
+  &__subttl
+    margin-bottom: 50px
   &__form
     .input
       margin-bottom: 15px
+
+  &--lg
+    #{$this}__inner
+      max-width: 930px
+    #{$this}__title
+      margin-bottom: 35px
+    #{$this}__text
+      margin-bottom: 50px
+    #{$this}__form
 
 
 // ============ animations ===============

@@ -56,6 +56,24 @@ export default function setSliders() {
         on: {
           init: setLazy
         }
+      },
+      contacts: {
+        slidesPerView: 'auto',
+        spaceBetween: 40,
+        centeredSlides: true,
+        grabCursor: true,
+        loop: true,
+        breakpoints: {
+          992: {
+            spaceBetween: 20,
+          },
+          768: {
+            spaceBetween: 10,
+          }
+        },
+        on: {
+          init: setLazy
+        }
       }
     };
 

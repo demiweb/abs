@@ -123,7 +123,83 @@
   &--thumbs
     // box-sizing: border-box
     .slide
-      
+  &--contacts
+    box-sizing: border-box
+    .slide
+      width: percentage(1410/1920)
+      // +vertical
+      height: auto
+      &.swiper-slide-active
+        &:before
+          display: none
+        .slide__title
+          display: block
+        .slide__bottom
+          visibility: visible
+          opacity: 1
+        .slide__img
+          transform: scaleY(1)
+          display: block
+          filter: grayscale(0)
+
+      &__img
+        +cover
+        padding-top: 55%
+        transform: scaleY(.9)
+        position: relative
+        width: 100%
+        filter: grayscale(100%)
+        +tr(transform .3s, filter .3s)
+        +sm
+          padding-top: 65%
+        +xs
+          padding-top: 75%
+      &__title
+        position: absolute
+        bottom: 5%
+        left: 5%
+        display: none
+      &__btn
+        text-align: center
+        +lg
+          .btn
+            min-width: 0
+            width: 100%
+      &__bottom
+        padding-top: 20px
+        +flex(space-between, center, row, wrap)
+        visibility: hidden
+        opacity: 0
+        +tr(visibility .3s, opacity .3s, transform .3s)
+        +md
+          // display: block
+        .text, .slide__btn
+          width: 33.33333%
+        .slide__btn
+          +md
+            order: 2
+            width: 100%
+        .text
+          padding-right: 10px
+          +md
+            margin-bottom: 10px
+          &:first-child
+            +md
+              order: 0
+              width: 50%
+            +sm
+              width: 100%
+              
+          &:last-child
+            text-align: right
+            padding-right: 0
+            +md
+              order: 1
+              width: 50%
+            +sm
+              width: 100%
+              text-align: left
+          
 
 .assort-slide
   // display: flex !important

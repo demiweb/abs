@@ -4,6 +4,7 @@ import animateItemPage from './animateItemPage';
 import animateAbout from './animateAbout';
 import animateNewsPage from './animateNewsPage';
 import animateArticlePage from './animateArticlePage';
+import animateContactsPage from './animateContactsPage';
 
 function setAnimation(func) {
   if (window.matchMedia('(max-width: 1199px)').matches) {
@@ -19,6 +20,7 @@ export default function setAnimations() {
   setAnimation(animateAbout);
   setAnimation(animateNewsPage);
   setAnimation(animateArticlePage);
+  setAnimation(animateContactsPage);
 };
 
 

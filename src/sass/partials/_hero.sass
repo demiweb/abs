@@ -4,6 +4,8 @@
   padding-top: $header-height
   +flex(center, center)
   position: relative
+  padding-left: 15px
+  padding-right: 15px
   opacity: 0
   +before
     +coverdiv
@@ -18,6 +20,11 @@
   &__title
     margin-bottom: 10px
     opacity: 0
+  &__subttl
+    max-width: 930px
+    margin-left: auto
+    margin-right: auto
+    padding-top: 10px
   &__breadcrumbs
     opacity: 0
   &__breadcrumbs-top
@@ -27,3 +34,8 @@
     z-index: 10
     +lg
       top: calc(#{$header-height-mob} + 10px)
+
+  &--lg
+    min-height: 75vh
+    +sm
+      min-height: 50vh

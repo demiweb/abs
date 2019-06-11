@@ -36,9 +36,7 @@
   &--gray
     background-color: $gray-lightest
   &--bg
-    +cover
-  &--lg
-    padding-bottom: var(--section-padding-lg, 100px)
+    +cover  
   &--oil
     padding-top: 20%
     padding-bottom: var(--section-padding-lg, 100px)
@@ -56,6 +54,16 @@
     #{$this}__word
       top: -.3em
       left: 10%
+  &--lg
+    padding-bottom: var(--section-padding-lg, 100px)
+  &--md
+    padding-top: var(--section-padding-md, 65px)
+    padding-bottom: var(--section-padding-md, 65px)
+  &--black
+    background-color: $black
+  &--al-full
+    min-height: 75vh
+    +flex(center, center, column)
   
 .section-block
   position: relative

@@ -14,6 +14,8 @@ h1, h2, h3, h4, h5, h6
     color: $white
   &--bold
     +bold
+  &--ttn
+    text-transform: none
 
 .h1, h1
   font-size: 36px
@@ -34,7 +36,7 @@ h1, h2, h3, h4, h5, h6
   +bold
   font-size: 60px
   line-height: 1
-  +css-lock(40, 60, 576, 1199, font-size)
+  +css-lock(30, 60, 320, 1199, font-size)
 
   &--md
     +css-lock(28, 48, 576, 1199, font-size)
@@ -46,7 +48,7 @@ h1, h2, h3, h4, h5, h6
   +thin
   color: $white
   line-height: 1.2
-  +css-lock(24, 32, 576, 1199, font-size)
+  +css-lock(18, 32, 320, 1199, font-size)
 
 .h3, h3
   +bold
@@ -165,6 +167,12 @@ h1, h2, h3, h4, h5, h6
       left: 0
       transform: translate(0, 0)
       width: 20px
+  &--white
+    +before
+      border-color: $white
+    +after
+      border-color: $white
+
 
 .title-lines
   @extend .title-under
