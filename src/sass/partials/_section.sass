@@ -80,14 +80,15 @@
   &--error
     background-color: #eeeef0
     +cover
+    background-position: 100% 0
     +flex(center, flex-end, column)
     padding-left: var(--section-padding-lg, 100px)
     padding-right: var(--section-padding-lg, 100px)
     position: relative
-    +before
-      +coverdiv
-      background-color: rgba($white, .5)
-      z-index: 0
+    // +before
+    //   +coverdiv
+    //   background-color: rgba($white, .5)
+    //   z-index: 0
     +md
       align-items: center
       padding-left: 15px
