@@ -14,7 +14,9 @@
       border-color: $red-accent
   &.input--placeholder
     label
-      top: 32px
+      // top: 32px
+      top: calc(50% + 10px)
+      transform: translate(0, -50%)
       left: 10px
 
   &--arrow
@@ -24,13 +26,16 @@
       width: 15px
       background-color: currentColor
       right: 12px
-      top: 40px
+      // top: 40px
+      top: calc(50% + 10px)
+      transform: translate(0, -50%)
     +after
       +icon-arrow(10, 10, 1, currentColor, -135)
       position: absolute
       right: 12px
-      transform: rotate(-135deg)
-      top: 36px
+      // top: 36px
+      top: calc(50% + 10px)
+      transform: translate(0, -50%) rotate(-135deg)
     &.input--placeholder
       padding-top: 20px
   &--md
@@ -40,7 +45,9 @@
     &.input--placeholder
       label
         left: 0        
-        top: 1em
+        // top: 1em
+        top: calc(50% + 10px)
+        transform: translate(0, -50%)
       input
         &:focus + label
           transform: translate(-.7em, 0) scale(.8)
@@ -65,12 +72,16 @@
     &.input--placeholder
       label
         left: 0
-        top: 1.2em
+        // top: 1.2em
+        top: calc(50% + 10px)
+        transform: translate(0, -50%)
   &--placeholder
     padding-top: 15px
     label
       position: absolute      
-      top: 1.2em
+      // top: 1.2em
+      top: calc(50% + 10px)
+      transform: translate(0, -50%)
       left: 0
       pointer-events: none
       +tr(transform .3s, top .3s, color .3s)
