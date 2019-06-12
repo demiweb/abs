@@ -40,6 +40,10 @@ body
     width: 100%
     height: 100vh
     +cover
+  &--no-hero
+    padding-top: $header-height
+    +lg
+      padding-top: $header-height-mob
 
 .container
   margin-left: auto
@@ -194,6 +198,12 @@ input, textarea
     &.is-active
       +before
         +icon-arrow(10, 10, 1, currentColor, -45)
+  &--red
+    color: $red-accent
+    border-color: $red-accent
+    +hover
+      background-color: $white
+      border-color: $white
 
 
 .line-sm

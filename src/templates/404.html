@@ -1,0 +1,29 @@
+---
+title: '404'
+page: '404'
+outClass: 'out--no-hero'
+header: {
+  mod: ''
+}
+hero: {
+  title: '<small>АКТУАЛЬНІ</small> НОВИНИ',
+  titleMod: 'title--white',
+  bgImage: 'bg-hero-news.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'ABS' },
+      { item: '/' },
+      { link: 'Новини', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_404.html" %}
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

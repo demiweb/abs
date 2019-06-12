@@ -73,6 +73,25 @@
       +sm
         margin-bottom: 30px
         margin-top: 15px
+  &--full
+    min-height: calc(100vh - #{$header-height} - #{$footer-height})
+    +lg
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height})
+  &--error
+    background-color: #eeeef0
+    +cover
+    +flex(center, flex-end, column)
+    padding-left: var(--section-padding-lg, 100px)
+    padding-right: var(--section-padding-lg, 100px)
+    position: relative
+    +before
+      +coverdiv
+      background-color: rgba($white, .5)
+      z-index: 0
+    +md
+      align-items: center
+      padding-left: 15px
+      padding-right: 15px
   
 .section-block
   position: relative

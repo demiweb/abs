@@ -10,3 +10,4 @@ PageList:
 - file: article-page.html
 - file: contacts.html
 - file: article-page-pdf.html
+- file: 404.html

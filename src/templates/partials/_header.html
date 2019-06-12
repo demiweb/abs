@@ -1,4 +1,4 @@
-{% if page === 'home' or page === 'item-page' or page === 'item-page-2' or page === 'catalog' %}
+{% if page === 'home' or page === 'item-page' or page === 'item-page-2' or page === 'catalog' or page === '404' %}
 {% set productionLink = 'is-active' %}
 {% else %}
 {% set productionLink = '' %}
@@ -16,7 +16,7 @@
 {% set aboutLink = '' %}
 {% endif %}
 
-{% if page === 'news' or page === 'article-page' %}
+{% if page === 'news' or page === 'article-page' or page === 'article-page-pdf' %}
 {% set newsLink = 'is-active' %}
 {% else %}
 {% set newsLink = '' %}
