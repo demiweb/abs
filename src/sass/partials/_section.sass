@@ -55,6 +55,10 @@
   &--red
     background-color: $red-accent
   &--principles
+    +sm
+      padding-bottom: 0
+      .lines
+        display: none
     #{$this}__word
       top: -.3em
       left: 10%
@@ -81,7 +85,7 @@
     background-color: #eeeef0
     +cover
     background-size: auto
-    background-position: 100% 0
+    background-position: 100% 50%
     +flex(center, flex-end, column)
     padding-left: var(--section-padding-lg, 100px)
     padding-right: var(--section-padding-lg, 100px)
