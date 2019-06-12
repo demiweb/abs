@@ -23,7 +23,7 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class=" is-active js-hover">продукція</a>
+              <li><a href="#" class="  js-hover">продукція</a>
                 <div class="header__subnav">
                   <!-- begin nav -->
                   <nav class="nav nav--sub">
@@ -37,7 +37,7 @@
                   <!-- end nav -->
                 </div>
               </li>
-              <li><a href="#">Про нас</a></li>
+              <li><a href="#" class=" is-active">Про нас</a></li>
               <li><a href="#">новини</a></li>
               <li><a href="#">контакти</a>
                 <div class="header__social">
@@ -113,7 +113,7 @@
       </section>
       <!-- end fullpage-section -->
       <!-- begin section -->
-      <section class="section js-section-2">
+      <section class="section section--white">
         <div class="lines lines--fu lines--section">
           <div class="line line--1"></div>
           <div class="line line--2"></div>
@@ -129,7 +129,7 @@
           </div>
           <div class="section-block__img js-lazy" data-background-image="img/about/img-2.jpg">
           </div>
-          <div class="section-block__img-right js-lazy js-anim-el js-parallax" data-anim-name="fadeInLeft" data-anim-duration="0.5s" data-rellax-percentage="0.1" data-background-image="img/about/img-1.jpg"></div>
+          <div class="section-block__img-right js-lazy js-parallax" data-rellax-percentage="0.1" data-background-image="img/about/img-1.jpg"></div>
         </div>
       </section>
       <!-- end section -->
@@ -261,7 +261,7 @@
       </section>
       <!-- end section -->
       <!-- begin section -->
-      <section class="section section--lg">
+      <section class="section section--white section--lg section--features">
         <div class="lines lines--section lines--fu">
           <div class="line line--1"></div>
           <div class="line line--2"></div>
@@ -302,7 +302,7 @@
       </section>
       <!-- end section -->
       <!-- begin section -->
-      <section class="section section--red section--principles overflow-hidden">
+      <section class="section section--red section--principles">
         <div class="lines lines--fu lines--5 lines--section lines--section-red">
           <div class="line line--1"></div>
           <div class="line line--2"></div>
@@ -358,7 +358,7 @@
             </div>
             <!-- end principle -->
           </div>
-          <div class="principles__right js-lazy js-anim-el" data-background-image="img/about/alessio-lin-236486-unsplash.jpg" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+          <div class="principles__right js-lazy" data-background-image="img/about/alessio-lin-236486-unsplash.jpg">
             <div class="principles__right-word js-parallax js-parallax-vertical-text">principle</div>
             <div class="principles__right-block">
               <div class="principles__right-title title-under title-under--sm title-under--left">
@@ -403,7 +403,7 @@
       </section>
       <!-- end section -->
       <!-- begin section -->
-      <section class="section">
+      <section class="section section--white">
         <div class="lines lines--fu lines--section">
           <div class="line line--1"></div>
           <div class="line line--2"></div>
@@ -582,22 +582,25 @@
           <form>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="text" placeholder="ІМ’Я">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="text">
+                <label>ІМ’Я</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="tel" placeholder="телефон">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="tel">
+                <label>телефон</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin textarea -->
-              <div class="textarea textarea--lg">
-                <textarea placeholder="повідомлення" value=""></textarea>
+              <div class="textarea textarea--lg textarea--lg">
+                <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
+                <label>повідомлення</label>
               </div>
               <!-- end textarea -->
             </div>

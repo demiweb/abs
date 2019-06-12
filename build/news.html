@@ -23,7 +23,7 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class=" is-active js-hover">продукція</a>
+              <li><a href="#" class="  js-hover">продукція</a>
                 <div class="header__subnav">
                   <!-- begin nav -->
                   <nav class="nav nav--sub">
@@ -38,7 +38,7 @@
                 </div>
               </li>
               <li><a href="#">Про нас</a></li>
-              <li><a href="#">новини</a></li>
+              <li><a href="#" class=" is-active">новини</a></li>
               <li><a href="#">контакти</a>
                 <div class="header__social">
                   <!-- begin social -->
@@ -121,7 +121,9 @@
           <div class="news__items">
             <!-- begin news-item -->
             <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__img js-lazy" data-background-image="img/news/news_03.jpg"></div>
+              <div class="news-item__img">
+                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_03.jpg"></div>
+              </div>
               <div class="news-item__content">
                 <div class="news-item__title">
                   <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
@@ -144,12 +146,16 @@
                   <a href="#" class="btn btn--sec">читати більше</a>
                 </div>
               </div>
-              <div class="news-item__img js-lazy" data-background-image="img/news/news_06.jpg"></div>
+              <div class="news-item__img">
+                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_06.jpg"></div>
+              </div>
             </div>
             <!-- end news-item -->
             <!-- begin news-item -->
             <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__img js-lazy" data-background-image="img/news/news_08.jpg"></div>
+              <div class="news-item__img">
+                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_08.jpg"></div>
+              </div>
               <div class="news-item__content">
                 <div class="news-item__title">
                   <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
@@ -172,7 +178,9 @@
                   <a href="#" class="btn btn--sec">читати більше</a>
                 </div>
               </div>
-              <div class="news-item__img js-lazy" data-background-image="img/news/news_11.jpg"></div>
+              <div class="news-item__img">
+                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_11.jpg"></div>
+              </div>
             </div>
             <!-- end news-item -->
           </div>
@@ -235,22 +243,25 @@
           <form>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="text" placeholder="ІМ’Я">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="text">
+                <label>ІМ’Я</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="tel" placeholder="телефон">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="tel">
+                <label>телефон</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin textarea -->
-              <div class="textarea textarea--lg">
-                <textarea placeholder="повідомлення" value=""></textarea>
+              <div class="textarea textarea--lg textarea--lg">
+                <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
+                <label>повідомлення</label>
               </div>
               <!-- end textarea -->
             </div>

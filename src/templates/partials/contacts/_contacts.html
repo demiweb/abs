@@ -1,8 +1,8 @@
 {%set
 contacts = [
-  { icon: 'location', title: 'АДРЕСА', text: 'Головний офіс вул. Залізничне Шосе, 6, Київ, 01103' },
-  { icon: 'phone', title: 'ЗВ’ЯЗАТИСЯ НАПРЯМУ', text: '<a href="tel:+380504947606">+38 050 494 76 06</a>' },
-  { icon: 'email', title: 'E-MAIL', text: '<a href="mailto:info@abss.com.ua">info@abss.com.ua</a>' }
+  { delay: '',icon: 'location', title: 'АДРЕСА', text: 'Головний офіс вул. Залізничне Шосе, 6, Київ, 01103' },
+  { delay: '.2s',icon: 'phone', title: 'ЗВ’ЯЗАТИСЯ НАПРЯМУ', text: '<a href="tel:+380504947606">+38 050 494 76 06</a>' },
+  { delay: '.4s',icon: 'email', title: 'E-MAIL', text: '<a href="mailto:info@abss.com.ua">info@abss.com.ua</a>' }
 ]
 %}
 
@@ -13,7 +13,7 @@ contacts = [
     <div class="contacts">
       {% for i in contacts %}
       <!-- begin contact -->
-      <div class="contact">
+      <div class="contact js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="{{ i.delay }}">
         <div class="contact__icon">
           {{ mixins.icon(i.icon) }}
         </div>

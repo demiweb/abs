@@ -205,6 +205,8 @@ input, textarea
   &--text
     background-color: $c-text
     transform: translateY(0)
+  &--red
+    background-color: $red-accent
 
 .btn-link
   font-size: $fz-sm
@@ -293,6 +295,10 @@ input, textarea
     #{$this}__text
       margin-bottom: 50px
     #{$this}__form
+      .input
+        margin-bottom: 0
+        +xs
+          margin-bottom: 10px
 
 
 // ============ animations ===============
@@ -342,7 +348,7 @@ input, textarea
 @keyframes fadeInLeft
   0%
     opacity: 0
-    transform: translate(100%, 0)
+    transform: translate(100px, 0)
   100%
     opacity: 1
     transform: translate(0, 0)

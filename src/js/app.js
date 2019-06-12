@@ -21,6 +21,8 @@ import setGallery from './components/setGallery';
 import toggleBlock from './components/toggleBlock';
 import truncateText from './components/truncateText';
 import setPopups from './components/setPopups';
+import toggleInputFocus from './components/toggleInputFocus';
+import setTextareaHeight from './components/setTextareaHeight';
 
 $(function() {
   cssVars();
@@ -43,4 +45,6 @@ $(function() {
   toggleBlock();
   truncateText();
   setPopups();
+  toggleInputFocus();
+  setTextareaHeight();
 });

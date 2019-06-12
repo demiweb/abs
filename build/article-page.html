@@ -23,7 +23,7 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class=" is-active js-hover">продукція</a>
+              <li><a href="#" class="  js-hover">продукція</a>
                 <div class="header__subnav">
                   <!-- begin nav -->
                   <nav class="nav nav--sub">
@@ -38,7 +38,7 @@
                 </div>
               </li>
               <li><a href="#">Про нас</a></li>
-              <li><a href="#">новини</a></li>
+              <li><a href="#" class=" is-active">новини</a></li>
               <li><a href="#">контакти</a>
                 <div class="header__social">
                   <!-- begin social -->
@@ -213,8 +213,9 @@
                 <div class="subscribe__form">
                   <form>
                     <!-- begin input -->
-                    <div class="input input--arrow">
-                      <input type="email" placeholder="Введіть ваш E-mail">
+                    <div class="input input--arrow input--placeholder">
+                      <input class="js-input-placeholder" type="email">
+                      <label>Введіть ваш E-mail</label>
                     </div>
                     <!-- end input -->
                     <button class="btn btn--sec btn--md">ПІДТВЕРДИТИ ПІДПИСКУ</button>
@@ -279,22 +280,25 @@
           <form>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="text" placeholder="ІМ’Я">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="text">
+                <label>ІМ’Я</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="tel" placeholder="телефон">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="tel">
+                <label>телефон</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin textarea -->
-              <div class="textarea textarea--lg">
-                <textarea placeholder="повідомлення" value=""></textarea>
+              <div class="textarea textarea--lg textarea--lg">
+                <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
+                <label>повідомлення</label>
               </div>
               <!-- end textarea -->
             </div>

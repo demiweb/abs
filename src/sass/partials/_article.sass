@@ -49,27 +49,7 @@
       z-index: 0
       fill: $gray-light
       font-size: 50px
-  // .double-img
-  //   position: relative
-  //   padding-top: 35%
-  //   +before
-  //     position: absolute
-  //     z-index: 0
-  //   &__img
-  //     position: absolute
-  //     width: 50%
-  //     +cover
-  //     padding-top: 30%
-  //     top: 50%
-  //     transform: translate(0, -50%)
-  //     z-index: 1
-  //     left: 0
-  //   &__img-lg
-  //     padding-top: 34%
-  //     width: percentage(7/12)
-  //     z-index: 2
-  //     right: 0
-  //     left: auto
+
 
 .more-articles
   --more-articles-col-gap: 15px
@@ -89,12 +69,30 @@
       width: calc(100% - (var(--more-articles-col-gap, 15px) * 2))
 
 .article-sm
+  $this: &
   display: block
+  +hover
+    #{$this}__img
+      +scale(1.1)
+      +before
+        visibility: visible
+        opacity: 1
+    #{$this}__content
+      transform: translate(0, 20px)
   &__img
     display: block
     +cover
     padding-top: 120%
     margin-bottom: 15px
+    +tr(transform .3s) 
+    position: relative
+    +before
+      +coverdiv
+      background-color: rgba($red-accent, .75)
+      z-index: 1
+      visibility: hidden
+      opacity: 0
+      +tr(opacity .3s, visibility .3s)
     +xs
       padding-top: 60%
   &__date
@@ -108,3 +106,6 @@
   &__text
     max-height: 4.1em
     display: block
+  &__content
+    display: block
+    +tr(transform .3s)

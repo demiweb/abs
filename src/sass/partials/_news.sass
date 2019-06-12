@@ -12,8 +12,12 @@
   --news-item-margin: 20px
   --news-item-padding-vertical: 125px
   --news-item-padding-horizontal: 50px
+  $this: &
   +flex()
   background-color: $black
+  +hover
+    #{$this}__img-bg
+      +scale(1)
   +xl
     --news-item-margin: 15px
     --news-item-padding-vertical: 100px
@@ -35,13 +39,19 @@
     +sm
       width: auto
   &__img
-    +cover
+    position: relative
+    overflow: hidden
     background-color: $gray
     +sm
       padding-top: 30%
       order: 0
     +xs
       padding-top: 50%
+  &__img-bg
+    +cover
+    +coverdiv
+    +scale(1.1)
+    +tr(transform .3s)
   &__title
     margin-bottom: var(--news-item-margin, 20px)
   &__text

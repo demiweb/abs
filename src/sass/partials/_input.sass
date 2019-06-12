@@ -9,6 +9,13 @@
     height: 45px
     padding: 10px 12px
     background-color: transparent
+    +tr(border-color .3s)
+    &:focus
+      border-color: $red-accent
+  &.input--placeholder
+    label
+      top: 32px
+      left: 10px
 
   &--arrow
     +before
@@ -17,28 +24,33 @@
       width: 15px
       background-color: currentColor
       right: 12px
-      top: 50%
-      transform: translate(0, -50%)
+      top: 40px
     +after
       +icon-arrow(10, 10, 1, currentColor, -135)
       position: absolute
       right: 12px
-      top: 50%
-      transform: translate(0, -50%) rotate(-135deg)
-
+      transform: rotate(-135deg)
+      top: 36px
+    &.input--placeholder
+      padding-top: 20px
   &--md
     input
       border: 0
       border-bottom: 1px solid  $gray
+    &.input--placeholder
+      label
+        left: 0        
+        top: 1em
+      input
+        &:focus + label
+          transform: translate(-.7em, 0) scale(.8)
   &--gray
     color: $gray-dark
-
     input
       border-color: $gray-dark
       font-size: $fz
       padding: 5px 0
       height: 35px
-
   &--lg
     input
       border: 0
@@ -46,3 +58,27 @@
       padding: 5px 0
       text-transform: uppercase
       height: 35px
+      font-size: $fz-md
+    label
+      font-size: $fz-md
+      text-transform: uppercase
+    &.input--placeholder
+      label
+        left: 0
+        top: 1.2em
+  &--placeholder
+    padding-top: 15px
+    label
+      position: absolute      
+      top: 1.2em
+      left: 0
+      pointer-events: none
+      +tr(transform .3s, top .3s, color .3s)
+    input
+      &:focus + label
+        top: 0
+        transform: translate(-.3em, 0) scale(.8)
+        color: $red-accent
+      &.has-text + label
+        top: 0
+        transform: translate(-.3em, 0) scale(.8)

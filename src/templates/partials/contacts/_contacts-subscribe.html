@@ -4,22 +4,22 @@
     <!-- begin subscribe -->
     <div class="subscribe subscribe--lg">
       <div class="subscribe__inner">
-        <div class="subscribe__title">
+        <div class="subscribe__title js-anim-el" data-anim-name="fadeInBottom">
           <h2 class="title title--white title--ttn">Бажаєте бути в курсі всіх останніх новин компанії ABS?</h2>
         </div>
 
-        <div class="subscribe__subttl is-center text text--thin text--gray">Залиште вашу електронну адресу і отримуйте останні новини першими.</div>
+        <div class="subscribe__subttl is-center text text--thin text--gray js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.2s">Залиште вашу електронну адресу і отримуйте останні новини першими.</div>
 
-        <div class="subscribe__form form form--subscribe-lg">
+        <div class="subscribe__form form form--subscribe-lg js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.4s">
           <form>
             <div class="form__field">
               {{ mixins.input(
                 name = 'input',
-                mod = 'input--md input--gray',
+                mod = 'input--md input--gray input--placeholder',
                 type = 'email',
-                placeholder = 'E-mail*',
+                label = { last: 'Введіть ваш E-mail' },
                 value = '',
-                fieldClass = ''
+                fieldClass = 'js-input-placeholder'
               ) }}
 
               <div class="form__btn">
@@ -29,7 +29,6 @@
                   href = false
                 ) }}
               </div>
-
               
             </div>
 

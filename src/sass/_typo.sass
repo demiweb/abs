@@ -12,6 +12,8 @@ h1, h2, h3, h4, h5, h6
     color: $red
   &--white
     color: $white
+  &--red
+    color: $red-accent
   &--bold
     +bold
   &--ttn
@@ -42,6 +44,8 @@ h1, h2, h3, h4, h5, h6
     +css-lock(28, 48, 576, 1199, font-size)
   &--ttn
     text-transform: none
+  &--text
+    color: $c-text
 
 .h2-subttl
   font-size: 32px
@@ -83,13 +87,14 @@ h1, h2, h3, h4, h5, h6
   color: $white
   font-size: 18px
   line-height: 1.2
-  +sm
-    font-size: $fz
 
   &--blue
     color: $blue
   &--ttn
     text-transform: none
+  &--xl
+    +bold
+    +css-lock(21, 28, 576, 1199, font-size)
   &--lg
     +bold
     +css-lock(21, 26, 576, 1199, font-size)
@@ -98,6 +103,8 @@ h1, h2, h3, h4, h5, h6
     +css-lock(21, 24, 576, 1199, font-size)
   &--black
     color: $black
+  &--text
+    color: $c-text
 
 .h5, h5
   font-size: 16px
@@ -155,6 +162,16 @@ h1, h2, h3, h4, h5, h6
       display: none
     +after
       width: 80px
+  &--md
+    padding-bottom: 25px
+    +before
+      display: none
+    +after
+      left: 0
+      transform: translate(0, 0)
+      border-bottom-width: 5px
+      width: 80px
+      border-color: $red-accent
   &--left
     +after
       transform: translate(0, 0)

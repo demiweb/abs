@@ -1,8 +1,8 @@
 {% set 
 form = [
-  { name: 'input', mod: 'input--lg', type: 'text', placeholder: 'ІМ’Я' },
-  { name: 'input', mod: 'input--lg', type: 'tel', placeholder: 'телефон' },
-  { name: 'textarea', mod: 'textarea--lg', type: '', placeholder: 'повідомлення' }
+  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'text', placeholder: 'ІМ’Я' },
+  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'tel', placeholder: 'телефон' },
+  { name: 'textarea', mod: 'textarea--lg textarea--lg', fieldClass: 'js-textarea js-input-placeholder', type: '', placeholder: 'повідомлення' }
 ]
 %}
 
@@ -29,7 +29,8 @@ form = [
           name = i.name,
           mod = i.mod,
           type = i.type,
-          placeholder = i.placeholder
+          label = { last: i.placeholder },
+          fieldClass = i.fieldClass
         ) }}
       </div>
       {% endfor %}

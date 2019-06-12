@@ -9,3 +9,4 @@ PageList:
 - file: news.html
 - file: article-page.html
 - file: contacts.html
+- file: article-page-pdf.html

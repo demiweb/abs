@@ -1,3 +1,27 @@
+{% if page === 'home' or page === 'item-page' or page === 'item-page-2' or page === 'catalog' %}
+{% set productionLink = 'is-active' %}
+{% else %}
+{% set productionLink = '' %}
+{% endif %}
+
+{% if page === 'contacts' %}
+{% set contactsLink = 'is-active' %}
+{% else %}
+{% set contactsLink = '' %}
+{% endif %}
+
+{% if page === 'about' %}
+{% set aboutLink = 'is-active' %}
+{% else %}
+{% set aboutLink = '' %}
+{% endif %}
+
+{% if page === 'news' or page === 'article-page' %}
+{% set newsLink = 'is-active' %}
+{% else %}
+{% set newsLink = '' %}
+{% endif %}
+
 <!-- begin header -->
 <header class="header{% if header.mod %} {{ header.mod }}{% endif %}">
   <div class="header__logo">
@@ -13,7 +37,7 @@
       list = [        
         {
           link: 'продукція',
-          modLink: 'is-active',
+          modLink: productionLink,
           item: '<div class="header__subnav is-active">'+
            mixins.list(
               name = 'nav',
@@ -27,10 +51,11 @@
             ) 
         +'</div>'
         },
-        { link: 'Про нас' },
-        { link: 'новини' },
+        { link: 'Про нас', modLink: aboutLink },
+        { link: 'новини', modLink: newsLink },
         {
           link: 'контакти',
+          modLink: contactsLink,
           item:  '<div class="header__social">'+
             mixins.list(
               name = 'social',
@@ -51,7 +76,7 @@
       list = [        
         {
           link: 'продукція',
-          modLink: 'is-active js-hover',
+          modLink: productionLink + ' js-hover',
           item: '<div class="header__subnav">'+
            mixins.list(
               name = 'nav',
@@ -65,10 +90,11 @@
             ) 
         +'</div>'
         },
-        { link: 'Про нас' },
-        { link: 'новини' },
+        { link: 'Про нас', modLink: aboutLink },
+        { link: 'новини', modLink: newsLink },
         {
           link: 'контакти',
+          modLink: contactsLink,
           item:  '<div class="header__social">'+
             mixins.list(
               name = 'social',
@@ -105,17 +131,5 @@
     <a href="#" class="burger js-burger"><span></span></a>
   </div>
 
-{#   <div class="header__subnav">
-    {{ mixins.list(
-        name = 'nav',
-        modifications = { wrap: 'nav--sub' },
-        list = [
-          { item: '', link: 'monbat batteries' },
-          { item: '', link: 'start batteries' },
-          { item: '', link: 'winmaxx' },
-          { item: '', link: 'MonOil' }
-        ]
-      ) }}
-  </div> #}
 </header>
 <!-- end header -->

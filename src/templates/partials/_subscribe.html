@@ -7,10 +7,10 @@
       <form>
         {{ mixins.input(
           name = 'input',
-          mod = 'input--arrow',
+          mod = 'input--arrow input--placeholder',
           type = 'email',
-          placeholder = 'Введіть ваш E-mail',
-          fieldClass = ''
+          label = { last: 'Введіть ваш E-mail' },
+          fieldClass = 'js-input-placeholder'
         ) }}
 
         {{ mixins.btn(

@@ -33,6 +33,10 @@
     position: absolute
     z-index: 0
 
+  &--white
+    +sm
+      .lines
+        display: none
   &--gray
     background-color: $gray-lightest
   &--bg
@@ -64,6 +68,11 @@
   &--al-full
     min-height: 75vh
     +flex(center, center, column)
+  &--features
+    #{$this}__title
+      +sm
+        margin-bottom: 30px
+        margin-top: 15px
   
 .section-block
   position: relative

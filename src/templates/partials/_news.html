@@ -18,7 +18,9 @@ news = [
       <!-- begin news-item -->
       <div class="news-item{% if i.odd %} news-item--red{% endif %} js-anim-el" data-anim-name="fadeInBottom">
         {% if i.odd %}
-        <div class="news-item__img js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        <div class="news-item__img">
+          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        </div>
 
         <div class="news-item__content">
           <div class="news-item__title">
@@ -52,7 +54,9 @@ news = [
           </div>
         </div>
 
-        <div class="news-item__img js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        <div class="news-item__img">
+          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        </div>
         {% endif %}
       </div>
       <!-- end news-item -->

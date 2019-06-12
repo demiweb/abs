@@ -2,7 +2,7 @@
   color: $gray
   .is-active
     pointer-events: none
-    color: $gray
+    color: currentColor
     text-decoration: none
     +before
       display: none
@@ -17,4 +17,6 @@
       position: absolute
       left: 0
       bottom: 0
-      border-bottom: 1px solid  $gray
+      border-bottom: 1px solid  currentColor
+  &--dark
+    color: $gray-dark

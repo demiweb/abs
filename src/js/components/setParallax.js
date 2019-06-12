@@ -57,7 +57,7 @@ export default function setParallax() {
     if(!els.length) return;
 
     const rellax = new Rellax('.js-parallax', {
-      speed: -1.5,
+      speed: 2,
       center: true,
       wrapper: null,
       round: true,
@@ -84,9 +84,22 @@ export default function setParallax() {
     textBlocks.forEach((block) => {
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-          const translate = block.style.transform.slice(12, -1).split(',')[1];
+          let translate = parseInt(block.style.transform.slice(12, -1).split(',')[1]);
+
+          // if (translate > 0) {
+          //   console.log('positive');
+          //   translate = -Math.abs(translate);
+          // } else {
+          //   console.log('negative');
+          //   // translate = 0;
+          // }
+
+
+          // translate = -Math.abs(translate);
+
+          // console.log(translate);
           
-          block.style.transform = `translate3d(0px, ${translate}, 0px) rotate(-90deg)`;
+          block.style.transform = `translate3d(0px, ${translate}px, 0px) rotate(-90deg)`;
         });
       });
 

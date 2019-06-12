@@ -1,14 +1,19 @@
 import anime from 'animejs';
 import PageAnimator from './PageAnimator';
 
-export default function animateNewsPage() {
-  const page = document.querySelector('.contacts-page');
+export default function animateItemPage() {
+  const page = document.querySelector('.article-pdf-page');
   if (!page) return;
+  
   const elements = {
+    main: document.querySelector('.main'),
     hero: document.querySelector('.hero'),
     title: document.querySelector('.hero__title'),
-    subttl: document.querySelector('.hero__subttl .h2-subttl')
+    breadcrumbs: document.querySelector('.hero__breadcrumbs'),
+    titleLine: document.querySelector('.line-sm')
   };
+
+  console.log(elements);
 
   const pageAnimator = new PageAnimator(elements);
   pageAnimator.animate = (elements) => {
@@ -16,23 +21,32 @@ export default function animateNewsPage() {
 
     tl    
       .add({
+        targets: elements.main,
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
         targets: elements.hero,
         opacity: [0, 1],
         duration: 500
-      })
+      }, 1)
       .add({
         targets: elements.title,
-        translateY: ['-100%', '0%'],
         opacity: [0, 1],
+        translateY: ['-100%', '0%'],
         duration: 500
       })
       .add({
-        targets: elements.subttl,
-        translateY: ['-110%', '0%'],
+        targets: elements.titleLine,
+        opacity: [0, 1],
+        translateY: ['-100%', '0%'],
+        duration: 500
+      })
+      .add({
+        targets: elements.breadcrumbs,
         opacity: [0, 1],
         duration: 500
       });
   };
-
   pageAnimator.init();
 };
