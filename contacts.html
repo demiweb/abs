@@ -23,7 +23,7 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class=" is-active js-hover">продукція</a>
+              <li><a href="#" class="  js-hover">продукція</a>
                 <div class="header__subnav">
                   <!-- begin nav -->
                   <nav class="nav nav--sub">
@@ -39,7 +39,7 @@
               </li>
               <li><a href="#">Про нас</a></li>
               <li><a href="#">новини</a></li>
-              <li><a href="#">контакти</a>
+              <li><a href="#" class=" is-active">контакти</a>
                 <div class="header__social">
                   <!-- begin social -->
                   <div class="social ">
@@ -107,7 +107,7 @@
       <!-- end hero -->
       <!-- begin section -->
       <section class="section section--md">
-        <div class="section__title title-under is-center">
+        <div class="section__title title-under is-center js-anim-el" data-anim-name="fadeInBottom">
           <h2 class="title">наші офіси</h2>
         </div>
         <!-- begin contacts-slider -->
@@ -200,7 +200,7 @@
           <!-- begin contacts -->
           <div class="contacts">
             <!-- begin contact -->
-            <div class="contact">
+            <div class="contact js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="">
               <div class="contact__icon">
                 <!-- begin icon-location -->
                 <svg viewBox="0 0 60 60" class="icon icon-location" width="1.000em" height="1em">
@@ -217,7 +217,7 @@
             </div>
             <!-- end contact -->
             <!-- begin contact -->
-            <div class="contact">
+            <div class="contact js-anim-el" data-anim-name="fadeInBottom" data-anim-delay=".2s">
               <div class="contact__icon">
                 <!-- begin icon-phone -->
                 <svg viewBox="0 0 60 60" class="icon icon-phone" width="1.000em" height="1em">
@@ -235,7 +235,7 @@
             </div>
             <!-- end contact -->
             <!-- begin contact -->
-            <div class="contact">
+            <div class="contact js-anim-el" data-anim-name="fadeInBottom" data-anim-delay=".4s">
               <div class="contact__icon">
                 <!-- begin icon-email -->
                 <svg viewBox="0 0 511.974 511.974" class="icon icon-email" width="1.000em" height="1em">
@@ -260,13 +260,13 @@
         <div class="container">
           <!-- begin contacts-form -->
           <div class="contacts-form">
-            <div class="contacts-form__left">
+            <div class="contacts-form__left js-anim-el" data-anim-name="fadeIn">
               <div class="contacts-form__title">
                 <h2 class="title title--bold title--ttn">Ми раді допомогти вам у будь-якому питанні, яке вас турбує</h2>
               </div>
               <div class="contacts-form__text text text--thin text--gray">Будь-ласка, заповніть форму праворуч та ми зв’яжемося з вами в найближчий час</div>
             </div>
-            <div class="contacts-form__right">
+            <div class="contacts-form__right js-anim-el" data-anim-name="fadeInLeft">
               <div class="contacts-form__form-title title-under is-center">
                 <h2 class="title title--bold">КОНТАКТНА ФОРМА</h2>
               </div>
@@ -274,32 +274,36 @@
                 <form>
                   <div class="form__field">
                     <!-- begin input -->
-                    <div class="input input--lg">
-                      <input type="text" placeholder="ІМ’Я">
+                    <div class="input input--lg input--placeholder">
+                      <input class="js-input-placeholder" type="text">
+                      <label>ІМ’Я</label>
                     </div>
                     <!-- end input -->
                   </div>
                   <form>
                     <div class="form__field">
                       <!-- begin input -->
-                      <div class="input input--lg">
-                        <input type="tel" placeholder="телефон">
+                      <div class="input input--lg input--placeholder">
+                        <input class="js-input-placeholder" type="tel">
+                        <label>телефон</label>
                       </div>
                       <!-- end input -->
                     </div>
                     <form>
                       <div class="form__field">
                         <!-- begin input -->
-                        <div class="input input--lg">
-                          <input type="email" placeholder="E-MAIL">
+                        <div class="input input--lg input--placeholder">
+                          <input class="js-input-placeholder" type="email">
+                          <label>E-MAIL</label>
                         </div>
                         <!-- end input -->
                       </div>
                       <form>
                         <div class="form__field">
                           <!-- begin textarea -->
-                          <div class="textarea textarea--lg">
-                            <textarea placeholder="Повідомлення" value=""></textarea>
+                          <div class="textarea textarea--lg textarea--placeholder">
+                            <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
+                            <label>Повідомлення</label>
                           </div>
                           <!-- end textarea -->
                         </div>
@@ -320,16 +324,17 @@
           <!-- begin subscribe -->
           <div class="subscribe subscribe--lg">
             <div class="subscribe__inner">
-              <div class="subscribe__title">
+              <div class="subscribe__title js-anim-el" data-anim-name="fadeInBottom">
                 <h2 class="title title--white title--ttn">Бажаєте бути в курсі всіх останніх новин компанії ABS?</h2>
               </div>
-              <div class="subscribe__subttl is-center text text--thin text--gray">Залиште вашу електронну адресу і отримуйте останні новини першими.</div>
-              <div class="subscribe__form form form--subscribe-lg">
+              <div class="subscribe__subttl is-center text text--thin text--gray js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.2s">Залиште вашу електронну адресу і отримуйте останні новини першими.</div>
+              <div class="subscribe__form form form--subscribe-lg js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.4s">
                 <form>
                   <div class="form__field">
                     <!-- begin input -->
-                    <div class="input input--md input--gray">
-                      <input type="email" placeholder="E-mail*">
+                    <div class="input input--md input--gray input--placeholder">
+                      <input class="js-input-placeholder" type="email">
+                      <label>Введіть ваш E-mail</label>
                     </div>
                     <!-- end input -->
                     <div class="form__btn">
@@ -404,22 +409,25 @@
           <form>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="text" placeholder="ІМ’Я">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="text">
+                <label>ІМ’Я</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg">
-                <input type="tel" placeholder="телефон">
+              <div class="input input--lg input--placeholder">
+                <input class="js-input-placeholder" type="tel">
+                <label>телефон</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin textarea -->
-              <div class="textarea textarea--lg">
-                <textarea placeholder="повідомлення" value=""></textarea>
+              <div class="textarea textarea--lg textarea--lg">
+                <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
+                <label>повідомлення</label>
               </div>
               <!-- end textarea -->
             </div>
