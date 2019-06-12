@@ -77,13 +77,13 @@ pdfList = [
     <div class="container">
       
     
-      <div class="pdf-link-block__title title-under title-under--md">
+      <div class="pdf-link-block__title title-under title-under--md js-anim-el" data-anim-name="fadeInBottom">
         <h2 class="title title--ttn title--bold title--red">{{ i.title }}</h2>
       </div>
 
       {% for j in i.blocks %}
       <div class="pdf-link-block__block">
-        <div class="pdf-link-block__block-top">
+        <div class="pdf-link-block__block-top js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.3s">
           <div class="pdf-link-block__block-title">
             <h4 class="h4 h4--xl h4--text">{{ j.title }}</h4>
           </div>
@@ -93,7 +93,7 @@ pdfList = [
 
         <div class="pdf-link-block__items">
           {% for k in j.items %}
-          <a href="#" class="pdf-link-block__item">
+          <a href="#" class="pdf-link-block__item js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.5s">
             <span class="pdf-link-block__item-title">{{ k.link }}</span>
 
             <span class="pdf-link-block__meta">
