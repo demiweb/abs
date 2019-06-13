@@ -63,6 +63,10 @@ export default function setSliders() {
         centeredSlides: true,
         grabCursor: true,
         loop: true,
+        navigation: {
+          nextEl: next,
+          prevEl: prev,
+        },
         breakpoints: {
           992: {
             spaceBetween: 20,

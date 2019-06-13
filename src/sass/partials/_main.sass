@@ -186,7 +186,7 @@
     font-size: $fz
     padding-right: 10px
     +notlast
-      margin-bottom: 15px
+      // margin-bottom: 15px
     +xllopen
       width: 100%
     +lg
@@ -216,6 +216,10 @@
   padding: var(--content-block-padding, 20px)
   &__title
     margin-bottom: 15px
+    flex: 1
+    padding-right: 10px
+    +xllopen
+      margin-bottom: 0
     +md
       margin-bottom: 5px
   &__block
@@ -237,7 +241,7 @@
   &__img
     width: 25%
     +xllopen
-      margin-bottom: 15px
+      // margin-bottom: 15px
       margin-right: 10px
     +xl
       width: 15%
@@ -247,9 +251,7 @@
       // margin-bottom: 15px
     +md
       // margin-bottom: 5px
-  &__title
-    flex: 1
-    padding-right: 10px
+    
   &__price
     width: 30%
     +xllopen
@@ -258,3 +260,7 @@
     +lg
       width: 100%
       text-align: center
+
+  &--full
+    +xllopen
+      padding-top: 0

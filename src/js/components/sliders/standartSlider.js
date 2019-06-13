@@ -49,8 +49,8 @@ export default function animateStandartSlider(slider) {
     anime({
       easing: 'easeOutCubic',
       targets: getelements(previousSlide).block,
-      duration: 500,
-      translateY: ['0%', '100%'],
+      duration: 700,
+      // translateY: ['0%', '100%'],
       opacity: [1, 0]
     });
     // previous slide
@@ -71,8 +71,8 @@ export default function animateStandartSlider(slider) {
     anime({
       easing: 'easeOutCubic',
       targets: getelements(activeSlide).block,
-      duration: 500,
-      translateY: ['100%', '0%'],
+      duration: 700,
+      // translateY: ['100%', '0%'],
       opacity: [0, 1]
     });
     // active slide
@@ -105,7 +105,8 @@ export default function animateStandartSlider(slider) {
         activeSlide.style.zIndex = 5;
 
 
-        block.style.transform = 'translateY(0)';
+        // block.style.transform = 'translateY(0)';
+        block.style.opacity = '1';
         img.style.transform = 'translateY(0)';      
       },
       setTranslate(translate) {

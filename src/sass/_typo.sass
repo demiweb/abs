@@ -38,7 +38,10 @@ h1, h2, h3, h4, h5, h6
   +bold
   font-size: 60px
   line-height: 1
-  +css-lock(30, 60, 320, 1199, font-size)
+  +css-lock(30, 80, 320, 1199, font-size)
+
+  &--fu
+    +css-lock(30, 60, 320, 1199, font-size)
 
   &--md
     +css-lock(28, 48, 576, 1199, font-size)
@@ -56,7 +59,7 @@ h1, h2, h3, h4, h5, h6
 
 .h2-subttl
   font-size: 32px
-  +thin
+  +light
   color: $white
   line-height: 1.2
   +css-lock(18, 32, 320, 1199, font-size)
@@ -65,6 +68,8 @@ h1, h2, h3, h4, h5, h6
   +bold
   +css-lock(28, 38, 576, 1199, font-size)
   line-height: 1
+  +xllopen
+    font-size: 28px
   &--blue
     color: $blue
   &--ttu
@@ -87,6 +92,8 @@ h1, h2, h3, h4, h5, h6
   +light
   +css-lock(18, 21, 576, 1199, font-size)
   line-height: 1
+  +xllopen
+    font-size: 16px
 
 .h4, h4
   text-transform: uppercase

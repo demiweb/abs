@@ -20,10 +20,10 @@ export default function animateAssortSlider(slider) {
     const previousSlide = slides[mySlider.swiper.previousIndex];
     const activeSlide = slides[mySlider.swiper.activeIndex];
 
-    mySlider.setCounter({
-      activeSlide: mySlider.swiper.activeIndex,
-      htmlBlock: mySlider.GETTERS().counter
-    });
+    // mySlider.setCounter({
+    //   activeSlide: mySlider.swiper.activeIndex,
+    //   htmlBlock: mySlider.GETTERS().counter
+    // });
     mySlider.setCounterSm({
       activeSlide: mySlider.swiper.activeIndex,
       slidesAmount: mySlider.swiper.slides.length,
@@ -54,15 +54,15 @@ export default function animateAssortSlider(slider) {
     anime({
       easing: 'easeOutCubic',
       targets: getelements(previousSlide).title,
-      duration: 600,
-      translateY: [0, 100],
+      duration: 700,
+      // translateY: [0, 100],
       opacity: [1, 0]
     });
     anime({
       easing: 'easeOutCubic',
       targets: getelements(previousSlide).text,
-      duration: 500,
-      translateY: [0, 100],
+      duration: 700,
+      // translateY: [0, 100],
       opacity: [1, 0]
     });
     // previous slide
@@ -83,15 +83,15 @@ export default function animateAssortSlider(slider) {
     anime({
       easing: 'easeOutCubic',
       targets: getelements(activeSlide).title,
-      duration: 500,
-      translateY: [100, 0],
+      duration: 700,
+      // translateY: [100, 0],
       opacity: [0, 1]
     });
     anime({
       easing: 'easeOutCubic',
       targets: getelements(activeSlide).text,
-      duration: 600,
-      translateY: [100, 0],
+      duration: 700,
+      // translateY: [100, 0],
       opacity: [0, 1]
     });
     // active slide
@@ -124,9 +124,9 @@ export default function animateAssortSlider(slider) {
         const text = activeSlide.querySelector('.assort-slide__text');
 
         text.style.opacity = 1;
-        text.style.transform = 'translateY(0)';
+        // text.style.transform = 'translateY(0)';
         title.style.opacity = 1;
-        title.style.transform = 'translateY(0)';
+        // title.style.transform = 'translateY(0)';
         img.style.transform = 'translateY(0)';
         activeSlide.style.zIndex = 5;          
       },

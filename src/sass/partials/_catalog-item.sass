@@ -8,7 +8,7 @@
     padding-left: 15px
     padding-right: 15px
   +hover
-    background-color: $white
+    background-color: rgba($gray, .5)
     box-shadow: 0 0 15px rgba($black, .3)
     
   +md
@@ -24,17 +24,21 @@
     width: 40%
     display: block
     +xl
-      width: 25%
+      // width: 25%
     +lg
-      width: 30%
+      // width: 30%
     +md
-      width: 150px
-      height: 100px
+      width: 250px
+      height: 175px
       position: absolute
       top: 30px
       left: 0
     +xs
-      width: 100px
+      // width: 100px
+      width: 100%
+      height: auto
+      position: static
+      margin-bottom: 15px
   &__content
     flex-grow: 1
     display: block
@@ -44,9 +48,12 @@
     display: block
     +md
       // margin-bottom: 25px
-      padding-left: 150px
+      padding-left: 250px
+      margin-bottom: 120px
     +xs
       padding-left: 100px
+      margin-bottom: 25px
+      padding-left: 0
 
 
 .characteristics
@@ -61,6 +68,8 @@
     +xllopen
       width: auto
       flex-grow: 1
+      margin-left: 0
+      margin-right: 0
     +xl
       width: auto
       flex-grow: 1

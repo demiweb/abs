@@ -70,12 +70,12 @@ export default function setParallax() {
   
 
   // parallax for titles
-  const titles = [].slice.call(document.querySelectorAll('.js-parallax-title'));
+  // const titles = [].slice.call(document.querySelectorAll('.js-parallax-title'));
 
-  titles.forEach((title) => {
-    const titleParallax = new TitleParallax(title);
-    titleParallax.init();
-  });
+  // titles.forEach((title) => {
+  //   const titleParallax = new TitleParallax(title);
+  //   titleParallax.init();
+  // });
 
   // parallax for vertical text
   function animateVerticalText() {

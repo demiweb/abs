@@ -1,9 +1,25 @@
 {%set
 slider = [
-  { img: 'slider-1.jpg' },
-  { img: 'slider-2.jpg' },
-  { img: 'slider-1.jpg' },
-  { img: 'slider-2.jpg' }
+  {
+    img: 'slider-1.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы для легковых и грузовых автомобилей'
+  },
+  {
+    img: 'slider-2.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп. Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы'
+  },
+  {
+    img: 'slider-1.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы для легковых и грузовых автомобилей'
+  },
+  {
+    img: 'slider-2.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп. Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы'
+  }
 ]
 %}
 
@@ -14,8 +30,8 @@ slider = [
 
 
  <div class="section__block section-block">
-   <div class="section__title is-col-6-5 js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
-     <h2 class="title js-parallax-title"><strong>Широкий ассортимент</strong> аккумуляторных батарей включает:</h2>
+   <div class="section__title is-col-6-5 js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+     <h2 class="title"><strong>Широкий ассортимент</strong> аккумуляторных батарей включает:</h2>
    </div>
 
    <div class="section-block__slider js-anim-el" data-anim-name="fadeIn" data-anim-delay="0.5s">
@@ -31,12 +47,13 @@ slider = [
             <div class="slide assort-slide">
               <div class="assort-slide__content">
                 <div class="assort-slide__title">
-                  <h4 class="h4 h4--md h4--black">Стартерные аккумуляторы  
-                    для легковых и грузовых 
-                  автомобилей</h4>
+                  <h4 class="h4 h4--md h4--black">{{ i.title }}</h4>
                 </div>
 
-                <div class="assort-slide__text text text--gray text--thin">Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.</div>
+                <div class="assort-slide__text text text--gray text--thin">
+                  {{ i.text }}
+                
+                </div>
               </div>
 
               <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
@@ -58,9 +75,9 @@ slider = [
           <div class="slider-counter-sm__all">04</div>
         </div>
       </div>
-      <div class="slider--assort__counter text-stroke js-parallax js-counter">
+      {# <div class="slider--assort__counter text-stroke js-parallax js-counter">
         01
-      </div>
+      </div> #}
 
       <div class="slider--assort__btns">
         <button class="slider--assort__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>

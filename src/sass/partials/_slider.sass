@@ -69,6 +69,7 @@
         left: var(--section-padding, 40px)
       +sm
         left: 0
+        top: 260px
       +xs
         top: 200px
     &__counter
@@ -128,6 +129,30 @@
     .slide
   &--contacts
     box-sizing: border-box
+    &__wrap
+      #{$this}__prev,
+      #{$this}__next
+        // height: 100%        
+        width: 30%
+        background-color: transparent
+        width: 400px
+        top: 30px
+        bottom: 85px
+        transform: translate(0, 0)
+        border: 0
+        height: auto
+        width: calc(#{percentage(510/1920) / 2} - 40px)
+        +md
+          width: calc(#{percentage(510/1920) / 2} - 20px)
+          top: 20px
+          bottom: 100px
+        +sm
+          width: calc(#{percentage(510/1920) / 2} - 10px)
+          bottom: 125px
+      #{$this}__prev
+        left: 0
+      #{$this}__next
+        right: 0
     .slide
       width: percentage(1410/1920)
       // +vertical
@@ -221,7 +246,7 @@
   &__title
     margin-bottom: 25px
     opacity: 0
-    transform: translateY(100px)
+    // transform: translateY(100px)
     +md
       margin-bottom: 15px
   &__content
@@ -248,14 +273,18 @@
       margin-bottom: 20px
       // height: auto
       // height: 60%
-      padding-top: 35%
-    +xs
+      // padding-top: 35%
+    +sm
       padding-top: 0
+      height: 270px
+    +xs
+      // padding-top: 0
       height: 200px
+      margin-bottom: 30px
   &__text
     text-align: left
     opacity: 0
-    transform: translateY(100px)
+    // transform: translateY(100px)
 
 .arrow
   --arrow-size: 100px
@@ -332,7 +361,8 @@
     position: relative
     z-index: 1
     max-width: percentage(1310/1920)
-    transform: translateY(100%)
+    // transform: translateY(100%)
+    opacity: 0
     +lg
       padding-left: 15%
     +md

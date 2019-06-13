@@ -116,14 +116,14 @@ export default class AboutAnimator {
         targets: lines,
         duration: 700,
         translateY: ['-150%', '0%'],
-        delay: anime.stagger(300)
+        delay: anime.stagger(50)
       })
       .add({
         targets: letters,
         translateX: ['-100%', '-40%'],
         opacity: [0, 1],
         duration: 500
-      });
+      }, '-=500');
 
     observer.unobserve(section);
   };
