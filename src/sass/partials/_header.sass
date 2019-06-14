@@ -15,6 +15,8 @@
   padding-right: 30px
   height: $header-height
   border-bottom: 1px solid $white-transp
+  +xl
+    height: $header-height-md
   
   +lg
     justify-content: flex-start
@@ -45,6 +47,8 @@
       top: $header-height
       +lg
         top: $header-height-mob
+    +xl
+      margin-top: 0
     +lg
       position: absolute
       margin-top: 0
@@ -57,13 +61,13 @@
       +flex(center, center)
       transform: translate(0, -100%)
       +tr(transform .3s)
-    +lg
-      height: calc(100vh - #{$header-height-mob})
   &__social
     position: absolute
     top: 8px
     left: 100%
     min-width: 105px
+    +xl
+      top: 20px
     +lg
       position: static
     li
@@ -74,6 +78,8 @@
     position: relative
     z-index: 1
     +flex(flex-start, center)
+    +xl
+      width: 200px
     +lg
       width: auto
   &__burger

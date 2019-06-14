@@ -11,6 +11,8 @@
     +coverdiv
     background-color: rgba($black, .4)
     z-index: 0
+  +xl
+    padding-top: $header-height-md
   +lg
     padding-top: $header-height-mob
   &__block
@@ -35,6 +37,8 @@
     top: calc(#{$header-height} + 10px)
     left: var(--section-padding, 40px)
     z-index: 10
+    +xl
+      top: calc(#{$header-height-md} + 10px)
     +lg
       top: calc(#{$header-height-mob} + 10px)
 

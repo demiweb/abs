@@ -87,6 +87,8 @@
         // margin-top: 15px
   &--full
     min-height: calc(100vh - #{$header-height} - #{$footer-height})
+    +xl
+      min-height: calc(100vh - #{$header-height-md} - #{$footer-height})
     +lg
       min-height: calc(100vh - #{$header-height-mob} - #{$footer-height})
   &--error
@@ -147,6 +149,8 @@
   background-color: $black
   padding: 0  
   height: calc(100vh - #{$header-height})
+  +xl
+    height: calc(100vh - #{$header-height-md})
   +lg
     height: calc(100vh - #{$header-height-mob})
   +xs
@@ -186,6 +190,8 @@
     background-color: #000
     opacity: .8
     +tr(opacity .3s)
+  +xl
+    padding-top: calc(50vh - #{$header-height-md})
   +lg
     --three-cols-section-col-padding-left: 20px
     padding-top: calc(50vh - #{$header-height-mob})

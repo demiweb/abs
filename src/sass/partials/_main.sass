@@ -21,11 +21,10 @@
         overflow: auto
         z-index: 10
         top: 0
-        padding-top: $header-height
+        padding-top: $header-height-mob
         background-color: rgba($black, .5)
         width: 100%
-      +lg
-        padding-top: $header-height-mob
+        
     #{$this}__content
       transform: translate($aside-width, 0)
       padding-right: $aside-width
@@ -80,6 +79,8 @@
   &--full
     padding-top: $subnav-height
     margin-top: $header-height
+    +xl
+      margin-top: $header-height-md
     +lg
       margin-top: $header-height-mob
       padding-top: 50px
