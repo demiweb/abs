@@ -191,6 +191,17 @@ input, textarea
     min-width: 210px
     font-size: $fz-md
     padding: 7px 10px
+  &--lg
+    min-width: 260px
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 9px
+    padding-bottom: 8px
+    font-size: $fz
+    +sm
+      padding-top: 5px
+      padding-bottom: 5px
+      font-size: $fz-md
   &--full
     width: 100%
   &--arrow
@@ -212,6 +223,12 @@ input, textarea
     +hover
       background-color: $white
       border-color: $white
+  &--transp
+    background-color: transparent
+    color: $c-text
+    +hover
+      background-color: $c-text
+      color: $white
 
 
 .line-sm
@@ -251,6 +268,8 @@ input, textarea
     small
       font-size: 10px
       +light
+  &--red
+    color: $red
 
 .text-stroke
   +css-lock(100, 260, 576, 1199, font-size)
@@ -317,6 +336,25 @@ input, textarea
         margin-bottom: 0
         +xs
           margin-bottom: 10px
+
+
+.counter
+  font-size: 0
+  input, button
+    height: 40px
+    text-align: center
+    border: 1px solid  $gray-light
+    display: inline-block
+    vertical-align: top
+  input
+    padding: 10px
+    width: 60px
+  button
+    background-color: transparent
+    color: $gray-light
+    width: 40px
+    font-size: 26px
+
 
 
 // ============ animations ===============

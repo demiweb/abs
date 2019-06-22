@@ -1,0 +1,35 @@
+.cart
+  &__row
+    border-bottom: 1px solid  $gray-light
+    padding-top: 40px
+    padding-bottom: 40px
+    +md
+      padding-top: 30px
+      padding-bottom: 30px
+    +sm
+      padding-top: 20px
+      padding-bottom: 20px
+    +xs
+      padding-top: 10px
+      padding-bottom: 10px
+  &__items
+    box-shadow: 0 5px 3px  rgba(#000, .1)
+
+
+.cart-item
+  +flex(space-between, center)
+  &__meta
+    flex-grow: 1
+
+  &__amount
+    +flex(space-between, center)
+  &__counter
+    margin-right: 15px
+  &__price
+    margin-right: 15px
+  &__icon
+    font-size: 0
+    display: block
+    .icon
+      fill: $gray-light
+      font-size: 21px

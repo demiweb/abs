@@ -11,3 +11,5 @@ PageList:
 - file: contacts.html
 - file: article-page-pdf.html
 - file: 404.html
+- file: thank-you.html
+- file: cart.html

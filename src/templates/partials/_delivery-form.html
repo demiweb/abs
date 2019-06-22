@@ -1,0 +1,49 @@
+{%set
+cols = [
+  {
+    fields: [
+      { name: '' },
+      { name: '' },
+      { name: '' }
+    ]
+  },
+  {
+    fields: [
+      { name: '' },
+      { name: '' },
+      { name: '' }
+    ]
+  },
+  {
+    fields: [
+      { name: '' },
+      { name: '' },
+      { name: '' }
+    ]
+  }
+]
+%}
+
+<!-- begin delivery-form -->
+<div class="delivery-form">
+  <div class="delivery-form__title text text--gray">
+     Залиште ваші контактні дані нижче та оберіть способи доставки та оплати
+  </div>
+
+  <div class="delivery-form__form">
+    <form>
+      <div class="delivery-form__form-inner">
+        {% for i in cols %}
+        <div class="delivery-form__col">
+          {% for j in i.fields %}
+          <div class="delivery-form__field">
+            this is input
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+</div>
+<!-- end delivery-form -->
