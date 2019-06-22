@@ -2,7 +2,7 @@
 <html class="has-aside-open">
   <head>
     <meta charset="utf-8" />
-    <title>news</title>
+    <title>thank-you</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000" />
@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- BEGIN content -->
-    <div class="out news-page">
+    <div class="out out--no-hero">
       <!-- begin header -->
       <header class="header">
         <div class="header__logo">
@@ -23,7 +23,7 @@
           <!-- begin nav -->
           <nav class="nav ">
             <ul>
-              <li><a href="#" class="  js-hover">продукція</a>
+              <li><a href="#" class=" is-active js-hover">продукція</a>
                 <div class="header__subnav">
                   <!-- begin nav -->
                   <nav class="nav nav--sub">
@@ -38,7 +38,7 @@
                 </div>
               </li>
               <li><a href="#">Про нас</a></li>
-              <li><a href="#" class=" is-active">новини</a></li>
+              <li><a href="#">новини</a></li>
               <li><a href="#">контакти</a>
                 <div class="header__social">
                   <!-- begin social -->
@@ -101,104 +101,43 @@
         </div>
       </header>
       <!-- end header -->
-      <!-- begin hero -->
-      <section class="hero js-lazy" data-background-image="img/hero/bg-hero-news.jpg">
-        <div class="hero__breadcrumbs hero__breadcrumbs-top">
-          <!-- begin breadcrumbs -->
-          <div class="breadcrumbs ">
-            <ul>
-              <li><a href="#">ABS</a></li>
-              <li>/</li>
-              <li><a href="#" class=" is-active">Новини</a></li>
-            </ul>
+      <!-- begin section -->
+      <section class="section section--full section--bg js-lazy" data-background-image="img/bg-thank-you.jpg">
+        <!-- begin thank-you -->
+        <div class="thank-you">
+          <div class="thank-you__title">
+            <h2 class="h2 h2--md h2--ttn h2--text">Дякуємо за замовлення!</h2>
           </div>
-          <!-- end breadcrumbs -->
-        </div>
-        <div class="hero__block overflow-hidden">
-          <div class="hero__title">
-            <h1 class="h1 title--white"><small>АКТУАЛЬНІ</small> НОВИНИ</h1>
+          <div class="thank-you__line">
+            <div class="line-sm line-sm--red"></div>
+          </div>
+          <div class="thank-you__subttl text text--thin text--gray">Ваше замовлення незабаром опиниться у вас. Ми зв’яжемося з вами у найближчий час</div>
+          <div class="thank-you__meta">
+            <!-- begin thank-you-meta -->
+            <div class="thank-you-meta ">
+              <dl>
+                <dt>№ замовлення: </dt>
+                <dd>321</dd>
+                <dt>Статус: </dt>
+                <dd>На розгляданні</dd>
+                <dt>Кількість товарів:</dt>
+                <dd>5</dd>
+                <dt>СпосІб оплати:</dt>
+                <dd>Готівкою</dd>
+                <dt>СпосІб доставки: </dt>
+                <dd>Самовивіз</dd>
+              </dl>
+            </div>
+            <!-- end thank-you-meta -->
+          </div>
+          <div class="thank-you__btns">
+            <a href="#" class="btn btn--sec btn--lg">продовжити покупки</a>
+            <a href="#" class="btn btn--transp btn--black btn--lg">На головну</a>
           </div>
         </div>
+        <!-- end thank-you -->
       </section>
-      <!-- end hero -->
-      <!-- begin main -->
-      <main class="main main--section">
-        <div class="title-lines"></div>
-        <!-- begin news -->
-        <div class="news">
-          <div class="news__items">
-            <!-- begin news-item -->
-            <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__img">
-                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_03.jpg"></div>
-              </div>
-              <div class="news-item__content">
-                <div class="news-item__title">
-                  <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-                </div>
-                <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-                <div class="news-item__btn">
-                  <a href="#" class="btn btn--sec btn--black">читати більше</a>
-                </div>
-              </div>
-            </div>
-            <!-- end news-item -->
-            <!-- begin news-item -->
-            <div class="news-item js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__content">
-                <div class="news-item__title">
-                  <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-                </div>
-                <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-                <div class="news-item__btn">
-                  <a href="#" class="btn btn--sec">читати більше</a>
-                </div>
-              </div>
-              <div class="news-item__img">
-                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_06.jpg"></div>
-              </div>
-            </div>
-            <!-- end news-item -->
-            <!-- begin news-item -->
-            <div class="news-item news-item--red js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__img">
-                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_08.jpg"></div>
-              </div>
-              <div class="news-item__content">
-                <div class="news-item__title">
-                  <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-                </div>
-                <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-                <div class="news-item__btn">
-                  <a href="#" class="btn btn--sec btn--black">читати більше</a>
-                </div>
-              </div>
-            </div>
-            <!-- end news-item -->
-            <!-- begin news-item -->
-            <div class="news-item js-anim-el" data-anim-name="fadeInBottom">
-              <div class="news-item__content">
-                <div class="news-item__title">
-                  <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-                </div>
-                <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-                <div class="news-item__btn">
-                  <a href="#" class="btn btn--sec">читати більше</a>
-                </div>
-              </div>
-              <div class="news-item__img">
-                <div class="news-item__img-bg js-lazy" data-background-image="img/news/news_11.jpg"></div>
-              </div>
-            </div>
-            <!-- end news-item -->
-          </div>
-          <div class="news__btn">
-            <a href="#" class="btn btn--sec">завантажити більше</a>
-          </div>
-        </div>
-        <!-- end news -->
-      </main>
-      <!-- end main -->
+      <!-- end section -->
       <!-- begin footer -->
       <footer class="footer footer--gray">
         <div class="footer__copy">© 2019 ООО «ABS ACCUMULATORY BATTERY SYSTEMS»</div>
