@@ -14,9 +14,9 @@
       border-color: $red-accent
   &.input--placeholder
     label
-      // top: 32px
-      top: calc(50% + 10px)
-      transform: translate(0, -50%)
+      top: 32px
+      // top: calc(50% + 10px)
+      // transform: translate(0, -50%)
       left: 10px
 
   &--arrow
@@ -26,31 +26,36 @@
       width: 15px
       background-color: currentColor
       right: 12px
-      // top: 40px
-      top: calc(50% + 10px)
-      transform: translate(0, -50%)
+      top: 40px
+      // top: calc(50% + 10px)
+      // transform: translate(0, -50%)
     +after
       +icon-arrow(10, 10, 1, currentColor, -135)
       position: absolute
       right: 12px
-      // top: 36px
-      top: calc(50% + 10px)
-      transform: translate(0, -50%) rotate(-135deg)
+      top: 36px
+      // top: calc(50% + 10px)
+      // transform: translate(0, -50%) rotate(-135deg)
+      transform: rotate(-135deg)
     &.input--placeholder
       padding-top: 20px
   &--md
     input
       border: 0
       border-bottom: 1px solid  $gray
+      font-size: $fz
+      padding: 5px 0
+      height: 35px
     &.input--placeholder
       label
         left: 0        
         // top: 1em
-        top: calc(50% + 10px)
-        transform: translate(0, -50%)
+        top: 26px
+        // top: calc(50% + 10px)
+        // transform: translate(0, -50%)
       input
         &:focus + label
-          transform: translate(-.7em, 0) scale(.8)
+          // transform: translate(-.7em, 0) scale(.8)
   &--gray
     color: $gray-dark
     input
@@ -72,24 +77,23 @@
     &.input--placeholder
       label
         left: 0
-        // top: 1.2em
-        top: calc(50% + 10px)
-        transform: translate(0, -50%)
+        top: 18px
   &--placeholder
     padding-top: 15px
     label
       position: absolute      
       // top: 1.2em
-      top: calc(50% + 10px)
-      transform: translate(0, -50%)
+      top: 26px
+      // top: calc(50% + 10px)
+      // transform: translate(0, -50%)
       left: 0
       pointer-events: none
       +tr(transform .3s, top .3s, color .3s)
     input
       &:focus + label
-        top: 0
-        transform: translate(-.3em, 0) scale(.8)
+        transform: translate(0, calc(0px - (50% + 15px)))
+        font-size: .75em
         color: $red-accent
       &.has-text + label
-        top: 0
-        transform: translate(-.3em, 0) scale(.8)
+        transform: translate(0, calc(0px - (50% + 15px)))
+        font-size: .75em

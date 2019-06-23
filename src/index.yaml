@@ -13,3 +13,4 @@ PageList:
 - file: 404.html
 - file: thank-you.html
 - file: cart.html
+- file: letter.html

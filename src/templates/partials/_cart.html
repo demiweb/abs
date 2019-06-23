@@ -1,6 +1,8 @@
 <!-- begin section -->
-<section class="section section--white">
-  {{ mixins.list(
+<section class="section section--white section--pt-sm">
+  <div class="section__breadcrumbs">   
+  
+    {{ mixins.list(
       name = 'breadcrumbs',
       modifications = { wrap: 'breadcrumbs--black '},
       list = [
@@ -9,6 +11,7 @@
         { link: 'Кошик', modLink: 'is-active' }
       ]
     ) }}
+    </div>
 
     <!-- begin cart -->
     <div class="cart">
@@ -23,8 +26,7 @@
 
       <div class="cart__items">
 
-
-
+        {% for i in range(0, 2) %}
         <div class="cart__row">
           <div class="container">
             <!-- begin cart-item -->
@@ -81,6 +83,7 @@
             <!-- end cart-item -->
           </div>
         </div>
+        {% endfor %}
 
       </div>
 
