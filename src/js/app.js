@@ -23,6 +23,7 @@ import truncateText from './components/truncateText';
 import setPopups from './components/setPopups';
 import toggleInputFocus from './components/toggleInputFocus';
 import setTextareaHeight from './components/setTextareaHeight';
+import setCounter from './components/setCounter';
 
 $(function() {
   cssVars();
@@ -47,4 +48,5 @@ $(function() {
   setPopups();
   toggleInputFocus();
   setTextareaHeight();
+  setCounter();
 });
