@@ -97,8 +97,14 @@
       min-height: calc(100vh - #{$header-height-md} - #{$footer-height})
     +lg
       min-height: calc(100vh - #{$header-height-mob} - #{$footer-height})
+    +xs
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height-mob})
+    +r(395)
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height-xs})
   &--center
     +flex(center, center)
+    padding-top: 5%
+    padding-bottom: 5%
   &--error
     background-color: #eeeef0
     +cover
