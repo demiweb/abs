@@ -90,6 +90,8 @@
               <div class="controls__text">N66L2X0_1</div>
             </div>
 
+            {% if not itemPageSm %}
+
             <div class="controls__item">
               {{ mixins.input(
                 name = 'select',
@@ -120,14 +122,17 @@
                 ]
               ) }}
             </div>
+            {% endif %}
           </div>
           <!-- end controls -->
         </div>
 
         <div class="content-block__block">
+          {% if not itemPageSm %}
           <div class="content-block__icons">
             {% include "partials/_characteristics.html" %}
           </div>
+          {% endif %}
 
           <div class="content-block__text text">
             Акумулятори MONBAT EFB series з інноваційною технологією Enhaced Flooded Battery (EFB) ідеально підходять для легкових автомобілів зі стандартними системами START-STOP, в яких споживання потужності вище середнього. Для виробництва акумуляторів MONBAT EFB розроблена спеціальна гібридна конструкція блоків елктродів на базі литих позитивних решіток з PbCa сплаву з активною масою підвищеної щільності і експандованих негативних решіток з підвищеними струмовідводними властивостями. В результаті підвищується стійкість до глибокого розряду при підвищенні прийому заряду, що збільшує термін служби акумуляторів.
@@ -138,9 +143,11 @@
     </div>
   </div>
 
+  {% if not itemPageSm %}
   <div class="content__table">
     {% include "partials/_item-table.html" %}
   </div>
+  {% endif %}
 
   <div class="content__similar">
     <div class="content__title title-under">

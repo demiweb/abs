@@ -13,6 +13,12 @@
     
   +md
     display: block
+  &__text
+    display: block
+    +md
+      padding-top: 30px
+    +xs
+      padding-top: 0
   &__icons
     display: block
     +sm
@@ -42,8 +48,11 @@
       position: static
       margin-bottom: 15px
   &__content
-    flex-grow: 1
+    // flex-grow: 1
     display: block
+    width: 60%
+    +md
+      width: 100%
     
   &__title
     margin-bottom: 35px
