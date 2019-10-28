@@ -26,9 +26,10 @@
         img
           height: auto
   &__thumb
-    display: block
+    display: inline-block
     border: 1px solid  $c-border
     text-align: center
+    // width: 100px
     +cover
     &.is-active
       border-color: var(--main-color, #{$black})
@@ -39,3 +40,5 @@
   width: auto
   +md
     display: none
+  img
+    height: auto !important

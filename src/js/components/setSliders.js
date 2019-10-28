@@ -13,6 +13,19 @@ export default function setSliders() {
     const $wrap = $(slider).closest('.slider__wrap');
     const prev = $wrap.find('.js-prev')[0];
     const next = $wrap.find('.js-next')[0];
+    let thumbsSlidesNumberDesc,
+      thumbsSlidesNumberMd,
+      thumbsSlidesNumberSm,
+      thumbsLoop;
+
+    if (name === 'item_gallery_thumbs') {
+      const slides = [].slice.call(slider.querySelectorAll('.swiper-slide'));
+      thumbsSlidesNumberDesc = slides.length >= 5 ? 5 : slides.length;
+      thumbsSlidesNumberMd = slides.length >= 4 ? 4 : slides.length;
+      thumbsSlidesNumberSm = slides.length >= 3 ? 3 : slides.length;
+
+      thumbsLoop = slides.length >= 3;
+    }
 
     const options = {
       similar: {
@@ -41,16 +54,16 @@ export default function setSliders() {
         }
       },
       'item_gallery_thumbs': {
-        slidesPerView: 5,
+        slidesPerView: thumbsSlidesNumberDesc,
         spaceBetween: 10,
-        loop: true,
+        loop: thumbsLoop,
         breakpoints: {
           576: {
-            slidesPerView: 3,
+            slidesPerView: thumbsSlidesNumberSm,
             spaceBetween: 5
           },
           768: {
-            slidesPerView: 4
+            slidesPerView: thumbsSlidesNumberMd
           }
         },
         on: {
